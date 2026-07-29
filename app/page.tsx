@@ -36,7 +36,7 @@ export default function HomePage() {
               </motion.h1>
               
               <motion.p variants={staggerItem} className="text-lg sm:text-xl text-slate-500 max-w-lg leading-relaxed">
-                Real-time OpenRTB auctions across Web, App, and CTV — connecting premium publishers with global advertisers.
+                Real-time OpenRTB auctions across Web, App, and CTV - connecting premium publishers with global advertisers.
               </motion.p>
               
               <motion.div variants={staggerItem} className="flex flex-wrap items-center gap-4 pt-4">

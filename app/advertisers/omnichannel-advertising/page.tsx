@@ -29,7 +29,7 @@ export default function OmnichannelAdvertisingPage() {
                   Every screen.
                 </h1>
                 <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
-                  Reach your most valuable audiences continuously across Web, App, and Connected TV — all managed from a single, unified platform.
+                  Reach your most valuable audiences continuously across Web, App, and Connected TV - all managed from a single, unified platform.
                 </p>
                 <MovingBorderButton href="/contact" className="mt-2 group">
                   Plan Your Campaign

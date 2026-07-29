@@ -116,7 +116,7 @@ export default function ContactPage() {
               Let&apos;s talk.
             </h1>
             <p className="text-lg md:text-xl text-slate-500 max-w-xl">
-              Publisher or advertiser — our specialists are ready to help you get started.
+              Publisher or advertiser - our specialists are ready to help you get started.
             </p>
           </FadeUp>
         </Container>
@@ -169,7 +169,7 @@ export default function ContactPage() {
                           <FormLabel className="text-slate-700 font-semibold">I am a...</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger className="bg-slate-50 border-slate-200 text-slate-900 data-placeholder:text-slate-400 rounded-xl h-14 px-4 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all">
+                              <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-slate-900 data-[placeholder]:text-slate-400 rounded-xl h-14 px-4 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all">
                                 <SelectValue placeholder="Select your role" />
                               </SelectTrigger>
                             </FormControl>
@@ -335,7 +335,7 @@ export default function ContactPage() {
               "Every enquiry is reviewed by a real specialist within one business day. We don't use automated responses for new partner enquiries."
             </blockquote>
             <p className="text-sm font-mono font-bold text-slate-400 tracking-widest uppercase">
-              — The Emonetiser Partnerships Team
+              - The Emonetiser Partnerships Team
             </p>
           </FadeUp>
         </Container>

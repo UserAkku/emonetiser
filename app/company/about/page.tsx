@@ -20,7 +20,7 @@ export default function AboutPage() {
                 We own<br />the exchange.
               </h1>
               <p className="text-lg md:text-xl text-slate-500 max-w-xl mb-10 leading-relaxed">
-                Founded to eliminate the middlemen — connecting publishers and advertisers through one transparent, real-time auction infrastructure.
+                Founded to eliminate the middlemen - connecting publishers and advertisers through one transparent, real-time auction infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="#what-we-built" className="inline-flex h-12 items-center justify-center rounded-full bg-slate-900 px-8 text-sm font-semibold text-white transition-colors hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 gap-2">
@@ -70,7 +70,7 @@ export default function AboutPage() {
                   For too long, the programmatic ecosystem has been characterized by opacity, fragmented supply chains, and excessive margin taxes. Middlemen stacked upon middlemen eroded publisher yield and diminished advertiser return on ad spend.
                 </p>
                 <p>
-                  We believed there had to be a better way. By owning the entire infrastructure — from the SSP that integrates directly with publishers to the DSP that ingests demand — we eliminated the hops, removed the hidden fees, and created a single, unified auction environment where value is maximized for both sides.
+                  We believed there had to be a better way. By owning the entire infrastructure - from the SSP that integrates directly with publishers to the DSP that ingests demand - we eliminated the hops, removed the hidden fees, and created a single, unified auction environment where value is maximized for both sides.
                 </p>
               </div>
             </FadeUp>
