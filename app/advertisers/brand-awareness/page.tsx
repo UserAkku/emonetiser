@@ -25,7 +25,7 @@ export default function BrandAwarenessPage() {
   return (
     <div className="bg-background text-foreground min-h-screen">
       {/* S1: HERO */}
-      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 gradient-mesh">
+      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 ">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeUp>
@@ -53,7 +53,7 @@ export default function BrandAwarenessPage() {
       </PageSection>
 
       {/* S2: WHY PREMIUM INVENTORY */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeUp>
@@ -67,18 +67,18 @@ export default function BrandAwarenessPage() {
             </FadeUp>
             <FadeUp delay={0.2}>
               <div className="flex flex-col gap-4">
-                <GlassPanel className="p-6 flex justify-between items-center border-[var(--color-brand-secondary)]/20">
+                <GlassPanel className="bento-violet p-6 flex justify-between items-center border-[var(--color-brand-secondary)]/20">
                   <span className="font-bold">Premium CPM vs Average</span>
                   <span className="font-mono text-xl text-[var(--color-brand-secondary)]">2-3×</span>
                 </GlassPanel>
-                <GlassPanel className="p-6 flex justify-between items-center border-[var(--color-brand-primary)]/20">
+                <GlassPanel className="bento-cyan p-6 flex justify-between items-center border-[var(--color-brand-primary)]/20">
                   <span className="font-bold">Active Viewability</span>
                   <div className="text-right">
                     <span className="font-mono text-xl text-[var(--color-brand-primary)]">85%+</span>
                     <span className="text-xs text-foreground/40 block">vs 55% avg</span>
                   </div>
                 </GlassPanel>
-                <GlassPanel className="p-6 flex justify-between items-center border-[var(--color-brand-accent)]/20">
+                <GlassPanel className="bento-coral p-6 flex justify-between items-center border-[var(--color-brand-accent)]/20">
                   <span className="font-bold">Video Completion (VCR)</span>
                   <div className="text-right">
                     <span className="font-mono text-xl text-[var(--color-brand-accent)]">75%+</span>
@@ -99,7 +99,7 @@ export default function BrandAwarenessPage() {
           </FadeUp>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-secondary)]/10 to-transparent border border-border hover:border-[var(--color-brand-secondary)]/30">
+              <GlassPanel className="bento-yellow h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-secondary)]/10 to-transparent border border-border hover:border-[var(--color-brand-secondary)]/30">
                 <Eye className="w-10 h-10 text-[var(--color-brand-secondary)] mb-6 transition-transform group-hover:scale-110" />
                 <h3 className="text-xl font-medium text-foreground mb-2">High-Impact Display</h3>
                 <p className="text-muted-foreground font-sans text-sm mb-6 leading-relaxed">Rich media, takeovers, and large format banners designed to stop the scroll.</p>
@@ -107,7 +107,7 @@ export default function BrandAwarenessPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-primary)]/10 to-transparent border border-border hover:border-[var(--color-brand-primary)]/30">
+              <GlassPanel className="bento-pink h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-primary)]/10 to-transparent border border-border hover:border-[var(--color-brand-primary)]/30">
                 <VideoCamera className="w-10 h-10 text-[var(--color-brand-primary)] mb-6 transition-transform group-hover:scale-110" />
                 <h3 className="text-xl font-medium text-foreground mb-2">Pre-Roll Video</h3>
                 <p className="text-muted-foreground font-sans text-sm mb-6 leading-relaxed">Captivate audiences with unskippable, premium video placements before content.</p>
@@ -115,7 +115,7 @@ export default function BrandAwarenessPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-black/10 to-transparent border border-border hover:border-border">
+              <GlassPanel className="bento-violet h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-black/10 to-transparent border border-border hover:border-border">
                 <Newspaper className="w-10 h-10 text-foreground/80 mb-6 transition-transform group-hover:scale-110" />
                 <h3 className="text-xl font-medium text-foreground mb-2">Native Advertising</h3>
                 <p className="text-muted-foreground font-sans text-sm mb-6 leading-relaxed">In-feed placements that match the form and function of the editorial content.</p>
@@ -123,7 +123,7 @@ export default function BrandAwarenessPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-accent)]/10 to-transparent border border-border hover:border-[var(--color-brand-accent)]/30">
+              <GlassPanel className="bento-cyan h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-accent)]/10 to-transparent border border-border hover:border-[var(--color-brand-accent)]/30">
                 <Television className="w-10 h-10 text-[var(--color-brand-accent)] mb-6 transition-transform group-hover:scale-110" />
                 <h3 className="text-xl font-medium text-foreground mb-2">Connected TV</h3>
                 <p className="text-muted-foreground font-sans text-sm mb-6 leading-relaxed">The prestige of traditional TV commercials with the targeting of digital.</p>
@@ -135,7 +135,7 @@ export default function BrandAwarenessPage() {
       </PageSection>
 
       {/* S4: MEASUREMENT */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <FadeUp>
@@ -193,7 +193,7 @@ export default function BrandAwarenessPage() {
               </div>
             </FadeUp>
             <FadeUp delay={0.2} className="order-1 lg:order-2">
-              <GlassPanel className="p-8 border-[var(--color-brand-accent)]/20 text-center relative overflow-hidden bg-gradient-to-br from-black/5 to-transparent border group hover:border-[var(--color-brand-accent)]/40 transition-all duration-300 hover:shadow-[0_0_40px_rgba(217,119,87,0.1)]">
+              <GlassPanel className="bento-coral p-8 border-[var(--color-brand-accent)]/20 text-center relative overflow-hidden bg-gradient-to-br from-black/5 to-transparent border group hover:border-[var(--color-brand-accent)]/40 transition-all duration-300 hover:shadow-[0_0_40px_rgba(217,119,87,0.1)]">
                 <ShieldCheck className="w-16 h-16 text-[var(--color-brand-accent)] mx-auto mb-6 transition-transform group-hover:scale-110" />
                 <h3 className="text-2xl font-bold mb-2">Platform Trust Score</h3>
                 <div className="text-5xl font-mono font-bold text-[var(--color-brand-accent)] mb-6">99.8%</div>
@@ -211,7 +211,7 @@ export default function BrandAwarenessPage() {
       </PageSection>
 
       {/* S6: FINAL CTA */}
-      <PageSection className="py-24 md:py-32 gradient-mesh-subtle border-t border-border">
+      <PageSection className="py-24 md:py-32  border-t border-border">
         <Container>
           <CtaDuo advertiserText="Launch Brand Campaign" />
         </Container>

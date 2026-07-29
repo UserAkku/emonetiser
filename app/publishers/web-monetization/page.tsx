@@ -16,7 +16,7 @@ export default function WebMonetizationPage() {
     <main className="flex flex-col w-full bg-background min-h-screen text-foreground">
       
       {/* S1 HERO */}
-      <PageSection className="pt-32 pb-24 md:pt-40 md:pb-32 gradient-mesh">
+      <PageSection className="pt-32 pb-24 md:pt-40 md:pb-32 ">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
             <FadeUp className="flex flex-col items-start text-left">
@@ -43,7 +43,7 @@ export default function WebMonetizationPage() {
       </PageSection>
 
       {/* S2 PUBLISHER CHALLENGES */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <FadeUp>
             <h2 className="text-3xl md:text-5xl font-display text-foreground mb-16 text-center">The waterfall problem</h2>
@@ -56,7 +56,7 @@ export default function WebMonetizationPage() {
                 { title: "Capped Demand", desc: "Relying on a single network limits competition.", icon: HandCoins },
                 { title: "No Transparency", desc: "Hidden fees and obscure auction dynamics.", icon: Eye },
               ].map((item, i) => (
-                <div key={i} className="glass-card bg-red-50 border-red-100 p-6 rounded-2xl flex gap-4 items-start">
+                <div key={i} className="bento-card bento-cyan bg-red-50 border-red-100 p-6 rounded-2xl flex gap-4 items-start">
                   <div className="p-3 rounded-lg bg-red-100 text-red-600">
                     <item.icon className="w-6 h-6" />
                   </div>
@@ -75,7 +75,7 @@ export default function WebMonetizationPage() {
                 { title: "Unlimited Demand", desc: "Access premium global demand partners seamlessly.", icon: CurrencyDollar },
                 { title: "Real-Time Reporting", desc: "Full visibility into every auction and bid.", icon: ChartBar },
               ].map((item, i) => (
-                <div key={i} className="glass-card bg-[var(--color-brand-primary)]/5 border-[var(--color-brand-primary)]/20 p-6 rounded-2xl flex gap-4 items-start">
+                <div key={i} className="bento-card bento-coral bg-[var(--color-brand-primary)]/5 border-[var(--color-brand-primary)]/20 p-6 rounded-2xl flex gap-4 items-start">
                   <div className="p-3 rounded-lg bg-[var(--color-brand-primary)]/10 text-[var(--color-brand-primary)]">
                     <item.icon className="w-6 h-6" />
                   </div>
@@ -97,32 +97,32 @@ export default function WebMonetizationPage() {
             <h2 className="text-3xl md:text-5xl font-display text-foreground mb-16">Built for scale</h2>
           </FadeUp>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <GlassPanel className="p-8 lg:col-span-2 lg:row-span-2 bg-gradient-to-br from-black/5 to-transparent flex flex-col justify-end min-h-[320px]">
+            <GlassPanel className="bento-violet p-8 lg:col-span-2 lg:row-span-2 bg-gradient-to-br from-black/5 to-transparent flex flex-col justify-end min-h-[320px]">
               <Lightning className="w-10 h-10 text-[var(--color-brand-primary)] mb-6" />
               <h3 className="text-2xl font-medium text-foreground mb-2">Header Bidding</h3>
               <p className="text-muted-foreground">Advanced wrapper technology that executes auctions in the browser with zero latency impact.</p>
             </GlassPanel>
-            <GlassPanel className="p-8">
+            <GlassPanel className="bento-cyan p-8">
               <ChartBar className="w-8 h-8 text-[var(--color-brand-accent)] mb-4" />
               <h3 className="text-xl font-medium text-foreground mb-2">Yield Optimization</h3>
               <p className="text-muted-foreground text-sm">Dynamic floor pricing based on machine learning.</p>
             </GlassPanel>
-            <GlassPanel className="p-8">
+            <GlassPanel className="bento-coral p-8">
               <ShieldCheck className="w-8 h-8 text-[var(--color-brand-primary)] mb-4" />
               <h3 className="text-xl font-medium text-foreground mb-2">Fraud Prevention</h3>
               <p className="text-muted-foreground text-sm">Built-in invalid traffic filtering and brand safety.</p>
             </GlassPanel>
-            <GlassPanel className="p-8 lg:col-span-2">
+            <GlassPanel className="bento-yellow p-8 lg:col-span-2">
               <Speedometer className="w-8 h-8 text-[var(--color-brand-secondary)] mb-4" />
               <h3 className="text-xl font-medium text-foreground mb-2">Real-Time Reporting</h3>
               <p className="text-muted-foreground text-sm">Granular analytics down to the ad unit and UTM source level.</p>
             </GlassPanel>
-            <GlassPanel className="p-8">
+            <GlassPanel className="bento-pink p-8">
               <CurrencyDollar className="w-8 h-8 text-[var(--color-brand-primary)] mb-4" />
               <h3 className="text-xl font-medium text-foreground mb-2">Floor Price Control</h3>
               <p className="text-muted-foreground text-sm">Set custom floors by geo, device, or channel.</p>
             </GlassPanel>
-            <GlassPanel className="p-8">
+            <GlassPanel className="bento-violet p-8">
               <Gauge className="w-8 h-8 text-[var(--color-brand-accent)] mb-4" />
               <h3 className="text-xl font-medium text-foreground mb-2">Lazy Loading</h3>
               <p className="text-muted-foreground text-sm">Only request ads when they enter the viewport.</p>
@@ -132,7 +132,7 @@ export default function WebMonetizationPage() {
       </PageSection>
 
       {/* S4 INTEGRATION PROCESS */}
-      <PageSection className="py-24 md:py-32 bg-gray-50 border-y border-border">
+      <PageSection className="py-24 md:py-32 bg-white border-y border-border">
         <Container>
           <FadeUp>
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -195,7 +195,7 @@ export default function WebMonetizationPage() {
       </PageSection>
 
       {/* S6 RESULTS */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -226,7 +226,7 @@ export default function WebMonetizationPage() {
       </PageSection>
 
       {/* S7 FINAL CTA */}
-      <PageSection className="py-24 md:py-32 gradient-mesh-subtle border-t border-border">
+      <PageSection className="py-24 md:py-32  border-t border-border">
         <Container>
           <CtaDuo publisherText="Start Monetizing" />
         </Container>

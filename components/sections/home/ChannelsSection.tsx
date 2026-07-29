@@ -5,7 +5,8 @@ import Link from "next/link";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { Globe, Smartphone, Tv } from "lucide-react";
+import { Globe, Smartphone, Tv, ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const channels = [
   {
@@ -14,10 +15,7 @@ const channels = [
     icon: Globe,
     formats: ["Display", "Native", "In-stream Video", "Out-stream Video"],
     link: "/publishers/web-monetization",
-    accentColor: "hsl(258,85%,62%)",
-    accentBg: "hsl(258,85%,62%,0.08)",
-    accentBorder: "hsl(258,85%,62%,0.25)",
-    accentShadow: "hsl(258,85%,62%,0.2)",
+    bentoClass: "bento-cyan",
     label: "Publisher SSP",
   },
   {
@@ -26,10 +24,7 @@ const channels = [
     icon: Smartphone,
     formats: ["Rewarded Video", "Interstitial", "Banner", "Native"],
     link: "/publishers/app-monetization",
-    accentColor: "hsl(175,75%,40%)",
-    accentBg: "hsl(175,75%,40%,0.08)",
-    accentBorder: "hsl(175,75%,40%,0.25)",
-    accentShadow: "hsl(175,75%,40%,0.2)",
+    bentoClass: "bento-yellow",
     label: "App Monetisation",
   },
   {
@@ -38,10 +33,7 @@ const channels = [
     icon: Tv,
     formats: ["Pre-roll", "Mid-roll", "Pause Ads", "SSAI Stitching"],
     link: "/publishers/ctv-monetization",
-    accentColor: "hsl(16,90%,58%)",
-    accentBg: "hsl(16,90%,58%,0.08)",
-    accentBorder: "hsl(16,90%,58%,0.25)",
-    accentShadow: "hsl(16,90%,58%,0.2)",
+    bentoClass: "bento-coral",
     label: "CTV / OTT",
   },
 ];
@@ -70,7 +62,7 @@ export function ChannelsSection() {
   );
 
   return (
-    <section ref={containerRef} className="py-24 md:py-32" style={{ background: "var(--section-purple)" }}>
+    <section ref={containerRef} className="py-24 md:py-32 section-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading 
           label="Channels" 
@@ -85,72 +77,34 @@ export function ChannelsSection() {
             <Link
               href={ch.link}
               key={ch.id}
-              className="channel-card group relative flex flex-col overflow-hidden rounded-3xl bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-              style={{
-                border: `1px solid ${ch.accentBorder}`,
-                boxShadow: `0 2px 12px -4px ${ch.accentShadow}`,
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.boxShadow = `0 20px 50px -10px ${ch.accentShadow}`;
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.boxShadow = `0 2px 12px -4px ${ch.accentShadow}`;
-              }}
+              className={cn(
+                "channel-card group bento-card flex flex-col min-h-[380px] justify-between",
+                ch.bentoClass
+              )}
             >
-              {/* Colorful gradient wash on hover */}
-              <div
-                className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: `linear-gradient(135deg, ${ch.accentBg}, transparent 60%)` }}
-              />
-
-              {/* Colored top accent bar */}
-              <div
-                className="absolute top-0 left-8 right-8 h-[3px] rounded-b-full"
-                style={{ background: ch.accentColor }}
-              />
-
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="mb-6 flex items-center gap-4">
-                  <div
-                    className="flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110"
-                    style={{ background: ch.accentBg, border: `1px solid ${ch.accentBorder}` }}
-                  >
-                    <ch.icon className="h-6 w-6" style={{ color: ch.accentColor }} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground">{ch.title}</h3>
-                    <span
-                      className="text-[10px] font-mono uppercase tracking-widest"
-                      style={{ color: ch.accentColor }}
-                    >
-                      {ch.label}
-                    </span>
-                  </div>
+              <div>
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-md shadow-sm">
+                  <ch.icon className="h-7 w-7 text-current" />
                 </div>
+                
+                <h3 className="text-3xl font-display font-bold text-current">{ch.title}</h3>
+                <span className="inline-block mt-2 font-mono text-[11px] uppercase tracking-[0.2em] font-bold opacity-80">
+                  {ch.label}
+                </span>
 
-                {/* Format list */}
-                <ul className="flex-1 flex flex-col gap-2.5 mt-2">
+                <ul className="flex flex-col gap-3 mt-8">
                   {ch.formats.map((f) => (
-                    <li key={f} className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                      <span
-                        className="w-1.5 h-1.5 rounded-full shrink-0"
-                        style={{ background: ch.accentColor }}
-                      />
+                    <li key={f} className="flex items-center gap-3 font-medium opacity-90">
+                      <span className="w-1.5 h-1.5 rounded-full bg-current" />
                       {f}
                     </li>
                   ))}
                 </ul>
+              </div>
 
-                {/* Arrow */}
-                <div
-                  className="mt-8 flex items-center gap-1.5 text-sm font-semibold transition-all duration-300 group-hover:gap-3"
-                  style={{ color: ch.accentColor }}
-                >
-                  Learn more
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
-                    <path d="M3 8h10m0 0-3.5-3.5M13 8l-3.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
+              <div className="mt-8 flex items-center gap-2 font-bold text-lg transition-all duration-300 group-hover:gap-3 opacity-90">
+                Learn more
+                <ArrowRight className="w-5 h-5" />
               </div>
             </Link>
           ))}

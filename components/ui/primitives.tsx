@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
-/** Glowing double-bezel wrapper card used across the design system */
+/** Glowing double-bezel wrapper card is removed, replaced with solid Bento Block */
 export function GlassCard({
   children,
   className,
@@ -14,20 +14,17 @@ export function GlassCard({
   return (
     <div
       className={cn(
-        "bezel-outer",
-        glow === "blue" && "glow-primary",
-        glow === "violet" && "glow-secondary",
+        "bento-card",
+        glow === "blue" ? "bento-cyan" : "bento-violet",
         className
       )}
     >
-      <div className="bezel-inner p-6 md:p-8">
-        {children}
-      </div>
+      {children}
     </div>
   );
 }
 
-/** Simple glass card without double-bezel for lighter contexts */
+/** Simple glass card replaced with crisp white bento block */
 export function GlassPanel({
   children,
   className,
@@ -36,13 +33,13 @@ export function GlassPanel({
   className?: string;
 }) {
   return (
-    <div className={cn("glass-card rounded-2xl p-6", className)}>
+    <div className={cn("bento-card bento-white", className)}>
       {children}
     </div>
   );
 }
 
-/** Pill-shaped eyebrow label — used sparingly (max 1 per 3 sections) */
+/** Pill-shaped eyebrow label */
 export function Eyebrow({
   children,
   accent = "blue",
@@ -55,17 +52,12 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em]",
-        accent === "blue" &&
-          "border border-[hsl(258,85%,62%,0.2)] bg-[hsl(258,85%,62%,0.08)] text-[hsl(258,85%,62%)]",
-        accent === "violet" &&
-          "border border-[hsl(258,85%,62%,0.2)] bg-[hsl(258,85%,62%,0.08)] text-[hsl(258,85%,62%)]",
-        accent === "green" &&
-          "border border-[hsl(175,75%,40%,0.2)] bg-[hsl(175,75%,40%,0.08)] text-[hsl(175,75%,40%)]",
-        accent === "coral" &&
-          "border border-[hsl(16,90%,58%,0.2)] bg-[hsl(16,90%,58%,0.08)] text-[hsl(16,90%,58%)]",
-        accent === "neutral" &&
-          "border border-gray-200 bg-gray-50 text-muted-foreground",
+        "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] shadow-sm",
+        accent === "blue" && "bg-[var(--color-vibrant-cyan)] text-white",
+        accent === "violet" && "bg-[var(--color-vibrant-violet)] text-white",
+        accent === "green" && "bg-[#10B981] text-white",
+        accent === "coral" && "bg-[var(--color-vibrant-coral)] text-white",
+        accent === "neutral" && "bg-[#111111] text-white",
         className
       )}
     >
@@ -74,7 +66,7 @@ export function Eyebrow({
   );
 }
 
-/** Metric display tile */
+/** Metric display tile — solid bento box */
 export function MetricTile({
   value,
   label,
@@ -88,49 +80,25 @@ export function MetricTile({
   accent?: "blue" | "violet" | "green" | "coral";
   className?: string;
 }) {
-  const colorMap = {
-    blue: "hsl(258,85%,62%)",
-    violet: "hsl(258,85%,62%)",
-    green: "hsl(175,75%,40%)",
-    coral: "hsl(16,90%,58%)",
-  };
-  const color = colorMap[accent];
-  
   return (
     <div className={cn(
-      "group relative overflow-hidden rounded-2xl bg-white border p-6 flex flex-col gap-1 transition-all duration-300 hover:-translate-y-1 cursor-default",
+      "bento-card flex flex-col gap-1 cursor-default justify-center min-h-[140px]",
+      accent === "blue" && "bento-cyan",
+      accent === "violet" && "bento-violet",
+      accent === "green" && "bento-black",
+      accent === "coral" && "bento-coral",
       className
-    )}
-    style={{
-      borderColor: `${color}25`,
-      boxShadow: `0 2px 12px -4px ${color}15`,
-    }}
-    onMouseEnter={e => {
-      (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 30px -6px ${color}25`;
-      (e.currentTarget as HTMLElement).style.borderColor = `${color}40`;
-    }}
-    onMouseLeave={e => {
-      (e.currentTarget as HTMLElement).style.boxShadow = `0 2px 12px -4px ${color}15`;
-      (e.currentTarget as HTMLElement).style.borderColor = `${color}25`;
-    }}
-    >
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
-        style={{ background: `linear-gradient(135deg, ${color}06, transparent)` }} />
-      {/* Colored top bar */}
-      <div className="absolute top-0 left-6 right-6 h-[3px] rounded-b-full" style={{ background: color }} />
-      <span
-        className="relative z-10 font-display text-4xl font-semibold tracking-tight"
-        style={{ color }}
-      >
+    )}>
+      <span className="relative z-10 font-display text-5xl font-bold tracking-tight mb-2">
         {value}
       </span>
-      <span className="relative z-10 text-sm font-medium text-foreground">{label}</span>
-      {sub && <span className="relative z-10 text-xs text-muted-foreground mt-1">{sub}</span>}
+      <span className="relative z-10 text-[15px] font-bold opacity-90">{label}</span>
+      {sub && <span className="relative z-10 text-xs mt-1 font-medium opacity-70">{sub}</span>}
     </div>
   );
 }
 
-/** Section wrapper with gradient mesh */
+/** Section wrapper with gradient mesh removed */
 export function PageSection({
   children,
   className,
@@ -146,8 +114,7 @@ export function PageSection({
     <section
       id={id}
       className={cn(
-        "relative py-24 md:py-32",
-        mesh && "gradient-mesh-subtle",
+        "relative py-24 md:py-32 section-white",
         className
       )}
     >

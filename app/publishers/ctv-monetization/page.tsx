@@ -15,7 +15,7 @@ export default function CtvMonetizationPage() {
     <main className="flex flex-col w-full bg-background min-h-screen text-foreground">
       
       {/* S1 HERO */}
-      <PageSection className="pt-32 pb-24 md:pt-40 md:pb-32 gradient-mesh">
+      <PageSection className="pt-32 pb-24 md:pt-40 md:pb-32 ">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeUp className="flex flex-col items-start text-left">
@@ -96,13 +96,13 @@ export default function CtvMonetizationPage() {
       </PageSection>
 
       {/* S2 WHY CTV IS DIFFERENT */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <FadeUp>
             <h2 className="text-3xl md:text-5xl font-display text-foreground mb-16 text-center">The Big Screen Advantage</h2>
           </FadeUp>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <GlassPanel className="p-8 md:col-span-2 bg-gradient-to-r from-black/5 to-transparent flex flex-col justify-end min-h-[320px]">
+            <GlassPanel className="bento-violet p-8 md:col-span-2 bg-gradient-to-r from-black/5 to-transparent flex flex-col justify-end min-h-[320px]">
               <div className="flex-1 flex items-start">
                 <Eye className="w-10 h-10 text-[var(--color-brand-primary)] mb-6" />
               </div>
@@ -115,19 +115,19 @@ export default function CtvMonetizationPage() {
               </div>
             </GlassPanel>
             
-            <GlassPanel className="p-8">
+            <GlassPanel className="bento-cyan p-8">
               <Crosshair className="w-8 h-8 text-[var(--color-brand-secondary)] mb-4" />
               <h3 className="text-xl font-medium text-foreground mb-2">First-Party Targeting</h3>
               <p className="text-muted-foreground text-sm">Household-level targeting based on verified logged-in user data.</p>
             </GlassPanel>
             
-            <GlassPanel className="p-8">
+            <GlassPanel className="bento-coral p-8">
               <ShieldCheck className="w-8 h-8 text-[var(--color-brand-secondary)] mb-4" />
               <h3 className="text-xl font-medium text-foreground mb-2">No Ad Blockers</h3>
               <p className="text-muted-foreground text-sm">Server-side stitched ads cannot be blocked by traditional network filters.</p>
             </GlassPanel>
             
-            <GlassPanel className="p-8 md:col-span-2 flex flex-col md:flex-row items-center gap-8 bg-gradient-to-bl from-[var(--color-brand-primary)]/5 to-transparent">
+            <GlassPanel className="bento-yellow p-8 md:col-span-2 flex flex-col md:flex-row items-center gap-8 bg-gradient-to-bl from-[var(--color-brand-primary)]/5 to-transparent">
               <div className="flex-1">
                 <CurrencyDollar className="w-8 h-8 text-[var(--color-brand-primary)] mb-4" />
                 <h3 className="text-xl font-medium text-foreground mb-2">Higher Yields</h3>
@@ -197,7 +197,7 @@ export default function CtvMonetizationPage() {
       </PageSection>
 
       {/* S4 PLATFORMS & FORMATS */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <FadeUp>
@@ -239,21 +239,21 @@ export default function CtvMonetizationPage() {
             </FadeUp>
             
             <StaggerContainer className="space-y-4">
-              <GlassPanel className="p-6 flex items-start gap-4">
+              <GlassPanel className="bento-pink p-6 flex items-start gap-4">
                 <ShieldCheck className="w-8 h-8 text-[var(--color-brand-secondary)] shrink-0" />
                 <div>
                   <h4 className="text-lg font-medium text-foreground mb-1">Brand Safety</h4>
                   <p className="text-sm text-muted-foreground">Strict category blocking and competitive separation.</p>
                 </div>
               </GlassPanel>
-              <GlassPanel className="p-6 flex items-start gap-4">
+              <GlassPanel className="bento-violet p-6 flex items-start gap-4">
                 <CurrencyDollar className="w-8 h-8 text-[var(--color-brand-primary)] shrink-0" />
                 <div>
                   <h4 className="text-lg font-medium text-foreground mb-1">100% Direct Demand</h4>
                   <p className="text-sm text-muted-foreground">Premium PMPs and direct integrations, no resellers.</p>
                 </div>
               </GlassPanel>
-              <GlassPanel className="p-6 flex items-start gap-4">
+              <GlassPanel className="bento-cyan p-6 flex items-start gap-4">
                 <CheckCircle className="w-8 h-8 text-[var(--color-brand-secondary)] shrink-0" />
                 <div>
                   <h4 className="text-lg font-medium text-foreground mb-1">IAB Compliant</h4>
@@ -266,7 +266,7 @@ export default function CtvMonetizationPage() {
       </PageSection>
 
       {/* S6 METRICS */}
-      <PageSection className="py-24 md:py-32 bg-gray-50 border-t border-border">
+      <PageSection className="py-24 md:py-32 bg-white border-t border-border">
         <Container>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <MetricTile value="85%+" label="Completion Rate" />
@@ -278,7 +278,7 @@ export default function CtvMonetizationPage() {
       </PageSection>
 
       {/* S7 FINAL CTA */}
-      <PageSection className="py-24 md:py-32 gradient-mesh-subtle border-t border-border">
+      <PageSection className="py-24 md:py-32  border-t border-border">
         <Container>
           <CtaDuo publisherText="Start CTV Monetization" />
         </Container>

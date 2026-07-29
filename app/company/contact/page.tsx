@@ -127,7 +127,7 @@ export default function ContactPage() {
         <Container>
           <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
             <FadeUp className="lg:col-span-2">
-              <GlassPanel className="p-8 md:p-12 border border-border bg-gradient-to-br from-white/[0.03] to-transparent relative overflow-hidden">
+              <GlassPanel className="bento-violet p-8 md:p-12 border border-border bg-gradient-to-br from-white/[0.03] to-transparent relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-brand-primary)]/5 rounded-full blur-[100px] pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-[var(--color-brand-secondary)]/5 rounded-full blur-[100px] pointer-events-none" />
                 
@@ -215,7 +215,7 @@ export default function ContactPage() {
 
             <StaggerContainer className="flex flex-col justify-between h-full space-y-6 lg:space-y-0">
               <motion.div variants={staggerItem}>
-                <GlassPanel className="p-8 border-l-[3px] border-l-[var(--color-brand-primary)] group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                <GlassPanel className="bento-cyan p-8 border-l-[3px] border-l-[var(--color-brand-primary)] group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                   <h3 className="font-display text-2xl text-foreground mb-3 group-hover:text-[var(--color-brand-primary)] transition-colors">Publishers</h3>
                   <p className="text-muted-foreground text-sm mb-6 leading-relaxed">Questions about integration or yield optimization.</p>
                   <a href="mailto:publishers@emonetiser.com" className="inline-flex items-center text-[var(--color-brand-primary)] hover:text-foreground transition-colors font-medium">
@@ -225,7 +225,7 @@ export default function ContactPage() {
               </motion.div>
 
               <motion.div variants={staggerItem}>
-                <GlassPanel className="p-8 border-l-[3px] border-l-[var(--color-brand-secondary)] group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                <GlassPanel className="bento-coral p-8 border-l-[3px] border-l-[var(--color-brand-secondary)] group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                   <h3 className="font-display text-2xl text-foreground mb-3 group-hover:text-[var(--color-brand-secondary)] transition-colors">Advertisers</h3>
                   <p className="text-muted-foreground text-sm mb-6 leading-relaxed">Inquiries about inventory access or managed service.</p>
                   <a href="mailto:advertisers@emonetiser.com" className="inline-flex items-center text-[var(--color-brand-secondary)] hover:text-foreground transition-colors font-medium">
@@ -235,7 +235,7 @@ export default function ContactPage() {
               </motion.div>
 
               <motion.div variants={staggerItem}>
-                <GlassPanel className="p-8 group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 border border-border">
+                <GlassPanel className="bento-yellow p-8 group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 border border-border">
                   <h3 className="font-display text-2xl text-foreground mb-3">Headquarters</h3>
                   <p className="text-muted-foreground text-sm mb-6 leading-relaxed">London, United Kingdom</p>
                   <div className="pt-4 border-t border-border mt-auto">
@@ -249,11 +249,11 @@ export default function ContactPage() {
       </PageSection>
 
       {/* S3: ADDITIONAL CONTACT */}
-      <PageSection className="py-24 bg-gray-50">
+      <PageSection className="py-24 bg-white">
         <Container>
           <StaggerContainer className="grid sm:grid-cols-3 gap-6 text-center">
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-8 h-full flex flex-col items-center justify-center group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-pink p-8 h-full flex flex-col items-center justify-center group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center text-foreground mb-6 group-hover:bg-black/5 group-hover:scale-110 transition-all duration-300">
                   <Envelope size={28} />
                 </div>
@@ -262,7 +262,7 @@ export default function ContactPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-8 h-full flex flex-col items-center justify-center group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-violet p-8 h-full flex flex-col items-center justify-center group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center text-foreground mb-6 group-hover:bg-black/5 group-hover:scale-110 transition-all duration-300">
                   <Clock size={28} />
                 </div>
@@ -271,7 +271,7 @@ export default function ContactPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-8 h-full flex flex-col items-center justify-center group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-cyan p-8 h-full flex flex-col items-center justify-center group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center text-foreground mb-6 group-hover:bg-black/5 group-hover:scale-110 transition-all duration-300">
                   <ChatCircle size={28} />
                 </div>
@@ -285,7 +285,7 @@ export default function ContactPage() {
 
 
       {/* S5: FAQ */}
-      <PageSection className="py-24 bg-gray-50">
+      <PageSection className="py-24 bg-white">
         <Container className="max-w-4xl">
           <FadeUp className="mb-12 text-center">
             <h2 className="text-3xl md:text-5xl font-display font-medium text-foreground">Frequently Asked Questions</h2>
@@ -293,7 +293,7 @@ export default function ContactPage() {
           <div className="space-y-4">
             {faqs.map((faq, i) => (
               <FadeUp key={i} delay={i * 0.1}>
-                <GlassPanel className="overflow-hidden group hover:border-border transition-colors">
+                <GlassPanel className="bento-coral overflow-hidden group hover:border-border transition-colors">
                   <button 
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"

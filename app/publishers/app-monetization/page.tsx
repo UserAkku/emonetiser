@@ -26,7 +26,7 @@ export default function AppMonetizationPage() {
     <main className="flex flex-col w-full bg-background min-h-screen text-foreground">
       
       {/* S1 HERO */}
-      <PageSection className="pt-32 pb-24 md:pt-40 md:pb-32 gradient-mesh">
+      <PageSection className="pt-32 pb-24 md:pt-40 md:pb-32 ">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeUp className="flex flex-col items-start text-left">
@@ -108,7 +108,7 @@ export default function AppMonetizationPage() {
       </PageSection>
 
       {/* S2 AD FORMAT SHOWCASE */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <FadeUp className="mb-16">
             <h2 className="text-3xl md:text-5xl font-display text-foreground">Formats that convert</h2>
@@ -221,7 +221,7 @@ export default function AppMonetizationPage() {
             </FadeUp>
             
             <FadeUp delay={0.2}>
-              <div className="glass-card rounded-2xl border border-border overflow-hidden bg-card">
+              <div className="bento-card bento-violet rounded-2xl border border-border overflow-hidden bg-card">
                 <div className="flex items-center px-4 py-3 bg-white/[0.04] border-b border-border gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500/80" />
                   <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
@@ -258,7 +258,7 @@ export default function AppMonetizationPage() {
       </PageSection>
 
       {/* S4 MEDIATION AUCTION (CSS Diagram) */}
-      <PageSection className="py-24 md:py-32 bg-gray-50 border-y border-border overflow-hidden">
+      <PageSection className="py-24 md:py-32 bg-white border-y border-border overflow-hidden">
         <Container>
           <FadeUp className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-display text-foreground mb-6">Real-Time In-App Bidding</h2>
@@ -333,7 +333,7 @@ export default function AppMonetizationPage() {
       </PageSection>
 
       {/* S6 FINAL CTA */}
-      <PageSection className="py-24 md:py-32 gradient-mesh-subtle border-t border-border">
+      <PageSection className="py-24 md:py-32  border-t border-border">
         <Container>
           <CtaDuo publisherText="Integrate SDK" />
         </Container>

@@ -29,7 +29,7 @@ export default function ProgrammaticAdvertisingPage() {
   return (
     <div className="bg-background text-foreground min-h-screen">
       {/* S1: HERO */}
-      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 gradient-mesh">
+      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 ">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeUp>
@@ -65,7 +65,7 @@ export default function ProgrammaticAdvertisingPage() {
           </FadeUp>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             <FadeUp delay={0.1} className="h-full">
-              <GlassPanel className="p-8 h-full flex flex-col bg-gradient-to-br from-black/5 to-transparent min-h-[350px] lg:min-h-[500px]">
+              <GlassPanel className="bento-violet p-8 h-full flex flex-col bg-gradient-to-br from-black/5 to-transparent min-h-[350px] lg:min-h-[500px]">
                 <div className="text-sm font-mono text-slate-500 mb-8 uppercase tracking-wider text-center">Traditional Supply Chain</div>
                 <div className="flex-1 flex flex-col justify-between items-center w-full max-w-sm mx-auto">
                   {['SSP (15%)', 'Exchange (10%)', 'DSP (20%)', 'Trading Desk (10%)', 'Advertiser'].map((node, i) => (
@@ -81,7 +81,7 @@ export default function ProgrammaticAdvertisingPage() {
             </FadeUp>
             
             <FadeUp delay={0.2} className="h-full">
-              <GlassPanel className="p-8 h-full flex flex-col bg-gradient-to-br from-[var(--color-brand-secondary)]/10 to-transparent min-h-[350px] lg:min-h-[500px] border-[var(--color-brand-secondary)]/20 shadow-[0_0_40px_rgba(var(--color-brand-secondary-rgb,56,189,248),0.05)]">
+              <GlassPanel className="bento-cyan p-8 h-full flex flex-col bg-gradient-to-br from-[var(--color-brand-secondary)]/10 to-transparent min-h-[350px] lg:min-h-[500px] border-[var(--color-brand-secondary)]/20 shadow-[0_0_40px_rgba(var(--color-brand-secondary-rgb,56,189,248),0.05)]">
                 <div className="text-sm font-mono text-[var(--color-brand-secondary)] mb-8 uppercase tracking-wider text-center">Emonetiser Exchange</div>
                 <div className="flex-1 flex flex-col justify-between items-center w-full max-w-sm mx-auto">
                   <div className="h-20 w-full bg-gradient-to-b from-[var(--color-brand-secondary)]/20 to-[var(--color-brand-secondary)]/5 border border-[var(--color-brand-secondary)]/40 rounded-xl flex items-center justify-center text-lg font-medium text-[var(--color-brand-secondary)] shadow-[0_0_20px_rgba(var(--color-brand-secondary-rgb,56,189,248),0.1)]">
@@ -107,14 +107,14 @@ export default function ProgrammaticAdvertisingPage() {
       </PageSection>
 
       {/* S3: DSP CAPABILITIES */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <FadeUp>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-12">Powerful DSP capabilities</h2>
           </FadeUp>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <motion.div variants={staggerItem} className="md:col-span-2 lg:col-span-2">
-              <GlassPanel className="h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px] bg-gradient-to-br from-black/5 to-transparent">
+              <GlassPanel className="bento-coral h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px] bg-gradient-to-br from-black/5 to-transparent">
                 <Target className="w-10 h-10 text-[var(--color-brand-secondary)] mb-6" />
                 <div>
                   <h3 className="text-2xl font-medium text-foreground mb-2">Cross-Channel Access</h3>
@@ -123,7 +123,7 @@ export default function ProgrammaticAdvertisingPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px] bg-gradient-to-br from-[var(--color-brand-primary)]/5 to-transparent">
+              <GlassPanel className="bento-yellow h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px] bg-gradient-to-br from-[var(--color-brand-primary)]/5 to-transparent">
                 <Lightning className="w-8 h-8 text-[var(--color-brand-primary)] mb-6" />
                 <div>
                   <h3 className="text-xl font-medium text-foreground mb-2">OpenRTB Bidding</h3>
@@ -132,7 +132,7 @@ export default function ProgrammaticAdvertisingPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
+              <GlassPanel className="bento-pink h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
                 <Sliders className="w-8 h-8 text-[var(--color-brand-secondary)] mb-6" />
                 <div>
                   <h3 className="text-xl font-medium text-foreground mb-2">Frequency Capping</h3>
@@ -141,7 +141,7 @@ export default function ProgrammaticAdvertisingPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
+              <GlassPanel className="bento-violet h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
                 <Crosshair className="w-8 h-8 text-[var(--color-brand-primary)] mb-6" />
                 <div>
                   <h3 className="text-xl font-medium text-foreground mb-2">Bid Optimization</h3>
@@ -150,7 +150,7 @@ export default function ProgrammaticAdvertisingPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem} className="md:col-span-2 lg:col-span-2">
-              <GlassPanel className="h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px] bg-gradient-to-bl from-black/5 to-transparent">
+              <GlassPanel className="bento-cyan h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px] bg-gradient-to-bl from-black/5 to-transparent">
                 <ChartBar className="w-10 h-10 text-[var(--color-brand-secondary)] mb-6" />
                 <div>
                   <h3 className="text-2xl font-medium text-foreground mb-2">Transparent Reporting</h3>
@@ -159,7 +159,7 @@ export default function ProgrammaticAdvertisingPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
+              <GlassPanel className="bento-coral h-full p-8 flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
                 <CurrencyDollar className="w-8 h-8 text-[var(--color-brand-primary)] mb-6" />
                 <div>
                   <h3 className="text-xl font-medium text-foreground mb-2">Campaign Pacing</h3>
@@ -179,7 +179,7 @@ export default function ProgrammaticAdvertisingPage() {
           </FadeUp>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <FadeUp delay={0.1}>
-              <GlassPanel className="p-8 h-full flex flex-col min-h-[220px] lg:min-h-[300px] bg-gradient-to-br from-black/5 to-transparent">
+              <GlassPanel className="bento-yellow p-8 h-full flex flex-col min-h-[220px] lg:min-h-[300px] bg-gradient-to-br from-black/5 to-transparent">
                 <Desktop className="w-10 h-10 text-[var(--color-brand-primary)] mb-6" />
                 <div className="flex-1">
                   <h3 className="text-2xl font-medium mb-4">Web</h3>
@@ -192,7 +192,7 @@ export default function ProgrammaticAdvertisingPage() {
               </GlassPanel>
             </FadeUp>
             <FadeUp delay={0.2}>
-              <GlassPanel className="p-8 h-full flex flex-col min-h-[220px] lg:min-h-[300px] bg-gradient-to-br from-[var(--color-brand-secondary)]/5 to-transparent border-[var(--color-brand-secondary)]/10">
+              <GlassPanel className="bento-pink p-8 h-full flex flex-col min-h-[220px] lg:min-h-[300px] bg-gradient-to-br from-[var(--color-brand-secondary)]/5 to-transparent border-[var(--color-brand-secondary)]/10">
                 <DeviceMobile className="w-10 h-10 text-[var(--color-brand-secondary)] mb-6" />
                 <div className="flex-1">
                   <h3 className="text-2xl font-medium mb-4">Mobile App</h3>
@@ -205,7 +205,7 @@ export default function ProgrammaticAdvertisingPage() {
               </GlassPanel>
             </FadeUp>
             <FadeUp delay={0.3}>
-              <GlassPanel className="p-8 h-full flex flex-col min-h-[220px] lg:min-h-[300px] bg-gradient-to-bl from-[var(--color-brand-primary)]/5 to-transparent border-[var(--color-brand-primary)]/10">
+              <GlassPanel className="bento-violet p-8 h-full flex flex-col min-h-[220px] lg:min-h-[300px] bg-gradient-to-bl from-[var(--color-brand-primary)]/5 to-transparent border-[var(--color-brand-primary)]/10">
                 <Television className="w-10 h-10 text-[var(--color-brand-primary)] mb-6" />
                 <div className="flex-1">
                   <h3 className="text-2xl font-medium mb-4">CTV</h3>
@@ -234,7 +234,7 @@ export default function ProgrammaticAdvertisingPage() {
               </div>
             </FadeUp>
             <FadeUp delay={0.2}>
-              <GlassPanel className="p-8 relative overflow-hidden group">
+              <GlassPanel className="bento-cyan p-8 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
                 
                 <div className="text-sm font-mono text-slate-500 mb-8 flex justify-between items-center border-b border-border pb-4 relative z-10">
@@ -284,7 +284,7 @@ export default function ProgrammaticAdvertisingPage() {
       </PageSection>
 
       {/* S6: FINAL CTA */}
-      <PageSection className="py-24 md:py-32 gradient-mesh-subtle border-t border-border">
+      <PageSection className="py-24 md:py-32  border-t border-border">
         <Container>
           <CtaDuo advertiserText="Access the Exchange" />
         </Container>

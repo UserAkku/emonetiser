@@ -31,170 +31,65 @@
   --radius-xl: calc(var(--radius) + 2px);
   --radius-2xl: calc(var(--radius) + 4px);
 
-  /* Emonetiser brand tokens */
-  --color-brand-primary: var(--brand-primary);
-  --color-brand-secondary: var(--brand-secondary);
-  --color-brand-accent: var(--brand-accent);
-  --color-void: var(--background);
-  --color-surface: var(--card);
-  --color-line: var(--border);
-  --color-fog: var(--muted-foreground);
-  --color-paper: var(--foreground);
-
   /* Fonts */
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Animations */
-  --animate-pulse-live: pulse-live 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-shimmer: shimmer 2.5s linear infinite;
-  --animate-marquee: marquee 30s linear infinite;
-  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
-  --animate-slide: slide var(--speed) ease-in-out infinite alternate;
-  --animate-meteor-effect: meteor-effect 5s linear infinite;
-  --animate-border-beam: border-beam calc(var(--duration)*1s) infinite linear;
-
-  @keyframes pulse-live {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
-  }
-  @keyframes shimmer {
-    from { background-position: -200% center; }
-    to { background-position: 200% center; }
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  @keyframes spin-around {
-    0% {
-      transform: translateZ(0) rotate(0);
-    }
-    15%, 35% {
-      transform: translateZ(0) rotate(90deg);
-    }
-    65%, 85% {
-      transform: translateZ(0) rotate(270deg);
-    }
-    100% {
-      transform: translateZ(0) rotate(360deg);
-    }
-  }
-  @keyframes slide {
-    to {
-      transform: translate(calc(100cqw - 100%), 0);
-    }
-  }
-  @keyframes fade-up {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes meteor-effect {
-    0% { transform: rotate(215deg) translateX(0); opacity: 1; }
-    70% { opacity: 1; }
-    100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
-  }
-  @keyframes border-beam {
-    100% { offset-distance: 100%; }
-  }
-  @keyframes accordion-down {
-    from { height: 0; }
-    to { height: var(--accordion-panel-height); }
-  }
-  @keyframes accordion-up {
-    from { height: var(--accordion-panel-height); }
-    to { height: 0; }
-  }
-  @keyframes blob-drift {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(20px, -20px) scale(1.05); }
-    66% { transform: translate(-15px, 15px) scale(0.97); }
-  }
-  --animate-blob: blob-drift 8s ease-in-out infinite;
+  /* Premium Vibrant Colors */
+  --color-vibrant-violet: #7C3AED;
+  --color-vibrant-cyan: #06B6D4;
+  --color-vibrant-coral: #FF5722;
+  --color-vibrant-yellow: #FBBF24;
+  --color-vibrant-pink: #EC4899;
+  --color-vibrant-black: #0F172A;
 }
 
 :root {
   /* ====================================================
-     EMONETISER — Vibrant Light Theme
-     White canvas · Electric Purple · Vivid Teal · Coral
+     EMONETISER — Premium Vibrant Color-Block Theme
+     100% White Canvas · Solid Vibrant Blocks · Crisp Text
      ==================================================== */
 
-  --background: hsl(0, 0%, 100%);          /* Pure white */
-  --foreground: hsl(222, 35%, 10%);        /* Deep charcoal */
+  --background: #FFFFFF;
+  --foreground: #111111;
   
-  --card: hsl(0, 0%, 100%);               /* White card */
-  --card-foreground: hsl(222, 35%, 10%);
+  --card: #FFFFFF;
+  --card-foreground: #111111;
   
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(222, 35%, 10%);
+  --popover: #FFFFFF;
+  --popover-foreground: #111111;
   
-  --primary: hsl(258, 85%, 62%);           /* Electric Violet */
-  --primary-foreground: hsl(0, 0%, 100%);
+  --primary: #111111;
+  --primary-foreground: #FFFFFF;
   
-  --secondary: hsl(175, 75%, 40%);         /* Vivid Teal */
-  --secondary-foreground: hsl(0, 0%, 100%);
+  --secondary: #F3F4F6;
+  --secondary-foreground: #111111;
   
-  --muted: hsl(220, 20%, 96%);             /* Very light cool gray */
-  --muted-foreground: hsl(220, 12%, 46%);  /* Medium cool gray */
+  --muted: #F9FAFB;
+  --muted-foreground: #4B5563;
   
-  --accent: hsl(220, 20%, 94%);
-  --accent-foreground: hsl(222, 35%, 10%);
+  --accent: #F3F4F6;
+  --accent-foreground: #111111;
   
-  --destructive: hsl(0, 84%, 50%);
-  --destructive-foreground: hsl(0, 0%, 100%);
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
   
-  --border: hsl(220, 15%, 90%);            /* Light subtle border */
-  --input: hsl(220, 15%, 94%);
-  --ring: hsl(258, 85%, 62%);
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #111111;
   
-  --radius: 0.75rem;
+  --radius: 1.5rem; /* Super rounded corners for premium bento look */
 
-  /* ========================
-     Brand accent colors
-     ======================== */
-  --brand-primary: hsl(258, 85%, 62%);     /* Electric Violet — Publisher */
-  --brand-secondary: hsl(175, 75%, 40%);   /* Vivid Teal — Advertiser */
-  --brand-accent: hsl(16, 90%, 58%);       /* Sunset Coral */
-
-  /* ========================
-     Section tint backgrounds
-     ======================== */
-  --section-purple: hsl(258, 100%, 99%);   /* Ultra-light purple tint */
-  --section-teal: hsl(175, 60%, 97%);      /* Ultra-light teal tint */
-  --section-coral: hsl(16, 100%, 98%);     /* Ultra-light coral tint */
-  --section-dark: hsl(240, 30%, 12%);      /* Deep indigo for dark sections */
-}
-
-/* Keep .dark for any dark section overrides */
-.dark {
-  --background: hsl(240, 30%, 10%);
-  --foreground: hsl(220, 20%, 94%);
-  --card: hsl(240, 25%, 14%);
-  --card-foreground: hsl(220, 20%, 94%);
-  --popover: hsl(240, 25%, 14%);
-  --popover-foreground: hsl(220, 20%, 94%);
-  --primary: hsl(258, 85%, 70%);
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(175, 75%, 50%);
-  --secondary-foreground: hsl(0, 0%, 100%);
-  --muted: hsl(240, 20%, 18%);
-  --muted-foreground: hsl(220, 15%, 60%);
-  --accent: hsl(240, 20%, 18%);
-  --accent-foreground: hsl(220, 20%, 94%);
-  --destructive: hsl(0, 72%, 55%);
-  --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(240, 18%, 22%);
-  --input: hsl(240, 20%, 18%);
-  --ring: hsl(258, 85%, 70%);
-  --brand-primary: hsl(258, 85%, 70%);
-  --brand-secondary: hsl(175, 75%, 50%);
-  --brand-accent: hsl(16, 90%, 62%);
+  /* Aliases for some legacy components */
+  --brand-primary: #7C3AED;
+  --brand-secondary: #06B6D4;
+  --brand-accent: #FF5722;
+  
+  /* Every section background is pure white */
+  --section-purple: #FFFFFF;
+  --section-teal: #FFFFFF;
+  --section-coral: #FFFFFF;
 }
 
 @layer base {
@@ -214,280 +109,91 @@
 }
 
 /* ============================================
-   SECTION BACKGROUNDS
+   PREMIUM VIBRANT SOLID CARDS (Bento Blocks)
    ============================================ */
-.section-white {
-  background: var(--background);
+
+.bento-card {
+  @apply relative overflow-hidden rounded-3xl p-8 transition-transform duration-300;
+}
+.bento-card:hover {
+  transform: translateY(-4px);
 }
 
-.section-purple {
-  background: var(--section-purple);
+/* Violet Block */
+.bento-violet {
+  background-color: var(--color-vibrant-violet);
+  color: #FFFFFF;
+  box-shadow: 0 20px 40px -10px rgba(124, 58, 237, 0.4);
 }
+.bento-violet .text-muted-foreground { color: rgba(255,255,255,0.7); }
 
-.section-teal {
-  background: var(--section-teal);
+/* Cyan Block */
+.bento-cyan {
+  background-color: var(--color-vibrant-cyan);
+  color: #FFFFFF;
+  box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.4);
 }
+.bento-cyan .text-muted-foreground { color: rgba(255,255,255,0.7); }
 
-.section-coral {
-  background: var(--section-coral);
+/* Coral Block */
+.bento-coral {
+  background-color: var(--color-vibrant-coral);
+  color: #FFFFFF;
+  box-shadow: 0 20px 40px -10px rgba(255, 87, 34, 0.4);
 }
+.bento-coral .text-muted-foreground { color: rgba(255,255,255,0.7); }
 
-.section-dark {
-  background: var(--section-dark);
+/* Yellow Block */
+.bento-yellow {
+  background-color: var(--color-vibrant-yellow);
+  color: #111111;
+  box-shadow: 0 20px 40px -10px rgba(251, 191, 36, 0.4);
 }
+.bento-yellow .text-muted-foreground { color: rgba(0,0,0,0.6); }
 
-.gradient-mesh {
-  background: var(--background);
+/* Pink Block */
+.bento-pink {
+  background-color: var(--color-vibrant-pink);
+  color: #FFFFFF;
+  box-shadow: 0 20px 40px -10px rgba(236, 72, 153, 0.4);
 }
+.bento-pink .text-muted-foreground { color: rgba(255,255,255,0.7); }
 
-.gradient-mesh-subtle {
-  background: var(--background);
+/* Black Block */
+.bento-black {
+  background-color: var(--color-vibrant-black);
+  color: #FFFFFF;
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.4);
+}
+.bento-black .text-muted-foreground { color: rgba(255,255,255,0.6); }
+
+/* White Block (with crisp shadow for contrast) */
+.bento-white {
+  background-color: #FFFFFF;
+  color: #111111;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+}
+.bento-white:hover {
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
 }
 
 /* ============================================
-   GLASS / SURFACE CARDS
+   BACKGROUNDS
    ============================================ */
-
-/* Light glassmorphism — for use on colored section backgrounds */
-.glass-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+.section-white, .gradient-mesh, .gradient-mesh-subtle {
+  background: #FFFFFF !important;
 }
 
-/* Dark glassmorphism — for .section-dark backgrounds */
-.dark .glass-card,
-.section-dark .glass-card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.5);
-}
-
-/* Double-bezel outer shell */
-.bezel-outer {
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 6px;
-  border-radius: 1.5rem;
-}
-
-.dark .bezel-outer,
-.section-dark .bezel-outer {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* Double-bezel inner core */
-.bezel-inner {
-  background: var(--card);
-  border-radius: calc(1.5rem - 6px);
+/* Clear any lingering blobs or noise */
+.blob, .noise-overlay::before {
+  display: none !important;
 }
 
 /* ============================================
-   COLORFUL CARD TREATMENTS
+   ANIMATIONS (Kept for components)
    ============================================ */
-
-/* Purple-accented card */
-.card-purple {
-  background: white;
-  border: 1px solid hsl(258, 85%, 88%);
-  box-shadow: 0 4px 20px -4px hsl(258, 85%, 62% / 0.12);
-}
-.card-purple:hover {
-  border-color: hsl(258, 85%, 62% / 0.4);
-  box-shadow: 0 8px 30px -6px hsl(258, 85%, 62% / 0.2);
-}
-
-/* Teal-accented card */
-.card-teal {
-  background: white;
-  border: 1px solid hsl(175, 75%, 80%);
-  box-shadow: 0 4px 20px -4px hsl(175, 75%, 40% / 0.12);
-}
-.card-teal:hover {
-  border-color: hsl(175, 75%, 40% / 0.4);
-  box-shadow: 0 8px 30px -6px hsl(175, 75%, 40% / 0.2);
-}
-
-/* Coral-accented card */
-.card-coral {
-  background: white;
-  border: 1px solid hsl(16, 90%, 85%);
-  box-shadow: 0 4px 20px -4px hsl(16, 90%, 58% / 0.12);
-}
-.card-coral:hover {
-  border-color: hsl(16, 90%, 58% / 0.4);
-  box-shadow: 0 8px 30px -6px hsl(16, 90%, 58% / 0.2);
-}
-
-/* ============================================
-   GLOW EFFECTS (tuned for light backgrounds)
-   ============================================ */
-.glow-primary {
-  box-shadow: 0 0 40px -8px hsl(258, 85%, 62% / 0.3);
-}
-.glow-secondary {
-  box-shadow: 0 0 40px -8px hsl(175, 75%, 40% / 0.25);
-}
-.glow-accent {
-  box-shadow: 0 0 24px -4px hsl(16, 90%, 58% / 0.3);
-}
-
-/* ============================================
-   GRADIENT TEXT
-   ============================================ */
-
-/* Purple → Teal shimmer */
-.text-gradient {
-  background: linear-gradient(
-    105deg,
-    var(--brand-primary) 0%,
-    hsl(216, 90%, 58%) 50%,
-    var(--brand-secondary) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Coral → Purple shimmer */
-.text-gradient-warm {
-  background: linear-gradient(
-    105deg,
-    var(--brand-accent) 0%,
-    hsl(290, 80%, 60%) 50%,
-    var(--brand-primary) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-shimmer {
-  background: linear-gradient(
-    105deg,
-    var(--brand-primary) 0%,
-    hsl(216, 90%, 58%) 35%,
-    var(--brand-secondary) 65%,
-    var(--brand-accent) 100%
-  );
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 4s linear infinite;
-}
-
-/* ============================================
-   HAIRLINE DIVIDERS
-   ============================================ */
-.divider-subtle {
-  border-color: hsl(220, 15%, 90%);
-}
-
-.section-dark .divider-subtle {
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-/* ============================================
-   PUBLISHER / ADVERTISER ACCENT UTILITIES
-   ============================================ */
-.accent-publisher {
-  --primary: var(--brand-primary);
-  --ring: var(--primary);
-}
-.accent-advertiser {
-  --primary: var(--brand-secondary);
-  --ring: var(--primary);
-}
-
-/* ============================================
-   BACKGROUND BLOB DECORATIONS
-   ============================================ */
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  pointer-events: none;
-  animation: blob-drift 8s ease-in-out infinite;
-}
-
-.blob-purple {
-  background: hsl(258, 85%, 62% / 0.18);
-}
-
-.blob-teal {
-  background: hsl(175, 75%, 40% / 0.15);
-  animation-delay: -3s;
-}
-
-.blob-coral {
-  background: hsl(16, 90%, 58% / 0.14);
-  animation-delay: -6s;
-}
-
-/* ============================================
-   NOISE TEXTURE OVERLAY
-   ============================================ */
-.noise-overlay::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  pointer-events: none;
-  opacity: 0.02;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-}
-
-/* ============================================
-   SCROLL REVEAL
-   ============================================ */
-.reveal-up {
-  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* ============================================
-   ACCORDION ANIMATIONS
-   ============================================ */
-.data-open\:animate-accordion-down[data-open] {
-  animation: accordion-down 200ms ease-out;
-}
-.data-closed\:animate-accordion-up[data-closed] {
-  animation: accordion-up 200ms ease-out;
-}
-
-/* ============================================
-   MARQUEE
-   ============================================ */
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-/* ============================================
-   COLORFUL NUMBERED STEP CIRCLES
-   ============================================ */
-.step-number-1 { background: hsl(258, 85%, 62%); }
-.step-number-2 { background: hsl(216, 90%, 58%); }
-.step-number-3 { background: hsl(175, 75%, 40%); }
-.step-number-4 { background: hsl(16, 90%, 58%); }
-.step-number-5 { background: hsl(290, 75%, 58%); }
-
-/* ============================================
-   DARK SECTION UTILITIES (for footer, metrics)
-   ============================================ */
-.section-dark {
-  color: hsl(220, 20%, 94%);
-}
-
-.section-dark .text-muted-foreground {
-  color: hsl(220, 15%, 60%);
-}
-
-.section-dark .border-border {
-  border-color: rgba(255, 255, 255, 0.1);
-}
+@keyframes pulse-live { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.reveal-up { animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }

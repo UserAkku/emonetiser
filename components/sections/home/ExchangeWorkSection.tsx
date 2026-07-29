@@ -5,13 +5,14 @@ import { gsap, useGSAP, ScrollTrigger } from "@/lib/gsap";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ExchangeArchitecture } from "@/components/visuals/ExchangeArchitecture";
+import { cn } from "@/lib/utils";
 
 const steps = [
-  { id: "01", title: "Ad Request", desc: "Publisher's site or app loads, sending an ad request with context.", color: "hsl(258,85%,62%)" },
-  { id: "02", title: "Bid Request", desc: "Emonetiser formats an OpenRTB bid request and broadcasts to DSPs.", color: "hsl(216,90%,58%)" },
-  { id: "03", title: "Simultaneous Bidding", desc: "DSPs evaluate the request and return bids in under 20ms.", color: "hsl(175,75%,40%)" },
-  { id: "04", title: "Winning Bid", desc: "The highest eligible bid wins the auction instantly.", color: "hsl(16,90%,58%)" },
-  { id: "05", title: "Creative Delivery", desc: "The winning creative is returned and rendered for the user.", color: "hsl(290,75%,58%)" },
+  { id: "01", title: "Ad Request", desc: "Publisher's site or app loads, sending an ad request with context.", bentoClass: "bento-violet" },
+  { id: "02", title: "Bid Request", desc: "Emonetiser formats an OpenRTB bid request and broadcasts to DSPs.", bentoClass: "bento-cyan" },
+  { id: "03", title: "Simultaneous Bidding", desc: "DSPs evaluate the request and return bids in under 20ms.", bentoClass: "bento-coral" },
+  { id: "04", title: "Winning Bid", desc: "The highest eligible bid wins the auction instantly.", bentoClass: "bento-yellow" },
+  { id: "05", title: "Creative Delivery", desc: "The winning creative is returned and rendered for the user.", bentoClass: "bento-pink" },
 ];
 
 export function ExchangeWorkSection() {
@@ -62,12 +63,12 @@ export function ExchangeWorkSection() {
   );
 
   return (
-    <section ref={containerRef} className="py-24 md:py-32 overflow-hidden" style={{ background: "var(--section-teal)", borderTop: "1px solid hsl(175,75%,40%,0.12)" }}>
+    <section ref={containerRef} className="py-24 md:py-32 section-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading 
           label="The Engine" 
           headline="How the exchange works"
-          accent="advertiser"
+          accent="yellow"
           className="mb-16"
         />
 
@@ -75,48 +76,48 @@ export function ExchangeWorkSection() {
           
           {/* Text Steps */}
           <div ref={textRef} className="flex flex-col gap-6 relative z-10">
-            {steps.map((step, i) => (
-              <div 
-                key={step.id} 
-                className={`step-item flex gap-5 rounded-2xl p-5 transition-all duration-500 cursor-default ${
-                  isMobile 
-                    ? activeStep === i ? "opacity-100 bg-white shadow-md" : "opacity-40" 
-                    : "opacity-30 lg:opacity-30"
-                }`}
-                style={
-                  (isMobile && activeStep === i)
-                    ? { borderLeft: `4px solid ${step.color}` }
-                    : {}
-                }
-                onClick={() => isMobile && setActiveStep(i)}
-              >
-                {/* Number circle */}
-                <div
-                  className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-md"
-                  style={{ background: step.color, boxShadow: `0 4px 14px ${step.color}40` }}
+            {steps.map((step, i) => {
+              const isActive = isMobile ? activeStep === i : true;
+              return (
+                <div 
+                  key={step.id} 
+                  className={cn(
+                    "step-item flex gap-6 p-6 rounded-3xl transition-all duration-500 cursor-default",
+                    isActive ? `bento-card ${step.bentoClass} shadow-xl scale-100 opacity-100` : "bg-gray-50 scale-[0.98]",
+                    !isMobile && "opacity-30" // Desktop handled by GSAP
+                  )}
+                  onClick={() => isMobile && setActiveStep(i)}
                 >
-                  {step.id}
+                  <div className={cn(
+                    "flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg",
+                    isActive ? "bg-black/20 text-current" : "bg-gray-200 text-gray-500"
+                  )}>
+                    {step.id}
+                  </div>
+                  <div>
+                    <h3 className={cn("text-2xl font-bold mb-1", isActive ? "text-current" : "text-gray-900")}>
+                      {step.title}
+                    </h3>
+                    <p className={cn("font-medium", isActive ? "opacity-90" : "text-gray-500")}>
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-1 text-foreground">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
             
             {/* Mobile tap dots */}
             {isMobile && (
-              <div className="flex gap-2 justify-center mt-2">
-                {steps.map((step, i) => (
+              <div className="flex gap-2 justify-center mt-4">
+                {steps.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveStep(i)}
                     className="h-2 rounded-full transition-all"
                     style={{
                       width: activeStep === i ? "2rem" : "0.5rem",
-                      background: activeStep === i ? step.color : "hsl(220,15%,80%)",
+                      background: activeStep === i ? "#111" : "#E5E7EB",
                     }}
-                    aria-label={`Go to step ${i + 1}`}
                   />
                 ))}
               </div>
@@ -124,7 +125,7 @@ export function ExchangeWorkSection() {
           </div>
 
           {/* Visualizer */}
-          <div className="lg:sticky lg:top-1/4 h-[400px] flex items-center justify-center -mx-6 lg:mx-0">
+          <div className="lg:sticky lg:top-1/4 h-[400px] flex items-center justify-center -mx-6 lg:mx-0 bento-card bento-white border-2 border-gray-100">
              <ExchangeArchitecture />
           </div>
 

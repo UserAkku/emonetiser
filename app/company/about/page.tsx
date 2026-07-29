@@ -58,7 +58,7 @@ export default function AboutPage() {
       </PageSection>
 
       {/* S2: OUR STORY */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <FadeUp>
@@ -77,21 +77,21 @@ export default function AboutPage() {
             
             <StaggerContainer className="space-y-6">
               <motion.div variants={staggerItem}>
-                <GlassPanel className="p-6 relative overflow-hidden group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                <GlassPanel className="bento-violet p-6 relative overflow-hidden group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                   <div className="absolute top-0 left-0 w-1 h-full bg-white/20 group-hover:bg-white/40 transition-colors" />
                   <h3 className="text-xl font-medium text-foreground mb-2">The Problem (2019)</h3>
                   <p className="text-muted-foreground">Fragmented exchanges causing up to 40% value loss in the supply path.</p>
                 </GlassPanel>
               </motion.div>
               <motion.div variants={staggerItem}>
-                <GlassPanel className="p-6 relative overflow-hidden group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                <GlassPanel className="bento-cyan p-6 relative overflow-hidden group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                   <div className="absolute top-0 left-0 w-1 h-full bg-[var(--color-brand-primary)]" />
                   <h3 className="text-xl font-medium text-foreground mb-2">We Built It (2021)</h3>
                   <p className="text-muted-foreground">Launched our unified infrastructure handling both supply and demand directly.</p>
                 </GlassPanel>
               </motion.div>
               <motion.div variants={staggerItem}>
-                <GlassPanel className="p-6 relative overflow-hidden group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                <GlassPanel className="bento-coral p-6 relative overflow-hidden group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                   <div className="absolute top-0 left-0 w-1 h-full bg-[var(--color-brand-secondary)]" />
                   <h3 className="text-xl font-medium text-foreground mb-2">Google Certified (2022)</h3>
                   <p className="text-muted-foreground">Achieved official certification, validating our direct integration capabilities and scale.</p>
@@ -110,7 +110,7 @@ export default function AboutPage() {
           </FadeUp>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <FadeUp>
-              <GlassPanel className="p-8 h-full border-t-2 border-t-[var(--color-brand-primary)] group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-yellow p-8 h-full border-t-2 border-t-[var(--color-brand-primary)] group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-14 h-14 rounded-2xl bg-[var(--color-brand-primary)]/10 flex items-center justify-center text-[var(--color-brand-primary)] group-hover:bg-[var(--color-brand-primary)]/20 group-hover:scale-110 transition-all duration-300">
                     <AppWindow size={28} weight="duotone" />
@@ -144,7 +144,7 @@ export default function AboutPage() {
             </FadeUp>
             
             <FadeUp delay={0.2}>
-              <GlassPanel className="p-8 h-full border-t-2 border-t-[var(--color-brand-secondary)] group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-pink p-8 h-full border-t-2 border-t-[var(--color-brand-secondary)] group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-14 h-14 rounded-2xl bg-[var(--color-brand-secondary)]/10 flex items-center justify-center text-[var(--color-brand-secondary)] group-hover:bg-[var(--color-brand-secondary)]/20 group-hover:scale-110 transition-all duration-300">
                     <Globe size={28} weight="duotone" />
@@ -187,7 +187,7 @@ export default function AboutPage() {
       </PageSection>
 
       {/* S4: CERTIFICATIONS */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <FadeUp className="mb-12">
             <Eyebrow>Industry Standards</Eyebrow>
@@ -196,7 +196,7 @@ export default function AboutPage() {
           
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-6 h-full flex flex-col group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-violet p-6 h-full flex flex-col group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="w-12 h-12 rounded-xl bg-black/5 flex items-center justify-center text-foreground mb-6 group-hover:bg-black/5 group-hover:scale-110 transition-all duration-300">
                   <Certificate size={24} />
                 </div>
@@ -206,7 +206,7 @@ export default function AboutPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-6 h-full flex flex-col group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-cyan p-6 h-full flex flex-col group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="w-12 h-12 rounded-xl bg-black/5 flex items-center justify-center text-foreground mb-6 group-hover:bg-black/5 group-hover:scale-110 transition-all duration-300">
                   <ShieldCheck size={24} />
                 </div>
@@ -216,7 +216,7 @@ export default function AboutPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-6 h-full flex flex-col group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-coral p-6 h-full flex flex-col group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="w-12 h-12 rounded-xl bg-black/5 flex items-center justify-center text-foreground mb-6 group-hover:bg-black/5 group-hover:scale-110 transition-all duration-300">
                   <FileText size={24} />
                 </div>
@@ -226,7 +226,7 @@ export default function AboutPage() {
               </GlassPanel>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-6 h-full flex flex-col group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-yellow p-6 h-full flex flex-col group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="w-12 h-12 rounded-xl bg-black/5 flex items-center justify-center text-foreground mb-6 group-hover:bg-black/5 group-hover:scale-110 transition-all duration-300">
                   <ShareNetwork size={24} />
                 </div>
@@ -248,7 +248,7 @@ export default function AboutPage() {
           
           <StaggerContainer className="grid md:grid-cols-3 gap-6">
             <motion.div variants={staggerItem} className="md:col-span-2">
-              <GlassPanel className="p-8 h-full bg-gradient-to-br from-black/5 to-transparent flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
+              <GlassPanel className="bento-pink p-8 h-full bg-gradient-to-br from-black/5 to-transparent flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
                 <Eyeglasses size={32} className="text-[var(--color-brand-secondary)] mb-6" />
                 <h3 className="text-2xl font-medium text-foreground mb-2">Transparency</h3>
                 <p className="text-muted-foreground">An open auction environment with no black-box mechanics, giving you complete visibility into every transaction.</p>
@@ -256,7 +256,7 @@ export default function AboutPage() {
             </motion.div>
             
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-8 h-full flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
+              <GlassPanel className="bento-violet p-8 h-full flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
                 <HandsClapping size={32} className="text-[var(--color-brand-primary)] mb-6" />
                 <h3 className="text-xl font-medium text-foreground mb-2">Ownership</h3>
                 <p className="text-muted-foreground text-sm">We build and maintain our infrastructure entirely in-house for maximum control.</p>
@@ -264,7 +264,7 @@ export default function AboutPage() {
             </motion.div>
             
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-8 h-full flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
+              <GlassPanel className="bento-cyan p-8 h-full flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
                 <Lightbulb size={32} className="text-[var(--color-brand-primary)] mb-6" />
                 <h3 className="text-xl font-medium text-foreground mb-2">Innovation</h3>
                 <p className="text-muted-foreground text-sm">Constant optimization and rapid deployment of new AdTech capabilities.</p>
@@ -272,7 +272,7 @@ export default function AboutPage() {
             </motion.div>
             
             <motion.div variants={staggerItem} className="md:col-span-2">
-              <GlassPanel className="p-8 h-full bg-gradient-to-bl from-[var(--color-brand-primary)]/5 to-transparent flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
+              <GlassPanel className="bento-coral p-8 h-full bg-gradient-to-bl from-[var(--color-brand-primary)]/5 to-transparent flex flex-col justify-end min-h-[200px] lg:min-h-[280px]">
                 <ChartLineUp size={32} className="text-[var(--color-brand-secondary)] mb-6" />
                 <h3 className="text-2xl font-medium text-foreground mb-2">Accountability</h3>
                 <p className="text-muted-foreground">Clear, granular reporting that holds our performance accountable to your bottom line.</p>
@@ -283,7 +283,7 @@ export default function AboutPage() {
       </PageSection>
 
       {/* S6: LEADERSHIP */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <FadeUp className="mb-12 text-center">
             <h2 className="text-3xl md:text-5xl font-display font-medium text-foreground">Leadership Team</h2>
@@ -291,7 +291,7 @@ export default function AboutPage() {
           
           <StaggerContainer className="grid md:grid-cols-3 gap-8">
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-8 text-center h-full group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-yellow p-8 text-center h-full group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="w-20 h-20 rounded-2xl bg-[var(--color-brand-primary)]/10 text-[var(--color-brand-primary)] flex items-center justify-center text-2xl font-display font-medium mx-auto mb-6 group-hover:bg-[var(--color-brand-primary)]/20 group-hover:scale-110 transition-all duration-300">
                   CEO
                 </div>
@@ -302,7 +302,7 @@ export default function AboutPage() {
             </motion.div>
             
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-8 text-center h-full group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-pink p-8 text-center h-full group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="w-20 h-20 rounded-2xl bg-black/5 text-foreground flex items-center justify-center text-2xl font-display font-medium mx-auto mb-6 group-hover:bg-black/5 group-hover:scale-110 transition-all duration-300">
                   CTO
                 </div>
@@ -313,7 +313,7 @@ export default function AboutPage() {
             </motion.div>
             
             <motion.div variants={staggerItem}>
-              <GlassPanel className="p-8 text-center h-full group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              <GlassPanel className="bento-violet p-8 text-center h-full group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
                 <div className="w-20 h-20 rounded-2xl bg-[var(--color-brand-secondary)]/10 text-[var(--color-brand-secondary)] flex items-center justify-center text-2xl font-display font-medium mx-auto mb-6 group-hover:bg-[var(--color-brand-secondary)]/20 group-hover:scale-110 transition-all duration-300">
                   VP
                 </div>
@@ -332,7 +332,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <FadeUp>
               <Link href="/publishers/web-monetization" className="block h-full transition-transform hover:-translate-y-2 duration-300">
-                <GlassPanel className="p-12 h-full text-center border border-border hover:border-[var(--color-brand-primary)]/50 group bg-gradient-to-b from-transparent to-[var(--color-brand-primary)]/5 shadow-2xl">
+                <GlassPanel className="bento-cyan p-12 h-full text-center border border-border hover:border-[var(--color-brand-primary)]/50 group bg-gradient-to-b from-transparent to-[var(--color-brand-primary)]/5 shadow-2xl">
                   <div className="w-20 h-20 rounded-2xl bg-[var(--color-brand-primary)]/10 flex items-center justify-center mx-auto mb-8 text-[var(--color-brand-primary)] group-hover:scale-110 transition-transform duration-300">
                     <AppWindow size={40} weight="duotone" />
                   </div>
@@ -347,7 +347,7 @@ export default function AboutPage() {
             
             <FadeUp delay={0.1}>
               <Link href="/advertisers/programmatic-advertising" className="block h-full transition-transform hover:-translate-y-2 duration-300">
-                <GlassPanel className="p-12 h-full text-center border border-border hover:border-[var(--color-brand-secondary)]/50 group bg-gradient-to-b from-transparent to-[var(--color-brand-secondary)]/5 shadow-2xl">
+                <GlassPanel className="bento-coral p-12 h-full text-center border border-border hover:border-[var(--color-brand-secondary)]/50 group bg-gradient-to-b from-transparent to-[var(--color-brand-secondary)]/5 shadow-2xl">
                   <div className="w-20 h-20 rounded-2xl bg-[var(--color-brand-secondary)]/10 flex items-center justify-center mx-auto mb-8 text-[var(--color-brand-secondary)] group-hover:scale-110 transition-transform duration-300">
                     <Globe size={40} weight="duotone" />
                   </div>

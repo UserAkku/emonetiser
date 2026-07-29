@@ -41,12 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${fontSans.variable} ${fontDisplay.variable} ${fontMono.variable} h-full antialiased`}
-    >
-      <body suppressHydrationWarning className="min-h-full flex flex-col font-sans bg-background text-foreground overflow-x-hidden">
+    <html lang="en" className={`${fontSans.variable} ${fontDisplay.variable} ${fontMono.variable} h-full antialiased`}>
+      <body suppressHydrationWarning className="min-h-full flex flex-col font-sans bg-white text-[#111111] overflow-x-hidden">
         <TooltipProvider>
           <Navbar />
           <main className="flex-1 flex flex-col pt-20">{children}</main>

@@ -29,7 +29,7 @@ export default function OmnichannelAdvertisingPage() {
   return (
     <div className="bg-background text-foreground min-h-screen">
       {/* S1: HERO */}
-      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 gradient-mesh">
+      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 ">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeUp>
@@ -58,7 +58,7 @@ export default function OmnichannelAdvertisingPage() {
       </PageSection>
 
       {/* S2: MULTI-SCREEN JOURNEY */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <FadeUp>
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -89,7 +89,7 @@ export default function OmnichannelAdvertisingPage() {
                   { icon: ChartBar, title: 'Single Dashboard', desc: 'Consolidated reporting without stitching together Excel files.' }
                 ].map((item, i) => (
                   <motion.div key={i} variants={staggerItem} className="h-full">
-                    <GlassPanel className="p-6 flex items-start gap-4 h-full">
+                    <GlassPanel className="bento-violet p-6 flex items-start gap-4 h-full">
                       <div className="p-3 rounded-lg bg-black/5 text-[var(--color-brand-secondary)] shrink-0">
                         <item.icon className="w-6 h-6" />
                       </div>
@@ -104,7 +104,7 @@ export default function OmnichannelAdvertisingPage() {
             </div>
             
             <FadeUp delay={0.2} className="order-1 lg:order-2 h-full">
-              <GlassPanel className="p-8 md:p-12 border-[var(--color-brand-secondary)]/20 h-full flex flex-col justify-center">
+              <GlassPanel className="bento-cyan p-8 md:p-12 border-[var(--color-brand-secondary)]/20 h-full flex flex-col justify-center">
                 <div className="text-sm font-mono text-foreground/40 mb-10 border-b border-border pb-4">Omni-Campaign Pacing</div>
                 <div className="flex flex-col justify-center gap-10 flex-grow">
                   <div>
@@ -142,7 +142,7 @@ export default function OmnichannelAdvertisingPage() {
       </PageSection>
 
       {/* S4: WHY EMONETISER */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <FadeUp>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center">The omnichannel advantage</h2>
@@ -196,7 +196,7 @@ export default function OmnichannelAdvertisingPage() {
       </PageSection>
 
       {/* S6: FINAL CTA */}
-      <PageSection className="py-24 md:py-32 gradient-mesh-subtle border-t border-border">
+      <PageSection className="py-24 md:py-32  border-t border-border">
         <Container>
           <CtaDuo advertiserText="Launch Omnichannel" />
         </Container>

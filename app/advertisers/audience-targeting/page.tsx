@@ -31,7 +31,7 @@ export default function AudienceTargetingPage() {
   return (
     <div className="bg-background text-foreground min-h-screen">
       {/* S1: HERO */}
-      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 gradient-mesh">
+      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 ">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeUp>
@@ -51,7 +51,7 @@ export default function AudienceTargetingPage() {
               </div>
             </FadeUp>
             <FadeUp delay={0.2}>
-              <div className="glass-card bezel-inner p-8 rounded-3xl relative h-[300px] lg:h-[400px] flex flex-col justify-center gap-4">
+              <div className="bento-card bento-cyan bezel-inner p-8 rounded-3xl relative h-[300px] lg:h-[400px] flex flex-col justify-center gap-4">
                 <div className="absolute inset-0 bg-[var(--color-brand-secondary)]/10 blur-3xl -z-10 rounded-full" />
                 <div className="flex items-center gap-3 p-3 bg-black/5 border border-border rounded-lg">
                   <Users className="w-5 h-5 text-[var(--color-brand-secondary)]" />
@@ -78,7 +78,7 @@ export default function AudienceTargetingPage() {
       </PageSection>
 
       {/* S2: TARGETING SIGNALS */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <FadeUp>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center">Comprehensive signals</h2>
@@ -149,7 +149,7 @@ export default function AudienceTargetingPage() {
       </PageSection>
 
       {/* S5: OPTIMIZATION */}
-      <PageSection className="py-24 md:py-32 bg-gray-50">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeUp>
@@ -173,7 +173,7 @@ export default function AudienceTargetingPage() {
               </div>
             </FadeUp>
             <FadeUp delay={0.2}>
-              <GlassPanel className="p-8 relative overflow-hidden bg-gradient-to-br from-black/5 to-transparent border border-border group hover:border-border transition-all duration-300 hover:shadow-2xl">
+              <GlassPanel className="bento-violet p-8 relative overflow-hidden bg-gradient-to-br from-black/5 to-transparent border border-border group hover:border-border transition-all duration-300 hover:shadow-2xl">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--color-brand-secondary)] to-[var(--color-brand-accent)]" />
                 <div className="text-sm font-mono text-foreground/40 mb-8 border-b border-border pb-4">Campaign Performance Trend</div>
                 
@@ -213,7 +213,7 @@ export default function AudienceTargetingPage() {
       </PageSection>
 
       {/* S6: FINAL CTA */}
-      <PageSection className="py-24 md:py-32 gradient-mesh-subtle border-t border-border">
+      <PageSection className="py-24 md:py-32  border-t border-border">
         <Container>
           <CtaDuo advertiserText="Build Your Audience" />
         </Container>
