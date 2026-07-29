@@ -5,7 +5,12 @@ import { HandCoins, Broadcast, AppWindow, Lightning, Crown } from "@phosphor-ico
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-export function HeaderBiddingVisualizer() {
+export interface HeaderBiddingVisualizerProps {
+  mode?: "compact" | "full";
+  className?: string;
+}
+
+export function HeaderBiddingVisualizer({ mode, className }: HeaderBiddingVisualizerProps = {}) {
   const [activeDsp, setActiveDsp] = useState<number | null>(null);
 
   useEffect(() => {
@@ -23,7 +28,7 @@ export function HeaderBiddingVisualizer() {
   ];
 
   return (
-    <div className="relative w-full h-[380px] flex items-center justify-between px-4 sm:px-12 bg-black/40 rounded-2xl overflow-hidden border border-white/5">
+    <div className={cn("relative w-full h-[380px] flex items-center justify-between px-4 sm:px-12 bg-black/40 rounded-2xl overflow-hidden border border-white/5", className)}>
       {/* Publisher Node */}
       <div className="relative z-10 flex flex-col items-center gap-3">
         <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl border border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/10 shadow-[0_0_30px_rgba(var(--color-brand-primary),0.2)] backdrop-blur-md">

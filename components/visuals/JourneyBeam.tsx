@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { Desktop, DeviceMobile, Television } from "@phosphor-icons/react";
 
-const Node = forwardRef<HTMLDivElement, { children: React.ReactNode; className?: string; time: string; title: string; desc: string; icon: React.ReactNode; colorClass: string }>(
+const Node = forwardRef<HTMLDivElement, { children?: React.ReactNode; className?: string; time: string; title: string; desc: string; icon: React.ReactNode; colorClass: string }>(
   ({ children, className, time, title, desc, icon, colorClass }, ref) => (
     <div className="flex flex-col items-center z-10 w-full max-w-[240px]">
       <div
@@ -80,7 +80,6 @@ export function JourneyBeam() {
           gradientStartColor="var(--color-brand-primary)"
           gradientStopColor="var(--color-brand-secondary)"
           curvature={0}
-          strokeWidth={3}
           duration={3}
         />
         <AnimatedBeam
@@ -91,7 +90,6 @@ export function JourneyBeam() {
           gradientStartColor="var(--color-brand-secondary)"
           gradientStopColor="var(--color-brand-accent)"
           curvature={0}
-          strokeWidth={3}
           duration={3}
           delay={1.5}
         />

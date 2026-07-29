@@ -50,10 +50,10 @@ export function RetargetingBeam() {
         <Node ref={node5Ref} title="Ad Delivered" icon={<PaperPlaneRight className="w-8 h-8 text-white/70" />} />
 
         {/* Beams */}
-        <AnimatedBeam containerRef={containerRef} fromRef={node1Ref} toRef={node2Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="rgba(255,255,255,0.4)" gradientStopColor="rgba(255,255,255,0.4)" curvature={0} strokeWidth={2} duration={2} />
-        <AnimatedBeam containerRef={containerRef} fromRef={node2Ref} toRef={node3Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="rgba(255,255,255,0.4)" gradientStopColor="rgba(255,255,255,0.4)" curvature={0} strokeWidth={2} duration={2} delay={1} />
-        <AnimatedBeam containerRef={containerRef} fromRef={node3Ref} toRef={node4Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="rgba(255,255,255,0.4)" gradientStopColor="var(--color-brand-secondary)" curvature={0} strokeWidth={3} duration={2} delay={2} />
-        <AnimatedBeam containerRef={containerRef} fromRef={node4Ref} toRef={node5Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="var(--color-brand-secondary)" gradientStopColor="rgba(255,255,255,0.4)" curvature={0} strokeWidth={2} duration={2} delay={3} />
+        <AnimatedBeam containerRef={containerRef} fromRef={node1Ref} toRef={node2Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="rgba(255,255,255,0.4)" gradientStopColor="rgba(255,255,255,0.4)" curvature={0} duration={2} />
+        <AnimatedBeam containerRef={containerRef} fromRef={node2Ref} toRef={node3Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="rgba(255,255,255,0.4)" gradientStopColor="rgba(255,255,255,0.4)" curvature={0} duration={2} delay={1} />
+        <AnimatedBeam containerRef={containerRef} fromRef={node3Ref} toRef={node4Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="rgba(255,255,255,0.4)" gradientStopColor="var(--color-brand-secondary)" curvature={0} duration={2} delay={2} />
+        <AnimatedBeam containerRef={containerRef} fromRef={node4Ref} toRef={node5Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="var(--color-brand-secondary)" gradientStopColor="rgba(255,255,255,0.4)" curvature={0} duration={2} delay={3} />
       </div>
 
       {/* Mobile view */}

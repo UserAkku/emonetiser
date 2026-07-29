@@ -5,7 +5,7 @@ import Link from "next/link";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { AuctionVisualizer } from "@/components/visuals/AuctionVisualizer";
+import { HeaderBiddingVisualizer } from "@/components/visuals/HeaderBiddingVisualizer";
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -37,7 +37,7 @@ export function HeroSection() {
       {/* Background Visualizer */}
       <div className="absolute inset-0 z-0 flex items-center justify-center opacity-30">
         <div className="absolute inset-0 bg-background/50 backdrop-blur-[2px] z-10" />
-        <AuctionVisualizer mode="compact" className="scale-150 sm:scale-100" />
+        <HeaderBiddingVisualizer mode="compact" className="scale-150 sm:scale-100" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-8 text-center">
