@@ -7,11 +7,11 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ExchangeArchitecture } from "@/components/visuals/ExchangeArchitecture";
 
 const steps = [
-  { id: "01", title: "Ad Request", desc: "Publisher's site or app loads, sending an ad request with context." },
-  { id: "02", title: "Bid Request", desc: "Emonetiser formats an OpenRTB bid request and broadcasts to DSPs." },
-  { id: "03", title: "Simultaneous Bidding", desc: "DSPs evaluate the request and return bids in under 20ms." },
-  { id: "04", title: "Winning Bid", desc: "The highest eligible bid wins the auction instantly." },
-  { id: "05", title: "Creative Delivery", desc: "The winning creative is returned and rendered for the user." },
+  { id: "01", title: "Ad Request", desc: "Publisher's site or app loads, sending an ad request with context.", color: "hsl(258,85%,62%)" },
+  { id: "02", title: "Bid Request", desc: "Emonetiser formats an OpenRTB bid request and broadcasts to DSPs.", color: "hsl(216,90%,58%)" },
+  { id: "03", title: "Simultaneous Bidding", desc: "DSPs evaluate the request and return bids in under 20ms.", color: "hsl(175,75%,40%)" },
+  { id: "04", title: "Winning Bid", desc: "The highest eligible bid wins the auction instantly.", color: "hsl(16,90%,58%)" },
+  { id: "05", title: "Creative Delivery", desc: "The winning creative is returned and rendered for the user.", color: "hsl(290,75%,58%)" },
 ];
 
 export function ExchangeWorkSection() {
@@ -35,7 +35,6 @@ export function ExchangeWorkSection() {
       const items = textRef.current?.querySelectorAll(".step-item");
       if (!items) return;
 
-      // Create scroll-linked highlight effect
       items.forEach((item, i) => {
         gsap.to(item, {
           opacity: 1,
@@ -50,11 +49,10 @@ export function ExchangeWorkSection() {
         });
       });
       
-      // Pin the section
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",
-        end: "+=200%", // scroll distance
+        end: "+=200%",
         pin: true,
         pinSpacing: true,
       });
@@ -64,46 +62,60 @@ export function ExchangeWorkSection() {
   );
 
   return (
-    <section ref={containerRef} className="py-24 md:py-32 bg-background border-t border-border overflow-hidden">
+    <section ref={containerRef} className="py-24 md:py-32 overflow-hidden" style={{ background: "var(--section-teal)", borderTop: "1px solid hsl(175,75%,40%,0.12)" }}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading 
           label="The Engine" 
-          headline="How the exchange works" 
+          headline="How the exchange works"
+          accent="advertiser"
           className="mb-16"
         />
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           
           {/* Text Steps */}
-          <div ref={textRef} className="flex flex-col gap-8 relative z-10">
+          <div ref={textRef} className="flex flex-col gap-6 relative z-10">
             {steps.map((step, i) => (
               <div 
                 key={step.id} 
-                className={`step-item flex gap-6 transition-all duration-300 ${
+                className={`step-item flex gap-5 rounded-2xl p-5 transition-all duration-500 cursor-default ${
                   isMobile 
-                    ? activeStep === i ? "opacity-100" : "opacity-40" 
-                    : "opacity-30 lg:opacity-30" // handled by GSAP on desktop
+                    ? activeStep === i ? "opacity-100 bg-white shadow-md" : "opacity-40" 
+                    : "opacity-30 lg:opacity-30"
                 }`}
+                style={
+                  (isMobile && activeStep === i)
+                    ? { borderLeft: `4px solid ${step.color}` }
+                    : {}
+                }
                 onClick={() => isMobile && setActiveStep(i)}
               >
-                <div className="font-mono text-2xl font-light text-[var(--color-brand-primary)]">{step.id}</div>
+                {/* Number circle */}
+                <div
+                  className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-md"
+                  style={{ background: step.color, boxShadow: `0 4px 14px ${step.color}40` }}
+                >
+                  {step.id}
+                </div>
                 <div>
-                  <h3 className="text-xl font-medium mb-2">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.desc}</p>
+                  <h3 className="text-lg font-semibold mb-1 text-foreground">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}
             
-            {/* Mobile tap affordance */}
+            {/* Mobile tap dots */}
             {isMobile && (
-              <div className="flex gap-2 justify-center mt-4">
-                {steps.map((_, i) => (
+              <div className="flex gap-2 justify-center mt-2">
+                {steps.map((step, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveStep(i)}
-                    className={`h-2 rounded-full transition-all ${
-                      activeStep === i ? "w-8 bg-[var(--color-brand-primary)]" : "w-2 bg-border"
-                    }`}
+                    className="h-2 rounded-full transition-all"
+                    style={{
+                      width: activeStep === i ? "2rem" : "0.5rem",
+                      background: activeStep === i ? step.color : "hsl(220,15%,80%)",
+                    }}
                     aria-label={`Go to step ${i + 1}`}
                   />
                 ))}

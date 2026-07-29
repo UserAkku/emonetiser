@@ -7,36 +7,48 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Globe, Smartphone, Tv } from "lucide-react";
 
+const channels = [
+  {
+    id: "web",
+    title: "Web",
+    icon: Globe,
+    formats: ["Display", "Native", "In-stream Video", "Out-stream Video"],
+    link: "/publishers/web-monetization",
+    accentColor: "hsl(258,85%,62%)",
+    accentBg: "hsl(258,85%,62%,0.08)",
+    accentBorder: "hsl(258,85%,62%,0.25)",
+    accentShadow: "hsl(258,85%,62%,0.2)",
+    label: "Publisher SSP",
+  },
+  {
+    id: "app",
+    title: "Mobile App",
+    icon: Smartphone,
+    formats: ["Rewarded Video", "Interstitial", "Banner", "Native"],
+    link: "/publishers/app-monetization",
+    accentColor: "hsl(175,75%,40%)",
+    accentBg: "hsl(175,75%,40%,0.08)",
+    accentBorder: "hsl(175,75%,40%,0.25)",
+    accentShadow: "hsl(175,75%,40%,0.2)",
+    label: "App Monetisation",
+  },
+  {
+    id: "ctv",
+    title: "Connected TV",
+    icon: Tv,
+    formats: ["Pre-roll", "Mid-roll", "Pause Ads", "SSAI Stitching"],
+    link: "/publishers/ctv-monetization",
+    accentColor: "hsl(16,90%,58%)",
+    accentBg: "hsl(16,90%,58%,0.08)",
+    accentBorder: "hsl(16,90%,58%,0.25)",
+    accentShadow: "hsl(16,90%,58%,0.2)",
+    label: "CTV / OTT",
+  },
+];
+
 export function ChannelsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
-
-  const channels = [
-    {
-      id: "web",
-      title: "Web",
-      icon: Globe,
-      formats: ["Display", "Native", "In-stream Video", "Out-stream Video"],
-      link: "/publishers/web-monetization",
-      style: "rounded-t-lg border-x border-t border-border shadow-inner"
-    },
-    {
-      id: "app",
-      title: "Mobile App",
-      icon: Smartphone,
-      formats: ["Rewarded Video", "Interstitial", "Banner", "Native"],
-      link: "/publishers/app-monetization",
-      style: "rounded-[2rem] border-[4px] border-border shadow-inner px-2 pt-4"
-    },
-    {
-      id: "ctv",
-      title: "Connected TV",
-      icon: Tv,
-      formats: ["Pre-roll", "Mid-roll", "Pause Ads", "SSAI Stitching"],
-      link: "/publishers/ctv-monetization",
-      style: "rounded-lg border-[4px] border-border shadow-inner p-2"
-    }
-  ];
 
   useGSAP(
     () => {
@@ -58,7 +70,7 @@ export function ChannelsSection() {
   );
 
   return (
-    <section ref={containerRef} className="py-24 md:py-32 bg-card/30">
+    <section ref={containerRef} className="py-24 md:py-32" style={{ background: "var(--section-purple)" }}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading 
           label="Channels" 
@@ -68,31 +80,76 @@ export function ChannelsSection() {
           className="mb-16"
         />
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {channels.map((ch) => (
-            <Link 
-              href={ch.link} 
+            <Link
+              href={ch.link}
               key={ch.id}
-              className="channel-card group flex h-96 flex-col overflow-hidden rounded-3xl border border-border bg-card p-8 transition-all hover:-translate-y-2 hover:border-[var(--color-brand-primary)]/50 hover:shadow-2xl hover:shadow-[var(--color-brand-primary)]/10"
+              className="channel-card group relative flex flex-col overflow-hidden rounded-3xl bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              style={{
+                border: `1px solid ${ch.accentBorder}`,
+                boxShadow: `0 2px 12px -4px ${ch.accentShadow}`,
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.boxShadow = `0 20px 50px -10px ${ch.accentShadow}`;
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.boxShadow = `0 2px 12px -4px ${ch.accentShadow}`;
+              }}
             >
-              <div className="mb-6 flex items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-muted text-foreground group-hover:bg-[var(--color-brand-primary)]/10 group-hover:text-[var(--color-brand-primary)] transition-colors">
-                  <ch.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-medium">{ch.title}</h3>
-              </div>
+              {/* Colorful gradient wash on hover */}
+              <div
+                className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: `linear-gradient(135deg, ${ch.accentBg}, transparent 60%)` }}
+              />
 
-              {/* Stylized Device Representation */}
-              <div className="flex-1 relative flex items-center justify-center">
-                <div className={`absolute bottom-0 w-3/4 h-3/4 bg-muted/30 transition-transform group-hover:scale-105 ${ch.style}`}>
-                   <div className="h-full w-full bg-background/50 backdrop-blur-sm flex flex-col justify-end p-4">
-                      {/* Hover reveals formats */}
-                      <ul className="space-y-2 opacity-50 transition-opacity group-hover:opacity-100">
-                        {ch.formats.map(f => (
-                          <li key={f} className="text-xs font-mono text-muted-foreground">{f}</li>
-                        ))}
-                      </ul>
-                   </div>
+              {/* Colored top accent bar */}
+              <div
+                className="absolute top-0 left-8 right-8 h-[3px] rounded-b-full"
+                style={{ background: ch.accentColor }}
+              />
+
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="mb-6 flex items-center gap-4">
+                  <div
+                    className="flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110"
+                    style={{ background: ch.accentBg, border: `1px solid ${ch.accentBorder}` }}
+                  >
+                    <ch.icon className="h-6 w-6" style={{ color: ch.accentColor }} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-foreground">{ch.title}</h3>
+                    <span
+                      className="text-[10px] font-mono uppercase tracking-widest"
+                      style={{ color: ch.accentColor }}
+                    >
+                      {ch.label}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Format list */}
+                <ul className="flex-1 flex flex-col gap-2.5 mt-2">
+                  {ch.formats.map((f) => (
+                    <li key={f} className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                      <span
+                        className="w-1.5 h-1.5 rounded-full shrink-0"
+                        style={{ background: ch.accentColor }}
+                      />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Arrow */}
+                <div
+                  className="mt-8 flex items-center gap-1.5 text-sm font-semibold transition-all duration-300 group-hover:gap-3"
+                  style={{ color: ch.accentColor }}
+                >
+                  Learn more
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
+                    <path d="M3 8h10m0 0-3.5-3.5M13 8l-3.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
               </div>
             </Link>

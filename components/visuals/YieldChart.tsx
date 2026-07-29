@@ -6,12 +6,12 @@ const data = [
   {
     name: 'Legacy Waterfall',
     Revenue: 1.20,
-    fill: 'var(--muted-foreground)',
+    fill: 'hsl(220,15%,80%)',
   },
   {
     name: 'Unified Auction',
     Revenue: 3.50,
-    fill: 'var(--brand-primary)',
+    fill: 'hsl(258,85%,62%)',
   },
 ];
 
@@ -31,11 +31,11 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 export function YieldChart() {
   return (
-    <div className="w-full h-[400px] border border-white/5 rounded-2xl bg-background p-6 flex flex-col">
+    <div className="w-full h-[400px] border border-gray-200 rounded-2xl bg-white p-6 flex flex-col shadow-sm">
       <div className="mb-6">
         <h3 className="text-sm font-mono tracking-widest text-muted-foreground uppercase">Revenue Comparison</h3>
         <p className="text-2xl font-bold mt-1 text-foreground">
-          +191% <span className="text-brand-primary">eCPM Uplift</span>
+          +191% <span style={{ color: "hsl(258,85%,62%)" }}>eCPM Uplift</span>
         </p>
       </div>
       

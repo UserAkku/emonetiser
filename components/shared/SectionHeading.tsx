@@ -4,7 +4,7 @@ interface SectionHeadingProps extends React.HTMLAttributes<HTMLDivElement> {
   label: string;
   headline: string;
   subtext?: string;
-  accent?: "publisher" | "advertiser" | "both";
+  accent?: "publisher" | "advertiser" | "both" | "coral";
   align?: "left" | "center";
 }
 
@@ -26,20 +26,29 @@ export function SectionHeading({
       )}
       {...props}
     >
-      <div className="flex items-center gap-2">
+      {/* Label pill */}
+      <span
+        className={cn(
+          "inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em]",
+          accent === "publisher" && "text-[hsl(258,85%,62%)] bg-[hsl(258,85%,62%,0.1)] border border-[hsl(258,85%,62%,0.2)]",
+          accent === "advertiser" && "text-[hsl(175,75%,40%)] bg-[hsl(175,75%,40%,0.1)] border border-[hsl(175,75%,40%,0.2)]",
+          accent === "coral" && "text-[hsl(16,90%,58%)] bg-[hsl(16,90%,58%,0.1)] border border-[hsl(16,90%,58%,0.2)]",
+          accent === "both" && "text-[hsl(258,85%,62%)] bg-[hsl(258,85%,62%,0.08)] border border-[hsl(258,85%,62%,0.15)]"
+        )}
+      >
         <span
-          className={cn(
-            "h-px w-6",
-            accent === "publisher" && "bg-[var(--color-brand-primary)]",
-            accent === "advertiser" && "bg-[var(--color-brand-secondary)]",
-            accent === "both" && "bg-gradient-to-r from-[var(--color-brand-primary)] to-[var(--color-brand-secondary)]"
-          )}
+          className="w-1.5 h-1.5 rounded-full"
+          style={{
+            background: accent === "advertiser"
+              ? "hsl(175,75%,40%)"
+              : accent === "coral"
+              ? "hsl(16,90%,58%)"
+              : "hsl(258,85%,62%)"
+          }}
         />
-        <span className="font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
-          {label}
-        </span>
-      </div>
-      <h2 className="font-display text-3xl font-medium tracking-tight sm:text-4xl md:text-5xl">
+        {label}
+      </span>
+      <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl text-foreground">
         {headline}
       </h2>
       {subtext && (

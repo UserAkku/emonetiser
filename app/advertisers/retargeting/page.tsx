@@ -27,18 +27,18 @@ import { RetargetingBeam } from "@/components/visuals/RetargetingBeam";
 
 export default function RetargetingPage() {
   return (
-    <div className="bg-background text-white min-h-screen">
+    <div className="bg-background text-foreground min-h-screen">
       {/* S1: HERO */}
       <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 gradient-mesh">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeUp>
               <div className="flex flex-col items-start text-left">
-                <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-white mb-6">
+                <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-foreground mb-6">
                   Bring them back.<br />
                   Convert them.
                 </h1>
-                <p className="text-xl text-slate-400 max-w-lg mb-10 leading-relaxed font-sans">
+                <p className="text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed font-sans">
                   Re-engage your highest-intent audiences across Web, App, and Connected TV with privacy-first retargeting.
                 </p>
                 <MovingBorderButton href="/contact" className="mt-2 group">
@@ -64,7 +64,7 @@ export default function RetargetingPage() {
       </PageSection>
 
       {/* S2: HOW RETARGETING WORKS */}
-      <PageSection className="py-24 md:py-32 bg-white/[0.02]">
+      <PageSection className="py-24 md:py-32 bg-gray-50">
         <Container>
           <FadeUp>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-16 text-center">The retargeting flow</h2>
@@ -84,50 +84,50 @@ export default function RetargetingPage() {
           </FadeUp>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <motion.div variants={staggerItem} className="md:col-span-2 lg:col-span-2">
-              <GlassPanel className="h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-secondary)]/10 to-transparent border border-white/5 hover:border-[var(--color-brand-secondary)]/30">
+              <GlassPanel className="h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-secondary)]/10 to-transparent border border-border hover:border-[var(--color-brand-secondary)]/30">
                 <ImageSquare className="w-10 h-10 text-[var(--color-brand-secondary)] mb-6 transition-transform group-hover:scale-110" />
-                <h3 className="text-2xl font-medium text-white mb-3">Dynamic Creatives</h3>
-                <p className="text-slate-400 font-sans leading-relaxed">Serve personalized product recommendations and customized offers based on exact browsing history to maximize conversion rates.</p>
+                <h3 className="text-2xl font-medium text-foreground mb-3">Dynamic Creatives</h3>
+                <p className="text-muted-foreground font-sans leading-relaxed">Serve personalized product recommendations and customized offers based on exact browsing history to maximize conversion rates.</p>
               </GlassPanel>
             </motion.div>
             
             <motion.div variants={staggerItem} className="md:col-span-1 lg:col-span-2">
-              <GlassPanel className="h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-primary)]/10 to-transparent border border-white/5 hover:border-[var(--color-brand-primary)]/30">
+              <GlassPanel className="h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-primary)]/10 to-transparent border border-border hover:border-[var(--color-brand-primary)]/30">
                 <Users className="w-10 h-10 text-[var(--color-brand-primary)] mb-6 transition-transform group-hover:scale-110" />
-                <h3 className="text-2xl font-medium text-white mb-3">Audience Segmentation</h3>
-                <p className="text-slate-400 font-sans leading-relaxed">Build highly specific groups based on cart abandoners, recent purchasers, or high-value frequent visitors.</p>
+                <h3 className="text-2xl font-medium text-foreground mb-3">Audience Segmentation</h3>
+                <p className="text-muted-foreground font-sans leading-relaxed">Build highly specific groups based on cart abandoners, recent purchasers, or high-value frequent visitors.</p>
               </GlassPanel>
             </motion.div>
             
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-6 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/5 hover:border-white/20">
-                <Devices className="w-8 h-8 text-white/80 mb-6 transition-transform group-hover:scale-110" />
-                <h3 className="text-lg font-medium text-white mb-2">Cross-Device Targeting</h3>
-                <p className="text-slate-400 text-sm font-sans leading-relaxed">Reach the same user across desktop, mobile, and CTV environments.</p>
+              <GlassPanel className="h-full p-6 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-black/10 to-transparent border border-border hover:border-border">
+                <Devices className="w-8 h-8 text-foreground/80 mb-6 transition-transform group-hover:scale-110" />
+                <h3 className="text-lg font-medium text-foreground mb-2">Cross-Device Targeting</h3>
+                <p className="text-muted-foreground text-sm font-sans leading-relaxed">Reach the same user across desktop, mobile, and CTV environments.</p>
               </GlassPanel>
             </motion.div>
             
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-6 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/5 hover:border-white/20">
-                <Clock className="w-8 h-8 text-white/80 mb-6 transition-transform group-hover:scale-110" />
-                <h3 className="text-lg font-medium text-white mb-2">Lookback Windows</h3>
-                <p className="text-slate-400 text-sm font-sans leading-relaxed">Customizable recency rules to target users while intent is highest.</p>
+              <GlassPanel className="h-full p-6 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-black/10 to-transparent border border-border hover:border-border">
+                <Clock className="w-8 h-8 text-foreground/80 mb-6 transition-transform group-hover:scale-110" />
+                <h3 className="text-lg font-medium text-foreground mb-2">Lookback Windows</h3>
+                <p className="text-muted-foreground text-sm font-sans leading-relaxed">Customizable recency rules to target users while intent is highest.</p>
               </GlassPanel>
             </motion.div>
             
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-6 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/5 hover:border-white/20">
-                <SlidersHorizontal className="w-8 h-8 text-white/80 mb-6 transition-transform group-hover:scale-110" />
-                <h3 className="text-lg font-medium text-white mb-2">Frequency Management</h3>
-                <p className="text-slate-400 text-sm font-sans leading-relaxed">Strict controls to avoid burning out your audience with repetitive ads.</p>
+              <GlassPanel className="h-full p-6 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-black/10 to-transparent border border-border hover:border-border">
+                <SlidersHorizontal className="w-8 h-8 text-foreground/80 mb-6 transition-transform group-hover:scale-110" />
+                <h3 className="text-lg font-medium text-foreground mb-2">Frequency Management</h3>
+                <p className="text-muted-foreground text-sm font-sans leading-relaxed">Strict controls to avoid burning out your audience with repetitive ads.</p>
               </GlassPanel>
             </motion.div>
             
             <motion.div variants={staggerItem}>
-              <GlassPanel className="h-full p-6 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/5 hover:border-white/20">
-                <HardDrives className="w-8 h-8 text-white/80 mb-6 transition-transform group-hover:scale-110" />
-                <h3 className="text-lg font-medium text-white mb-2">Server-Side Events</h3>
-                <p className="text-slate-400 text-sm font-sans leading-relaxed">Robust tracking APIs that don&apos;t rely solely on fragile browser cookies.</p>
+              <GlassPanel className="h-full p-6 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-black/10 to-transparent border border-border hover:border-border">
+                <HardDrives className="w-8 h-8 text-foreground/80 mb-6 transition-transform group-hover:scale-110" />
+                <h3 className="text-lg font-medium text-foreground mb-2">Server-Side Events</h3>
+                <p className="text-muted-foreground text-sm font-sans leading-relaxed">Robust tracking APIs that don&apos;t rely solely on fragile browser cookies.</p>
               </GlassPanel>
             </motion.div>
           </StaggerContainer>
@@ -135,7 +135,7 @@ export default function RetargetingPage() {
       </PageSection>
 
       {/* S4: PRIVACY & COMPLIANCE */}
-      <PageSection className="py-24 md:py-32 bg-white/[0.02]">
+      <PageSection className="py-24 md:py-32 bg-gray-50">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeUp>
@@ -162,10 +162,10 @@ export default function RetargetingPage() {
             </FadeUp>
             <FadeUp delay={0.2}>
               <h2 className="font-display text-4xl font-bold mb-6">Privacy-first retargeting</h2>
-              <p className="text-lg text-white/60 font-sans mb-6">
+              <p className="text-lg text-foreground/60 font-sans mb-6">
                 The regulatory landscape is shifting, but re-engaging your audience shouldn&apos;t carry legal risks. Our platform is built from the ground up to respect user consent signals strictly.
               </p>
-              <p className="text-lg text-white/60 font-sans">
+              <p className="text-lg text-foreground/60 font-sans">
                 By combining authenticated traffic, universal IDs, and server-to-server integrations, we ensure your retargeting campaigns maintain high match rates without violating privacy norms.
               </p>
             </FadeUp>
@@ -197,7 +197,7 @@ export default function RetargetingPage() {
       </PageSection>
 
       {/* S6: FINAL CTA */}
-      <PageSection className="py-24 md:py-32 gradient-mesh-subtle border-t border-white/5">
+      <PageSection className="py-24 md:py-32 gradient-mesh-subtle border-t border-border">
         <Container>
           <CtaDuo advertiserText="Build Retargeting Audiences" />
         </Container>

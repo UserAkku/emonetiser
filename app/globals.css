@@ -111,70 +111,90 @@
     from { height: var(--accordion-panel-height); }
     to { height: 0; }
   }
+  @keyframes blob-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(20px, -20px) scale(1.05); }
+    66% { transform: translate(-15px, 15px) scale(0.97); }
+  }
+  --animate-blob: blob-drift 8s ease-in-out infinite;
 }
 
 :root {
-  /* Luxury Dark Metallic Matte Olive & Champagne Gold Theme */
-  --background: hsl(85, 15%, 14%);       /* Matte Dark Olive (Visible) */
-  --foreground: hsl(40, 20%, 92%);       /* Pearl White */
+  /* ====================================================
+     EMONETISER — Vibrant Light Theme
+     White canvas · Electric Purple · Vivid Teal · Coral
+     ==================================================== */
+
+  --background: hsl(0, 0%, 100%);          /* Pure white */
+  --foreground: hsl(222, 35%, 10%);        /* Deep charcoal */
   
-  --card: hsl(85, 15%, 18%);             /* Matte Olive Surface */
-  --card-foreground: hsl(40, 20%, 92%);
+  --card: hsl(0, 0%, 100%);               /* White card */
+  --card-foreground: hsl(222, 35%, 10%);
   
-  --popover: hsl(85, 15%, 18%);
-  --popover-foreground: hsl(40, 20%, 92%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 35%, 10%);
   
-  --primary: hsl(40, 50%, 65%);          /* Matte Champagne Gold */
-  --primary-foreground: hsl(85, 15%, 14%);
+  --primary: hsl(258, 85%, 62%);           /* Electric Violet */
+  --primary-foreground: hsl(0, 0%, 100%);
   
-  --secondary: hsl(90, 10%, 60%);        /* Metallic Silver-Sage */
-  --secondary-foreground: hsl(40, 20%, 92%);
+  --secondary: hsl(175, 75%, 40%);         /* Vivid Teal */
+  --secondary-foreground: hsl(0, 0%, 100%);
   
-  --muted: hsl(85, 15%, 20%);
-  --muted-foreground: hsl(85, 10%, 65%); /* Slightly brighter fog */
+  --muted: hsl(220, 20%, 96%);             /* Very light cool gray */
+  --muted-foreground: hsl(220, 12%, 46%);  /* Medium cool gray */
   
-  --accent: hsl(85, 15%, 20%);
-  --accent-foreground: hsl(40, 20%, 92%);
+  --accent: hsl(220, 20%, 94%);
+  --accent-foreground: hsl(222, 35%, 10%);
   
-  --destructive: hsl(0, 72%, 45%);
-  --destructive-foreground: hsl(40, 20%, 92%);
+  --destructive: hsl(0, 84%, 50%);
+  --destructive-foreground: hsl(0, 0%, 100%);
   
-  --border: hsl(85, 15%, 24%);           /* Subtle Olive Border */
-  --input: hsl(85, 15%, 20%);
-  --ring: hsl(40, 50%, 65%);
+  --border: hsl(220, 15%, 90%);            /* Light subtle border */
+  --input: hsl(220, 15%, 94%);
+  --ring: hsl(258, 85%, 62%);
   
   --radius: 0.75rem;
 
-  /* Brand accent colors */
-  --brand-primary: hsl(40, 50%, 65%);   /* Matte Champagne Gold */
-  --brand-secondary: hsl(90, 10%, 60%); /* Metallic Silver-Sage */
-  --brand-accent: hsl(30, 40%, 50%);    /* Warm Bronze */
+  /* ========================
+     Brand accent colors
+     ======================== */
+  --brand-primary: hsl(258, 85%, 62%);     /* Electric Violet — Publisher */
+  --brand-secondary: hsl(175, 75%, 40%);   /* Vivid Teal — Advertiser */
+  --brand-accent: hsl(16, 90%, 58%);       /* Sunset Coral */
+
+  /* ========================
+     Section tint backgrounds
+     ======================== */
+  --section-purple: hsl(258, 100%, 99%);   /* Ultra-light purple tint */
+  --section-teal: hsl(175, 60%, 97%);      /* Ultra-light teal tint */
+  --section-coral: hsl(16, 100%, 98%);     /* Ultra-light coral tint */
+  --section-dark: hsl(240, 30%, 12%);      /* Deep indigo for dark sections */
 }
 
+/* Keep .dark for any dark section overrides */
 .dark {
-  --background: hsl(85, 15%, 14%);
-  --foreground: hsl(40, 20%, 92%);
-  --card: hsl(85, 15%, 18%);
-  --card-foreground: hsl(40, 20%, 92%);
-  --popover: hsl(85, 15%, 18%);
-  --popover-foreground: hsl(40, 20%, 92%);
-  --primary: hsl(40, 50%, 65%);
-  --primary-foreground: hsl(85, 15%, 14%);
-  --secondary: hsl(90, 10%, 60%);
-  --secondary-foreground: hsl(40, 20%, 92%);
-  --muted: hsl(85, 15%, 20%);
-  --muted-foreground: hsl(85, 10%, 65%);
-  --accent: hsl(85, 15%, 20%);
-  --accent-foreground: hsl(40, 20%, 92%);
-  --destructive: hsl(0, 72%, 45%);
-  --destructive-foreground: hsl(40, 20%, 92%);
-  --border: hsl(85, 15%, 24%);
-  --input: hsl(0, 0%, 13%);
-  --ring: hsl(15, 75%, 53%);
-  
-  --brand-primary: hsl(15, 75%, 53%);
-  --brand-secondary: hsl(30, 25%, 55%);
-  --brand-accent: hsl(10, 35%, 45%);
+  --background: hsl(240, 30%, 10%);
+  --foreground: hsl(220, 20%, 94%);
+  --card: hsl(240, 25%, 14%);
+  --card-foreground: hsl(220, 20%, 94%);
+  --popover: hsl(240, 25%, 14%);
+  --popover-foreground: hsl(220, 20%, 94%);
+  --primary: hsl(258, 85%, 70%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(175, 75%, 50%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(240, 20%, 18%);
+  --muted-foreground: hsl(220, 15%, 60%);
+  --accent: hsl(240, 20%, 18%);
+  --accent-foreground: hsl(220, 20%, 94%);
+  --destructive: hsl(0, 72%, 55%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(240, 18%, 22%);
+  --input: hsl(240, 20%, 18%);
+  --ring: hsl(258, 85%, 70%);
+  --brand-primary: hsl(258, 85%, 70%);
+  --brand-secondary: hsl(175, 75%, 50%);
+  --brand-accent: hsl(16, 90%, 62%);
 }
 
 @layer base {
@@ -188,15 +208,34 @@
   }
   html {
     @apply font-sans;
-    color-scheme: dark;
+    color-scheme: light;
     scroll-behavior: smooth;
   }
 }
 
 /* ============================================
-   UTILITY: Gradient meshes removed for Agency Look
-   Replaced with pure subtle noise & sharp borders
+   SECTION BACKGROUNDS
    ============================================ */
+.section-white {
+  background: var(--background);
+}
+
+.section-purple {
+  background: var(--section-purple);
+}
+
+.section-teal {
+  background: var(--section-teal);
+}
+
+.section-coral {
+  background: var(--section-coral);
+}
+
+.section-dark {
+  background: var(--section-dark);
+}
+
 .gradient-mesh {
   background: var(--background);
 }
@@ -205,21 +244,41 @@
   background: var(--background);
 }
 
-/* Glassmorphism card - Matte, flat & ultra-clean */
+/* ============================================
+   GLASS / SURFACE CARDS
+   ============================================ */
+
+/* Light glassmorphism — for use on colored section backgrounds */
 .glass-card {
-  background: color-mix(in srgb, var(--card) 60%, transparent);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid color-mix(in srgb, var(--foreground) 6%, transparent);
-  box-shadow: 0 8px 32px -8px rgba(0,0,0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Dark glassmorphism — for .section-dark backgrounds */
+.dark .glass-card,
+.section-dark .glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.5);
 }
 
 /* Double-bezel outer shell */
 .bezel-outer {
-  background: color-mix(in srgb, var(--foreground) 3%, transparent);
-  border: 1px solid color-mix(in srgb, var(--foreground) 5%, transparent);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   padding: 6px;
   border-radius: 1.5rem;
+}
+
+.dark .bezel-outer,
+.section-dark .bezel-outer {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Double-bezel inner core */
@@ -228,31 +287,93 @@
   border-radius: calc(1.5rem - 6px);
 }
 
-/* Accent glow effects */
+/* ============================================
+   COLORFUL CARD TREATMENTS
+   ============================================ */
+
+/* Purple-accented card */
+.card-purple {
+  background: white;
+  border: 1px solid hsl(258, 85%, 88%);
+  box-shadow: 0 4px 20px -4px hsl(258, 85%, 62% / 0.12);
+}
+.card-purple:hover {
+  border-color: hsl(258, 85%, 62% / 0.4);
+  box-shadow: 0 8px 30px -6px hsl(258, 85%, 62% / 0.2);
+}
+
+/* Teal-accented card */
+.card-teal {
+  background: white;
+  border: 1px solid hsl(175, 75%, 80%);
+  box-shadow: 0 4px 20px -4px hsl(175, 75%, 40% / 0.12);
+}
+.card-teal:hover {
+  border-color: hsl(175, 75%, 40% / 0.4);
+  box-shadow: 0 8px 30px -6px hsl(175, 75%, 40% / 0.2);
+}
+
+/* Coral-accented card */
+.card-coral {
+  background: white;
+  border: 1px solid hsl(16, 90%, 85%);
+  box-shadow: 0 4px 20px -4px hsl(16, 90%, 58% / 0.12);
+}
+.card-coral:hover {
+  border-color: hsl(16, 90%, 58% / 0.4);
+  box-shadow: 0 8px 30px -6px hsl(16, 90%, 58% / 0.2);
+}
+
+/* ============================================
+   GLOW EFFECTS (tuned for light backgrounds)
+   ============================================ */
 .glow-primary {
-  box-shadow: 0 0 40px -8px color-mix(in srgb, var(--brand-primary) 25%, transparent);
+  box-shadow: 0 0 40px -8px hsl(258, 85%, 62% / 0.3);
 }
 .glow-secondary {
-  box-shadow: 0 0 40px -8px color-mix(in srgb, var(--brand-secondary) 20%, transparent);
+  box-shadow: 0 0 40px -8px hsl(175, 75%, 40% / 0.25);
 }
 .glow-accent {
-  box-shadow: 0 0 24px -4px color-mix(in srgb, var(--brand-accent) 25%, transparent);
+  box-shadow: 0 0 24px -4px hsl(16, 90%, 58% / 0.3);
 }
 
-/* Hairline dividers */
-.divider-subtle {
-  border-color: color-mix(in srgb, var(--foreground) 6%, transparent);
+/* ============================================
+   GRADIENT TEXT
+   ============================================ */
+
+/* Purple → Teal shimmer */
+.text-gradient {
+  background: linear-gradient(
+    105deg,
+    var(--brand-primary) 0%,
+    hsl(216, 90%, 58%) 50%,
+    var(--brand-secondary) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Shimmer text */
+/* Coral → Purple shimmer */
+.text-gradient-warm {
+  background: linear-gradient(
+    105deg,
+    var(--brand-accent) 0%,
+    hsl(290, 80%, 60%) 50%,
+    var(--brand-primary) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .text-shimmer {
   background: linear-gradient(
     105deg,
-    var(--muted-foreground) 0%,
-    var(--foreground) 40%,
-    var(--brand-primary) 60%,
-    var(--brand-secondary) 80%,
-    var(--muted-foreground) 100%
+    var(--brand-primary) 0%,
+    hsl(216, 90%, 58%) 35%,
+    var(--brand-secondary) 65%,
+    var(--brand-accent) 100%
   );
   background-size: 200% auto;
   background-clip: text;
@@ -261,7 +382,20 @@
   animation: shimmer 4s linear infinite;
 }
 
-/* Publisher / Advertiser accent utilities */
+/* ============================================
+   HAIRLINE DIVIDERS
+   ============================================ */
+.divider-subtle {
+  border-color: hsl(220, 15%, 90%);
+}
+
+.section-dark .divider-subtle {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================
+   PUBLISHER / ADVERTISER ACCENT UTILITIES
+   ============================================ */
 .accent-publisher {
   --primary: var(--brand-primary);
   --ring: var(--primary);
@@ -271,24 +405,55 @@
   --ring: var(--primary);
 }
 
-/* Noise texture overlay - fixed, pointer-none */
+/* ============================================
+   BACKGROUND BLOB DECORATIONS
+   ============================================ */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  animation: blob-drift 8s ease-in-out infinite;
+}
+
+.blob-purple {
+  background: hsl(258, 85%, 62% / 0.18);
+}
+
+.blob-teal {
+  background: hsl(175, 75%, 40% / 0.15);
+  animation-delay: -3s;
+}
+
+.blob-coral {
+  background: hsl(16, 90%, 58% / 0.14);
+  animation-delay: -6s;
+}
+
+/* ============================================
+   NOISE TEXTURE OVERLAY
+   ============================================ */
 .noise-overlay::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 200;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 200px 200px;
 }
 
-/* Scroll reveal utility */
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
 .reveal-up {
   animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Accordion animations */
+/* ============================================
+   ACCORDION ANIMATIONS
+   ============================================ */
 .data-open\:animate-accordion-down[data-open] {
   animation: accordion-down 200ms ease-out;
 }
@@ -296,7 +461,33 @@
   animation: accordion-up 200ms ease-out;
 }
 
-/* Marquee */
+/* ============================================
+   MARQUEE
+   ============================================ */
 .animate-marquee {
   animation: marquee 30s linear infinite;
+}
+
+/* ============================================
+   COLORFUL NUMBERED STEP CIRCLES
+   ============================================ */
+.step-number-1 { background: hsl(258, 85%, 62%); }
+.step-number-2 { background: hsl(216, 90%, 58%); }
+.step-number-3 { background: hsl(175, 75%, 40%); }
+.step-number-4 { background: hsl(16, 90%, 58%); }
+.step-number-5 { background: hsl(290, 75%, 58%); }
+
+/* ============================================
+   DARK SECTION UTILITIES (for footer, metrics)
+   ============================================ */
+.section-dark {
+  color: hsl(220, 20%, 94%);
+}
+
+.section-dark .text-muted-foreground {
+  color: hsl(220, 15%, 60%);
+}
+
+.section-dark .border-border {
+  border-color: rgba(255, 255, 255, 0.1);
 }

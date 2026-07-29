@@ -46,7 +46,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${fontSans.variable} ${fontDisplay.variable} ${fontMono.variable} h-full antialiased`}
     >
-      <body suppressHydrationWarning className="min-h-full flex flex-col font-sans dark bg-background text-foreground overflow-x-hidden">
+      <body suppressHydrationWarning className="min-h-full flex flex-col font-sans bg-background text-foreground overflow-x-hidden">
         <TooltipProvider>
           <Navbar />
           <main className="flex-1 flex flex-col pt-20">{children}</main>
