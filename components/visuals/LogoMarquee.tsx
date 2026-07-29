@@ -63,8 +63,8 @@ export function LogoMarquee() {
         {certifications.map((cert, idx) => (
           <div key={idx} className="flex shrink-0 items-center justify-center transition-all">
             {cert.placeholder ? (
-              <div className="group flex h-12 items-center gap-3 rounded-full border border-[var(--color-brand-primary)]/20 bg-card/50 px-6 font-mono text-[11px] uppercase tracking-widest text-white/70 shadow-[0_0_15px_rgba(var(--color-brand-primary),0.05)] backdrop-blur-md transition-all hover:border-[var(--color-brand-primary)]/50 hover:text-white hover:shadow-[0_0_30px_rgba(var(--color-brand-primary),0.15)] hover:bg-card">
-                <div className="h-1.5 w-1.5 rounded-full bg-[var(--color-brand-primary)] opacity-50 group-hover:opacity-100 group-hover:animate-pulse" />
+              <div className="group flex h-12 items-center gap-3 rounded-full border border-slate-200 bg-white px-6 font-mono text-[11px] uppercase tracking-widest text-slate-500 shadow-sm transition-all hover:border-emerald-300 hover:text-emerald-700 hover:shadow-md hover:bg-emerald-50">
+                <div className="h-1.5 w-1.5 rounded-full bg-emerald-400 opacity-50 group-hover:opacity-100 group-hover:animate-pulse" />
                 {cert.name}
               </div>
             ) : (

@@ -181,7 +181,7 @@ export default function HomePage() {
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <motion.div variants={staggerItem} className="md:col-span-2">
-              <div className="group relative overflow-hidden rounded-3xl border border-emerald-200 bg-white p-6 transition-all hover:shadow-md hover:border-emerald-300">
+              <div className="group relative overflow-hidden rounded-3xl border border-emerald-200 bg-emerald-50 p-6 transition-all hover:shadow-md hover:border-emerald-300 hover:-translate-y-1">
                 <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
                   <div className="flex items-center gap-5">
                     <div className="w-14 h-14 rounded-2xl bg-emerald-100 border border-emerald-200 flex items-center justify-center shrink-0">
@@ -202,7 +202,7 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div variants={staggerItem}>
-              <div className="group relative overflow-hidden rounded-3xl border border-blue-200 bg-white p-7 transition-all hover:shadow-md hover:border-blue-300 h-full flex flex-col gap-5">
+              <div className="group relative overflow-hidden rounded-3xl border border-blue-200 bg-blue-50 p-7 transition-all hover:shadow-md hover:border-blue-300 hover:-translate-y-1 h-full flex flex-col gap-5">
                 <div className="w-14 h-14 rounded-2xl bg-blue-100 border border-blue-200 flex items-center justify-center">
                   <Devices className="w-7 h-7 text-blue-600" weight="duotone" />
                 </div>
@@ -218,7 +218,7 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div variants={staggerItem}>
-              <div className="group relative overflow-hidden rounded-3xl border border-violet-200 bg-white p-7 transition-all hover:shadow-md hover:border-violet-300 h-full flex flex-col gap-5">
+              <div className="group relative overflow-hidden rounded-3xl border border-violet-200 bg-violet-50 p-7 transition-all hover:shadow-md hover:border-violet-300 hover:-translate-y-1 h-full flex flex-col gap-5">
                 <div className="w-14 h-14 rounded-2xl bg-violet-100 border border-violet-200 flex items-center justify-center">
                   <Television className="w-7 h-7 text-violet-600" weight="duotone" />
                 </div>

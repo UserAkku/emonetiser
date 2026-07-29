@@ -169,7 +169,7 @@ export default function ContactPage() {
                           <FormLabel className="text-slate-700 font-semibold">I am a...</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger className="bg-slate-50 border-slate-200 text-slate-900 rounded-xl h-14 px-4 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all">
+                              <SelectTrigger className="bg-slate-50 border-slate-200 text-slate-900 data-placeholder:text-slate-400 rounded-xl h-14 px-4 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all">
                                 <SelectValue placeholder="Select your role" />
                               </SelectTrigger>
                             </FormControl>
