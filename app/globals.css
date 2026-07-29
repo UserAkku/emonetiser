@@ -1,0 +1,302 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 2px);
+  --radius-2xl: calc(var(--radius) + 4px);
+
+  /* Emonetiser brand tokens */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-void: var(--background);
+  --color-surface: var(--card);
+  --color-line: var(--border);
+  --color-fog: var(--muted-foreground);
+  --color-paper: var(--foreground);
+
+  /* Fonts */
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Animations */
+  --animate-pulse-live: pulse-live 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  --animate-slide: slide var(--speed) ease-in-out infinite alternate;
+  --animate-meteor-effect: meteor-effect 5s linear infinite;
+  --animate-border-beam: border-beam calc(var(--duration)*1s) infinite linear;
+
+  @keyframes pulse-live {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes shimmer {
+    from { background-position: -200% center; }
+    to { background-position: 200% center; }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes spin-around {
+    0% {
+      transform: translateZ(0) rotate(0);
+    }
+    15%, 35% {
+      transform: translateZ(0) rotate(90deg);
+    }
+    65%, 85% {
+      transform: translateZ(0) rotate(270deg);
+    }
+    100% {
+      transform: translateZ(0) rotate(360deg);
+    }
+  }
+  @keyframes slide {
+    to {
+      transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes meteor-effect {
+    0% { transform: rotate(215deg) translateX(0); opacity: 1; }
+    70% { opacity: 1; }
+    100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
+  }
+  @keyframes border-beam {
+    100% { offset-distance: 100%; }
+  }
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--accordion-panel-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--accordion-panel-height); }
+    to { height: 0; }
+  }
+}
+
+:root {
+  /* Luxury Dark Metallic Matte Olive & Champagne Gold Theme */
+  --background: hsl(85, 15%, 14%);       /* Matte Dark Olive (Visible) */
+  --foreground: hsl(40, 20%, 92%);       /* Pearl White */
+  
+  --card: hsl(85, 15%, 18%);             /* Matte Olive Surface */
+  --card-foreground: hsl(40, 20%, 92%);
+  
+  --popover: hsl(85, 15%, 18%);
+  --popover-foreground: hsl(40, 20%, 92%);
+  
+  --primary: hsl(40, 50%, 65%);          /* Matte Champagne Gold */
+  --primary-foreground: hsl(85, 15%, 14%);
+  
+  --secondary: hsl(90, 10%, 60%);        /* Metallic Silver-Sage */
+  --secondary-foreground: hsl(40, 20%, 92%);
+  
+  --muted: hsl(85, 15%, 20%);
+  --muted-foreground: hsl(85, 10%, 65%); /* Slightly brighter fog */
+  
+  --accent: hsl(85, 15%, 20%);
+  --accent-foreground: hsl(40, 20%, 92%);
+  
+  --destructive: hsl(0, 72%, 45%);
+  --destructive-foreground: hsl(40, 20%, 92%);
+  
+  --border: hsl(85, 15%, 24%);           /* Subtle Olive Border */
+  --input: hsl(85, 15%, 20%);
+  --ring: hsl(40, 50%, 65%);
+  
+  --radius: 0.75rem;
+
+  /* Brand accent colors */
+  --brand-primary: hsl(40, 50%, 65%);   /* Matte Champagne Gold */
+  --brand-secondary: hsl(90, 10%, 60%); /* Metallic Silver-Sage */
+  --brand-accent: hsl(30, 40%, 50%);    /* Warm Bronze */
+}
+
+.dark {
+  --background: hsl(85, 15%, 14%);
+  --foreground: hsl(40, 20%, 92%);
+  --card: hsl(85, 15%, 18%);
+  --card-foreground: hsl(40, 20%, 92%);
+  --popover: hsl(85, 15%, 18%);
+  --popover-foreground: hsl(40, 20%, 92%);
+  --primary: hsl(40, 50%, 65%);
+  --primary-foreground: hsl(85, 15%, 14%);
+  --secondary: hsl(90, 10%, 60%);
+  --secondary-foreground: hsl(40, 20%, 92%);
+  --muted: hsl(85, 15%, 20%);
+  --muted-foreground: hsl(85, 10%, 65%);
+  --accent: hsl(85, 15%, 20%);
+  --accent-foreground: hsl(40, 20%, 92%);
+  --destructive: hsl(0, 72%, 45%);
+  --destructive-foreground: hsl(40, 20%, 92%);
+  --border: hsl(85, 15%, 24%);
+  --input: hsl(0, 0%, 13%);
+  --ring: hsl(15, 75%, 53%);
+  
+  --brand-primary: hsl(15, 75%, 53%);
+  --brand-secondary: hsl(30, 25%, 55%);
+  --brand-accent: hsl(10, 35%, 45%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html {
+    @apply font-sans;
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+}
+
+/* ============================================
+   UTILITY: Gradient meshes removed for Agency Look
+   Replaced with pure subtle noise & sharp borders
+   ============================================ */
+.gradient-mesh {
+  background: var(--background);
+}
+
+.gradient-mesh-subtle {
+  background: var(--background);
+}
+
+/* Glassmorphism card - Matte, flat & ultra-clean */
+.glass-card {
+  background: color-mix(in srgb, var(--card) 60%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid color-mix(in srgb, var(--foreground) 6%, transparent);
+  box-shadow: 0 8px 32px -8px rgba(0,0,0, 0.5);
+}
+
+/* Double-bezel outer shell */
+.bezel-outer {
+  background: color-mix(in srgb, var(--foreground) 3%, transparent);
+  border: 1px solid color-mix(in srgb, var(--foreground) 5%, transparent);
+  padding: 6px;
+  border-radius: 1.5rem;
+}
+
+/* Double-bezel inner core */
+.bezel-inner {
+  background: var(--card);
+  border-radius: calc(1.5rem - 6px);
+}
+
+/* Accent glow effects */
+.glow-primary {
+  box-shadow: 0 0 40px -8px color-mix(in srgb, var(--brand-primary) 25%, transparent);
+}
+.glow-secondary {
+  box-shadow: 0 0 40px -8px color-mix(in srgb, var(--brand-secondary) 20%, transparent);
+}
+.glow-accent {
+  box-shadow: 0 0 24px -4px color-mix(in srgb, var(--brand-accent) 25%, transparent);
+}
+
+/* Hairline dividers */
+.divider-subtle {
+  border-color: color-mix(in srgb, var(--foreground) 6%, transparent);
+}
+
+/* Shimmer text */
+.text-shimmer {
+  background: linear-gradient(
+    105deg,
+    var(--muted-foreground) 0%,
+    var(--foreground) 40%,
+    var(--brand-primary) 60%,
+    var(--brand-secondary) 80%,
+    var(--muted-foreground) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Publisher / Advertiser accent utilities */
+.accent-publisher {
+  --primary: var(--brand-primary);
+  --ring: var(--primary);
+}
+.accent-advertiser {
+  --primary: var(--brand-secondary);
+  --ring: var(--primary);
+}
+
+/* Noise texture overlay - fixed, pointer-none */
+.noise-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Scroll reveal utility */
+.reveal-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Accordion animations */
+.data-open\:animate-accordion-down[data-open] {
+  animation: accordion-down 200ms ease-out;
+}
+.data-closed\:animate-accordion-up[data-closed] {
+  animation: accordion-up 200ms ease-out;
+}
+
+/* Marquee */
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
