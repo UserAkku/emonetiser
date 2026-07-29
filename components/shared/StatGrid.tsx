@@ -14,33 +14,32 @@ interface StatGridProps {
   className?: string;
 }
 
-const bentoClasses = [
-  "bento-violet",
-  "bento-yellow",
-  "bento-coral",
-  "bento-black"
-];
-
 export function StatGrid({ stats, accent = "both", className }: StatGridProps) {
   return (
-    <div className={cn("grid gap-6 sm:grid-cols-2 lg:grid-cols-4", className)}>
-      {stats.map((stat, i) => {
-        const bentoClass = bentoClasses[i % bentoClasses.length];
-        return (
+    <div className={cn("grid gap-4 sm:grid-cols-2 lg:grid-cols-4", className)}>
+      {stats.map((stat, i) => (
+        <div
+          key={i}
+          className={cn(
+            "flex flex-col gap-2 rounded-2xl border bg-card p-6 transition-colors",
+            accent === "publisher" && "hover:border-[var(--color-brand-primary)]/50",
+            accent === "advertiser" && "hover:border-[var(--color-brand-secondary)]/50",
+            accent === "both" && "hover:border-border/80"
+          )}
+        >
           <div
-            key={i}
             className={cn(
-              "bento-card flex flex-col gap-3 justify-center min-h-[160px]",
-              bentoClass
+              "text-4xl font-semibold tracking-tighter md:text-5xl",
+              accent === "publisher" && "text-[var(--color-brand-primary)]",
+              accent === "advertiser" && "text-[var(--color-brand-secondary)]",
+              accent === "both" && "text-foreground"
             )}
           >
-            <div className="text-5xl font-bold tracking-tighter md:text-6xl">
-              <CounterStat value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
-            </div>
-            <div className="font-bold text-lg opacity-90">{stat.label}</div>
+            <CounterStat value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
           </div>
-        );
-      })}
+          <div className="font-medium text-muted-foreground">{stat.label}</div>
+        </div>
+      ))}
     </div>
   );
 }

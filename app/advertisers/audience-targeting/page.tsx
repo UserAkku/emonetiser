@@ -3,45 +3,31 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { FadeUp, StaggerContainer, staggerItem } from "@/components/motion/Reveal";
-import { GlassCard, GlassPanel, Eyebrow, PageSection, Container } from "@/components/ui/primitives";
-import { buttonVariants } from "@/components/ui/button";
+import { Eyebrow, PageSection, Container } from "@/components/ui/primitives";
 import { CtaDuo } from "@/components/shared/CtaDuo";
 import { PremiumFormatCard } from "@/components/ui/premium-format-card";
 import { MovingBorderButton } from "@/components/ui/moving-border-button";
 import { cn } from "@/lib/utils";
 import { 
-  ArrowRight, 
-  Users, 
-  MapPin, 
-  Devices, 
-  BookOpenText, 
-  IdentificationCard,
-  Target,
-  ShieldCheck,
-  MagnifyingGlass,
-  Warning,
-  ChartLineUp,
-  Faders,
-  ClockCounterClockwise
+  ArrowRight, Users, MapPin, Devices, BookOpenText, IdentificationCard,
+  Target, ShieldCheck, MagnifyingGlass, Warning, ChartLineUp, Faders, ClockCounterClockwise
 } from "@phosphor-icons/react";
-// Assuming AudienceBuilder exists or creating a placeholder if not
-// import AudienceBuilder from "@/components/visuals/AudienceBuilder";
 
 export default function AudienceTargetingPage() {
   return (
-    <div className="bg-background text-foreground min-h-screen">
+    <main className="bg-white text-foreground min-h-screen">
       {/* S1: HERO */}
-      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 ">
+      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 gradient-mesh">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeUp>
               <div className="flex flex-col items-start text-left">
-                <Eyebrow className="text-[var(--color-brand-secondary)] mb-6">Audience Targeting</Eyebrow>
-                <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-foreground mb-6">
+                <Eyebrow accent="blue" className="mb-6">Audience Targeting</Eyebrow>
+                <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-slate-900 mb-6">
                   Right person.<br />
                   Right moment.
                 </h1>
-                <p className="text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed font-sans">
+                <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
                   Combine powerful demographic, behavioral, and contextual signals to zero in on the precise audience most likely to engage with your brand.
                 </p>
                 <MovingBorderButton href="/contact" className="mt-2 group">
@@ -51,25 +37,26 @@ export default function AudienceTargetingPage() {
               </div>
             </FadeUp>
             <FadeUp delay={0.2}>
-              <div className="bento-card bento-cyan bezel-inner p-8 rounded-3xl relative h-[300px] lg:h-[400px] flex flex-col justify-center gap-4">
-                <div className="absolute inset-0 bg-[var(--color-brand-secondary)]/10 blur-3xl -z-10 rounded-full" />
-                <div className="flex items-center gap-3 p-3 bg-black/5 border border-border rounded-lg">
-                  <Users className="w-5 h-5 text-[var(--color-brand-secondary)]" />
-                  <span className="font-mono text-sm">Tech Enthusiasts (US)</span>
-                  <span className="ml-auto text-xs bg-[var(--color-brand-secondary)]/20 px-2 py-1 rounded text-[var(--color-brand-secondary)]">AND</span>
+              <div className="rounded-3xl border border-blue-200 bg-blue-50 p-8 flex flex-col gap-3 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-60 pointer-events-none" />
+                <div className="text-xs font-mono text-blue-500 uppercase tracking-widest font-semibold mb-4">Audience Builder</div>
+                <div className="flex items-center gap-3 p-3 bg-white border border-blue-200 rounded-xl shadow-sm">
+                  <Users className="w-5 h-5 text-blue-600 shrink-0" />
+                  <span className="font-mono text-sm text-slate-700">Tech Enthusiasts (US)</span>
+                  <span className="ml-auto text-xs bg-blue-100 px-2 py-0.5 rounded font-mono text-blue-600">AND</span>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-black/5 border border-border rounded-lg ml-8">
-                  <BookOpenText className="w-5 h-5 text-[var(--color-brand-primary)]" />
-                  <span className="font-mono text-sm">Context: Finance/Business</span>
-                  <span className="ml-auto text-xs bg-[var(--color-brand-primary)]/20 px-2 py-1 rounded text-[var(--color-brand-primary)]">OR</span>
+                <div className="flex items-center gap-3 p-3 bg-white border border-emerald-200 rounded-xl shadow-sm ml-6">
+                  <BookOpenText className="w-5 h-5 text-emerald-600 shrink-0" />
+                  <span className="font-mono text-sm text-slate-700">Context: Finance</span>
+                  <span className="ml-auto text-xs bg-emerald-100 px-2 py-0.5 rounded font-mono text-emerald-700">OR</span>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-black/5 border border-border rounded-lg ml-8">
-                  <Target className="w-5 h-5 text-[var(--color-brand-accent)]" />
-                  <span className="font-mono text-sm">Behavior: In-market Auto</span>
+                <div className="flex items-center gap-3 p-3 bg-white border border-violet-200 rounded-xl shadow-sm ml-6">
+                  <Target className="w-5 h-5 text-violet-600 shrink-0" />
+                  <span className="font-mono text-sm text-slate-700">Behavior: In-market Auto</span>
                 </div>
-                <div className="mt-4 p-4 border-t border-border flex justify-between items-center">
-                  <span className="text-sm text-foreground/60 font-sans">Est. Reach</span>
-                  <span className="font-mono font-bold text-xl">4.2M Users</span>
+                <div className="mt-4 pt-4 border-t border-blue-200 flex justify-between items-center">
+                  <span className="text-sm text-slate-400">Est. Reach</span>
+                  <span className="font-mono font-bold text-xl text-slate-900">4.2M Users</span>
                 </div>
               </div>
             </FadeUp>
@@ -78,12 +65,12 @@ export default function AudienceTargetingPage() {
       </PageSection>
 
       {/* S2: TARGETING SIGNALS */}
-      <PageSection className="py-24 md:py-32 bg-white">
+      <PageSection className="py-24 md:py-32 bg-slate-50 border-y border-slate-100">
         <Container>
           <FadeUp>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center">Comprehensive signals</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center text-slate-900">Comprehensive signals</h2>
           </FadeUp>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               { name: "Demographic", icon: Users, sizes: "Ex: Women 25-34, HHI $100k+", desc: "Age, gender, household income, and education levels.", span: "md:col-span-2 lg:col-span-1" },
               { name: "Behavioral", icon: Target, sizes: "Ex: Frequent business travelers", desc: "Past browsing history, purchase intent, and interests." },
@@ -106,118 +93,90 @@ export default function AudienceTargetingPage() {
         </Container>
       </PageSection>
 
-      {/* S4: BRAND SAFETY */}
-      <PageSection className="py-24 md:py-32">
+      {/* S3: BRAND SAFETY */}
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <FadeUp>
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="font-display text-4xl font-bold mb-6">Uncompromising brand safety</h2>
-              <p className="text-lg text-foreground/60 font-sans">Finding the right user doesn&apos;t matter if the environment isn&apos;t safe. Protect your brand reputation with ironclad controls.</p>
+              <h2 className="font-display text-4xl font-bold mb-4 text-slate-900">Uncompromising brand safety</h2>
+              <p className="text-lg text-slate-500">Finding the right user doesn&apos;t matter if the environment isn&apos;t safe. Protect your brand with ironclad controls.</p>
             </div>
           </FadeUp>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <FadeUp delay={0.1}>
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-black/5 flex items-center justify-center mb-6">
-                  <ShieldCheck className="w-8 h-8 text-[var(--color-brand-accent)]" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              { icon: ShieldCheck, title: "Category Exclusions", desc: "Block placement near sensitive topics, violence, or adult content.", color: "border-emerald-200 bg-emerald-50", icon_c: "bg-emerald-100 text-emerald-600" },
+              { icon: MagnifyingGlass, title: "Domain Filtering", desc: "Deploy allowlists or blocklists to control exactly which publisher sites represent you.", color: "border-blue-200 bg-blue-50", icon_c: "bg-blue-100 text-blue-600" },
+              { icon: Warning, title: "IVT Detection", desc: "Pre-bid integration with leading verification partners to filter out bots and invalid traffic.", color: "border-amber-200 bg-amber-50", icon_c: "bg-amber-100 text-amber-600" },
+            ].map((item, i) => (
+              <FadeUp key={i} delay={i * 0.1}>
+                <div className={cn("h-full rounded-3xl border p-7 flex flex-col transition-all hover:shadow-md hover:-translate-y-0.5", item.color)}>
+                  <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center mb-5", item.icon_c)}>
+                    <item.icon className="w-6 h-6" weight="duotone" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-slate-900 mb-2">{item.title}</h4>
+                  <p className="text-slate-500 text-sm">{item.desc}</p>
                 </div>
-                <h4 className="text-xl font-bold mb-2">Category Exclusions</h4>
-                <p className="text-foreground/60 font-sans text-sm">Automatically block ad placement near sensitive topics, violence, or adult content.</p>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.2}>
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-black/5 flex items-center justify-center mb-6">
-                  <MagnifyingGlass className="w-8 h-8 text-foreground/80" />
-                </div>
-                <h4 className="text-xl font-bold mb-2">Domain Filtering</h4>
-                <p className="text-foreground/60 font-sans text-sm">Deploy strict allowlists or blocklists to control exactly which publisher sites represent you.</p>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.3}>
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-black/5 flex items-center justify-center mb-6">
-                  <Warning className="w-8 h-8 text-[var(--color-brand-secondary)]" />
-                </div>
-                <h4 className="text-xl font-bold mb-2">IVT Detection</h4>
-                <p className="text-foreground/60 font-sans text-sm">Pre-bid integration with leading verification partners to filter out invalid traffic and bots.</p>
-              </div>
-            </FadeUp>
+              </FadeUp>
+            ))}
           </div>
         </Container>
       </PageSection>
 
-      {/* S5: OPTIMIZATION */}
-      <PageSection className="py-24 md:py-32 bg-white">
+      {/* S4: OPTIMIZATION */}
+      <PageSection className="py-24 md:py-32 bg-slate-50 border-y border-slate-100">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeUp>
-              <h2 className="font-display text-4xl md:text-5xl font-bold mb-10">Continuous optimization</h2>
-              <div className="flex flex-col gap-8 relative border-l border-border ml-4 pl-8">
-                <div className="relative">
-                  <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-[var(--color-brand-secondary)]" />
-                  <h4 className="text-xl font-bold mb-2 flex items-center gap-2"><Faders className="w-5 h-5 text-[var(--color-brand-secondary)]" /> Audience Analysis</h4>
-                  <p className="text-foreground/60 font-sans">Discover which segments are driving the best engagement and shift budget automatically.</p>
-                </div>
-                <div className="relative">
-                  <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-[var(--color-brand-primary)]" />
-                  <h4 className="text-xl font-bold mb-2 flex items-center gap-2"><ChartLineUp className="w-5 h-5 text-[var(--color-brand-primary)]" /> Bid Adjustment</h4>
-                  <p className="text-foreground/60 font-sans">Modify bids based on device, time of day, and audience value to ensure optimal ROAS.</p>
-                </div>
-                <div className="relative">
-                  <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-[var(--color-brand-accent)]" />
-                  <h4 className="text-xl font-bold mb-2 flex items-center gap-2"><ClockCounterClockwise className="w-5 h-5 text-[var(--color-brand-accent)]" /> Creative Rotation</h4>
-                  <p className="text-foreground/60 font-sans">A/B test different messaging against specific segments to find the perfect resonance.</p>
-                </div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-10 text-slate-900">Continuous optimization</h2>
+              <div className="flex flex-col gap-8 relative border-l-2 border-slate-200 ml-4 pl-8">
+                {[
+                  { icon: Faders, title: "Audience Analysis", desc: "Discover which segments drive the best engagement and shift budget automatically.", color: "text-blue-600", dot: "bg-blue-500" },
+                  { icon: ChartLineUp, title: "Bid Adjustment", desc: "Modify bids based on device, time of day, and audience value to ensure optimal ROAS.", color: "text-emerald-600", dot: "bg-emerald-500" },
+                  { icon: ClockCounterClockwise, title: "Creative Rotation", desc: "A/B test different messaging against specific segments to find the perfect resonance.", color: "text-violet-600", dot: "bg-violet-500" },
+                ].map((item, i) => (
+                  <div key={i} className="relative">
+                    <div className={cn("absolute -left-[41px] top-2 w-4 h-4 rounded-full ring-4 ring-white", item.dot)} />
+                    <h4 className={cn("text-xl font-bold mb-2 flex items-center gap-2", item.color)}>
+                      <item.icon className="w-5 h-5" /> {item.title}
+                    </h4>
+                    <p className="text-slate-500">{item.desc}</p>
+                  </div>
+                ))}
               </div>
             </FadeUp>
             <FadeUp delay={0.2}>
-              <GlassPanel className="bento-violet p-8 relative overflow-hidden bg-gradient-to-br from-black/5 to-transparent border border-border group hover:border-border transition-all duration-300 hover:shadow-2xl">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--color-brand-secondary)] to-[var(--color-brand-accent)]" />
-                <div className="text-sm font-mono text-foreground/40 mb-8 border-b border-border pb-4">Campaign Performance Trend</div>
-                
-                <div className="flex flex-col gap-6 relative z-10">
-                  <div className="flex items-end justify-between group/metric hover:bg-black/5 p-2 -mx-2 rounded transition-colors">
-                    <div>
-                      <div className="text-sm text-foreground/60 font-sans mb-1">CPA (Cost per Action)</div>
-                      <div className="text-3xl font-mono font-bold">$18.42</div>
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+                <div className="text-sm font-mono text-slate-400 mb-6 border-b border-slate-100 pb-4">Campaign Performance</div>
+                <div className="flex flex-col gap-5">
+                  {[
+                    { label: "CPA (Cost per Action)", value: "$18.42", change: "↓ 24%", good: true },
+                    { label: "Conversion Rate", value: "2.8%", change: "↑ 1.2%", good: true },
+                    { label: "CTR", value: "0.45%", change: "↑ 0.15%", good: true },
+                  ].map((row, i) => (
+                    <div key={i} className="flex items-end justify-between p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                      <div>
+                        <div className="text-sm text-slate-400 mb-1">{row.label}</div>
+                        <div className="text-3xl font-mono font-bold text-slate-900">{row.value}</div>
+                      </div>
+                      <div className="text-emerald-600 flex items-center gap-1 font-mono text-sm bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200">
+                        {row.change}
+                      </div>
                     </div>
-                    <div className="text-[var(--color-brand-accent)] flex items-center gap-1 font-mono text-sm bg-[var(--color-brand-accent)]/10 px-2 py-1 rounded">
-                      ↓ 24%
-                    </div>
-                  </div>
-                  <div className="flex items-end justify-between group/metric hover:bg-black/5 p-2 -mx-2 rounded transition-colors">
-                    <div>
-                      <div className="text-sm text-foreground/60 font-sans mb-1">Conversion Rate</div>
-                      <div className="text-3xl font-mono font-bold">2.8%</div>
-                    </div>
-                    <div className="text-[var(--color-brand-accent)] flex items-center gap-1 font-mono text-sm bg-[var(--color-brand-accent)]/10 px-2 py-1 rounded">
-                      ↑ 1.2%
-                    </div>
-                  </div>
-                  <div className="flex items-end justify-between group/metric hover:bg-black/5 p-2 -mx-2 rounded transition-colors">
-                    <div>
-                      <div className="text-sm text-foreground/60 font-sans mb-1">CTR</div>
-                      <div className="text-3xl font-mono font-bold">0.45%</div>
-                    </div>
-                    <div className="text-[var(--color-brand-accent)] flex items-center gap-1 font-mono text-sm bg-[var(--color-brand-accent)]/10 px-2 py-1 rounded">
-                      ↑ 0.15%
-                    </div>
-                  </div>
+                  ))}
                 </div>
-              </GlassPanel>
+              </div>
             </FadeUp>
           </div>
         </Container>
       </PageSection>
 
-      {/* S6: FINAL CTA */}
-      <PageSection className="py-24 md:py-32  border-t border-border">
+      {/* S5: FINAL CTA */}
+      <PageSection className="py-24 md:py-32 gradient-mesh border-t border-slate-100">
         <Container>
           <CtaDuo advertiserText="Build Your Audience" />
         </Container>
       </PageSection>
-    </div>
+    </main>
   );
 }

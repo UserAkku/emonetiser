@@ -24,16 +24,16 @@ export function MovingBorderButton({
         className={cn(
           "absolute inset-[-1000%] animate-[spin_3s_linear_infinite]",
           isPrimary
-            ? "bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,var(--color-brand-primary)_50%,transparent_100%)] opacity-100"
-            : "bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,var(--color-brand-secondary)_50%,transparent_100%)] opacity-60"
+            ? "bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,var(--color-brand-primary)_50%,transparent_100%)]"
+            : "bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,var(--color-brand-secondary)_50%,transparent_100%)]"
         )}
       />
       <span
         className={cn(
           "inline-flex h-full w-full items-center justify-center rounded-full px-8 py-3 text-[15px] font-semibold backdrop-blur-3xl transition-colors gap-2",
           isPrimary
-            ? "bg-background text-white group-hover:bg-background/80"
-            : "bg-card text-white group-hover:bg-background"
+            ? "bg-white text-slate-900 group-hover:bg-slate-50"
+            : "bg-white text-slate-900 group-hover:bg-slate-50"
         )}
       >
         {children}
@@ -42,7 +42,7 @@ export function MovingBorderButton({
   );
 
   const wrapperClass = cn(
-    "group relative inline-flex h-14 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-primary)] focus:ring-offset-2 focus:ring-offset-background transition-transform active:scale-95 shadow-[0_0_20px_rgba(var(--color-brand-primary-rgb,0,0,0),0.2)]",
+    "group relative inline-flex h-14 overflow-hidden rounded-full p-[1.5px] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-primary)] focus:ring-offset-2 transition-transform active:scale-95 shadow-sm hover:shadow-md",
     className
   );
 

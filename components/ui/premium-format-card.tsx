@@ -10,22 +10,22 @@ interface FormatCardProps {
   icon: any;
   className?: string;
   delay?: number;
-  accentColor?: string;
 }
 
-const bentoClasses = [
-  "bento-violet",
-  "bento-cyan",
-  "bento-coral",
-  "bento-yellow",
-  "bento-pink",
+const cardColors = [
+  { bg: "bg-emerald-50 border-emerald-200 hover:border-emerald-300", icon: "bg-emerald-100 text-emerald-600", dot: "bg-emerald-500", tag: "border-emerald-200 bg-white text-emerald-700" },
+  { bg: "bg-blue-50 border-blue-200 hover:border-blue-300", icon: "bg-blue-100 text-blue-600", dot: "bg-blue-500", tag: "border-blue-200 bg-white text-blue-700" },
+  { bg: "bg-violet-50 border-violet-200 hover:border-violet-300", icon: "bg-violet-100 text-violet-600", dot: "bg-violet-500", tag: "border-violet-200 bg-white text-violet-700" },
+  { bg: "bg-amber-50 border-amber-200 hover:border-amber-300", icon: "bg-amber-100 text-amber-600", dot: "bg-amber-500", tag: "border-amber-200 bg-white text-amber-700" },
+  { bg: "bg-rose-50 border-rose-200 hover:border-rose-300", icon: "bg-rose-100 text-rose-600", dot: "bg-rose-500", tag: "border-rose-200 bg-white text-rose-700" },
 ];
 
-let cardIndex = 0;
+let colorIndex = 0;
 
-export function PremiumFormatCard({ name, desc, sizes, icon: Icon, className, delay = 0, accentColor }: FormatCardProps) {
-  const bentoClass = accentColor ? `bento-${accentColor}` : bentoClasses[cardIndex++ % bentoClasses.length];
-  
+export function PremiumFormatCard({ name, desc, sizes, icon: Icon, className, delay = 0 }: FormatCardProps) {
+  const c = cardColors[colorIndex % cardColors.length];
+  colorIndex++;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -33,30 +33,24 @@ export function PremiumFormatCard({ name, desc, sizes, icon: Icon, className, de
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: delay }}
       className={cn(
-        "bento-card flex flex-col min-h-[300px]",
-        bentoClass,
+        "group relative flex flex-col overflow-hidden rounded-3xl border p-8 transition-all hover:-translate-y-1 hover:shadow-md",
+        c.bg,
         className
       )}
     >
-      <div className="flex flex-col h-full">
-        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-md shadow-sm">
-          <Icon className="w-7 h-7 text-current" weight="duotone" />
+      {/* Content */}
+      <div className="relative z-10 flex flex-col h-full">
+        <div className={cn("mb-6 flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110", c.icon)}>
+          <Icon className="w-7 h-7" weight="duotone" />
         </div>
         
-        <h3 className="text-3xl font-display font-bold mb-3 tracking-tight">
-          {name}
-        </h3>
+        <h3 className="text-2xl font-display font-semibold text-slate-900 mb-3 tracking-tight">{name}</h3>
+        <p className="text-slate-500 text-base leading-relaxed mb-8 flex-grow">{desc}</p>
         
-        <p className="text-base leading-relaxed mb-8 flex-grow opacity-90 font-medium">
-          {desc}
-        </p>
-        
-        <div className="mt-auto pt-4 border-t border-current/20">
-          <div className="flex items-center gap-2.5 pt-2">
-            <span className="w-2 h-2 rounded-full bg-current animate-pulse" />
-            <span className="text-[11px] font-mono tracking-wider uppercase font-bold opacity-90">
-              {sizes}
-            </span>
+        <div className="mt-auto pt-4">
+          <div className={cn("inline-flex items-start gap-2.5 rounded-xl border px-4 py-2.5", c.tag)}>
+            <span className={cn("w-1.5 h-1.5 rounded-full shrink-0 mt-1.5 animate-pulse", c.dot)} />
+            <span className="text-[11px] font-mono tracking-wide uppercase leading-relaxed">{sizes}</span>
           </div>
         </div>
       </div>

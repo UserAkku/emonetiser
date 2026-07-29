@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
-/** Glowing double-bezel wrapper card is removed, replaced with solid Bento Block */
+/** Card with subtle border and shadow for light theme */
 export function GlassCard({
   children,
   className,
@@ -14,17 +14,20 @@ export function GlassCard({
   return (
     <div
       className={cn(
-        "bento-card",
-        glow === "blue" ? "bento-cyan" : "bento-violet",
+        "rounded-3xl border border-slate-200 bg-white shadow-sm",
+        glow === "blue" && "shadow-[0_0_30px_-6px_rgba(34,211,238,0.3)]",
+        glow === "violet" && "shadow-[0_0_30px_-6px_rgba(139,92,246,0.3)]",
         className
       )}
     >
-      {children}
+      <div className="p-6 md:p-8">
+        {children}
+      </div>
     </div>
   );
 }
 
-/** Simple glass card replaced with crisp white bento block */
+/** Simple panel card — white with light border */
 export function GlassPanel({
   children,
   className,
@@ -33,7 +36,7 @@ export function GlassPanel({
   className?: string;
 }) {
   return (
-    <div className={cn("bento-card bento-white", className)}>
+    <div className={cn("rounded-2xl border border-slate-200 bg-white p-6 shadow-sm", className)}>
       {children}
     </div>
   );
@@ -46,18 +49,21 @@ export function Eyebrow({
   className,
 }: {
   children: ReactNode;
-  accent?: "blue" | "violet" | "green" | "coral" | "neutral";
+  accent?: "blue" | "violet" | "green" | "neutral";
   className?: string;
 }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] shadow-sm",
-        accent === "blue" && "bg-[var(--color-vibrant-cyan)] text-white",
-        accent === "violet" && "bg-[var(--color-vibrant-violet)] text-white",
-        accent === "green" && "bg-[#10B981] text-white",
-        accent === "coral" && "bg-[var(--color-vibrant-coral)] text-white",
-        accent === "neutral" && "bg-[#111111] text-white",
+        "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]",
+        accent === "blue" &&
+          "border border-blue-200 bg-blue-50 text-blue-600",
+        accent === "violet" &&
+          "border border-violet-200 bg-violet-50 text-violet-600",
+        accent === "green" &&
+          "border border-emerald-200 bg-emerald-50 text-emerald-600",
+        accent === "neutral" &&
+          "border border-slate-200 bg-slate-50 text-slate-500",
         className
       )}
     >
@@ -66,7 +72,7 @@ export function Eyebrow({
   );
 }
 
-/** Metric display tile — solid bento box */
+/** Metric display tile — colorful on white */
 export function MetricTile({
   value,
   label,
@@ -77,28 +83,47 @@ export function MetricTile({
   value: React.ReactNode;
   label: string;
   sub?: string;
-  accent?: "blue" | "violet" | "green" | "coral";
+  accent?: "blue" | "violet" | "green";
   className?: string;
 }) {
+  const colors = {
+    blue: {
+      bg: "bg-blue-50 border-blue-200 hover:border-blue-300",
+      value: "text-blue-600",
+    },
+    violet: {
+      bg: "bg-violet-50 border-violet-200 hover:border-violet-300",
+      value: "text-violet-600",
+    },
+    green: {
+      bg: "bg-emerald-50 border-emerald-200 hover:border-emerald-300",
+      value: "text-emerald-600",
+    },
+  };
+
+  const c = colors[accent];
+
   return (
     <div className={cn(
-      "bento-card flex flex-col gap-1 cursor-default justify-center min-h-[140px]",
-      accent === "blue" && "bento-cyan",
-      accent === "violet" && "bento-violet",
-      accent === "green" && "bento-black",
-      accent === "coral" && "bento-coral",
+      "group relative overflow-hidden rounded-2xl border p-6 flex flex-col gap-1 transition-all duration-300 hover:-translate-y-1 cursor-default",
+      c.bg,
       className
     )}>
-      <span className="relative z-10 font-display text-5xl font-bold tracking-tight mb-2">
+      <span
+        className={cn(
+          "relative z-10 font-display text-4xl font-bold tracking-tight mb-2",
+          c.value
+        )}
+      >
         {value}
       </span>
-      <span className="relative z-10 text-[15px] font-bold opacity-90">{label}</span>
-      {sub && <span className="relative z-10 text-xs mt-1 font-medium opacity-70">{sub}</span>}
+      <span className="relative z-10 text-sm font-semibold text-slate-700">{label}</span>
+      {sub && <span className="relative z-10 text-xs text-slate-400 mt-1 uppercase tracking-widest font-mono">{sub}</span>}
     </div>
   );
 }
 
-/** Section wrapper with gradient mesh removed */
+/** Section wrapper */
 export function PageSection({
   children,
   className,
@@ -114,7 +139,8 @@ export function PageSection({
     <section
       id={id}
       className={cn(
-        "relative py-24 md:py-32 section-white",
+        "relative py-24 md:py-32",
+        mesh && "gradient-mesh",
         className
       )}
     >

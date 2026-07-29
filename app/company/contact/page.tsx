@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { FadeUp, StaggerContainer, staggerItem } from "@/components/motion/Reveal";
-import { GlassCard, GlassPanel, PageSection, Container } from "@/components/ui/primitives";
-import { buttonVariants, Button } from "@/components/ui/button";
+import { PageSection, Container } from "@/components/ui/primitives";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowRight, Envelope, Clock, ChatCircle, CaretDown, BookOpen, Terminal, Rocket, Briefcase } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, Envelope, Clock, ChatCircle, CaretDown } from "@phosphor-icons/react/dist/ssr";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -107,16 +107,16 @@ export default function ContactPage() {
   ];
 
   return (
-    <main className="flex-1">
+    <main className="bg-white text-slate-900 min-h-screen">
       {/* S1: HERO */}
-      <PageSection className="pt-32 pb-16 md:pt-48 md:pb-24">
+      <PageSection className="pt-32 pb-16 md:pt-48 md:pb-24 gradient-mesh">
         <Container>
           <FadeUp>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-display font-medium tracking-tight text-foreground mb-6">
-              Let's talk.
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-display font-bold tracking-tight text-slate-900 mb-6">
+              Let&apos;s talk.
             </h1>
-            <p className="text-lg md:text-xl text-foreground/70 max-w-xl">
-              Publisher or advertiser - our specialists are ready to help you get started.
+            <p className="text-lg md:text-xl text-slate-500 max-w-xl">
+              Publisher or advertiser — our specialists are ready to help you get started.
             </p>
           </FadeUp>
         </Container>
@@ -127,29 +127,29 @@ export default function ContactPage() {
         <Container>
           <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
             <FadeUp className="lg:col-span-2">
-              <GlassPanel className="bento-violet p-8 md:p-12 border border-border bg-gradient-to-br from-white/[0.03] to-transparent relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-brand-primary)]/5 rounded-full blur-[100px] pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-[var(--color-brand-secondary)]/5 rounded-full blur-[100px] pointer-events-none" />
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 md:p-12 shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-violet-100 rounded-full blur-3xl opacity-60 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-100 rounded-full blur-3xl opacity-60 pointer-events-none" />
                 
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 relative z-10">
                     <div className="grid md:grid-cols-2 gap-8">
                       <FormField control={form.control} name="name" render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground/80 font-medium">Full Name</FormLabel>
+                          <FormLabel className="text-slate-700 font-semibold">Full Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="Jane Doe" className="bg-gray-100 border-border text-foreground placeholder:text-foreground/20 rounded-xl focus-visible:ring-1 focus-visible:ring-[var(--color-brand-primary)]/50 focus-visible:border-[var(--color-brand-primary)]/50 h-14 px-4 transition-all" {...field} />
+                            <Input placeholder="Jane Doe" className="bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 rounded-xl focus-visible:ring-1 focus-visible:ring-emerald-500 focus-visible:border-emerald-500 h-14 px-4 transition-all" {...field} />
                           </FormControl>
-                          <FormMessage className="text-red-600" />
+                          <FormMessage className="text-rose-500" />
                         </FormItem>
                       )} />
                       <FormField control={form.control} name="email" render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground/80 font-medium">Work Email</FormLabel>
+                          <FormLabel className="text-slate-700 font-semibold">Work Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="jane@company.com" className="bg-gray-100 border-border text-foreground placeholder:text-foreground/20 rounded-xl focus-visible:ring-1 focus-visible:ring-[var(--color-brand-primary)]/50 focus-visible:border-[var(--color-brand-primary)]/50 h-14 px-4 transition-all" {...field} />
+                            <Input placeholder="jane@company.com" className="bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 rounded-xl focus-visible:ring-1 focus-visible:ring-emerald-500 focus-visible:border-emerald-500 h-14 px-4 transition-all" {...field} />
                           </FormControl>
-                          <FormMessage className="text-red-600" />
+                          <FormMessage className="text-rose-500" />
                         </FormItem>
                       )} />
                     </div>
@@ -157,91 +157,91 @@ export default function ContactPage() {
                     <div className="grid md:grid-cols-2 gap-8">
                       <FormField control={form.control} name="company" render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground/80 font-medium">Company</FormLabel>
+                          <FormLabel className="text-slate-700 font-semibold">Company</FormLabel>
                           <FormControl>
-                            <Input placeholder="Company Name" className="bg-gray-100 border-border text-foreground placeholder:text-foreground/20 rounded-xl focus-visible:ring-1 focus-visible:ring-[var(--color-brand-primary)]/50 focus-visible:border-[var(--color-brand-primary)]/50 h-14 px-4 transition-all" {...field} />
+                            <Input placeholder="Company Name" className="bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 rounded-xl focus-visible:ring-1 focus-visible:ring-emerald-500 focus-visible:border-emerald-500 h-14 px-4 transition-all" {...field} />
                           </FormControl>
-                          <FormMessage className="text-red-600" />
+                          <FormMessage className="text-rose-500" />
                         </FormItem>
                       )} />
                       <FormField control={form.control} name="role" render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground/80 font-medium">I am a...</FormLabel>
+                          <FormLabel className="text-slate-700 font-semibold">I am a...</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger className="bg-gray-100 border-border text-foreground rounded-xl h-14 px-4 focus:ring-1 focus:ring-[var(--color-brand-primary)]/50 focus:border-[var(--color-brand-primary)]/50 transition-all">
+                              <SelectTrigger className="bg-slate-50 border-slate-200 text-slate-900 rounded-xl h-14 px-4 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all">
                                 <SelectValue placeholder="Select your role" />
                               </SelectTrigger>
                             </FormControl>
-                            <SelectContent className="bg-[#111] border-border text-foreground rounded-xl">
-                              <SelectItem value="publisher" className="focus:bg-black/5 focus:text-foreground">Publisher</SelectItem>
-                              <SelectItem value="advertiser" className="focus:bg-black/5 focus:text-foreground">Advertiser</SelectItem>
-                              <SelectItem value="agency" className="focus:bg-black/5 focus:text-foreground">Agency</SelectItem>
-                              <SelectItem value="other" className="focus:bg-black/5 focus:text-foreground">Other</SelectItem>
+                            <SelectContent className="bg-white border-slate-200 text-slate-900 rounded-xl shadow-lg">
+                              <SelectItem value="publisher" className="focus:bg-slate-100 focus:text-slate-900">Publisher</SelectItem>
+                              <SelectItem value="advertiser" className="focus:bg-slate-100 focus:text-slate-900">Advertiser</SelectItem>
+                              <SelectItem value="agency" className="focus:bg-slate-100 focus:text-slate-900">Agency</SelectItem>
+                              <SelectItem value="other" className="focus:bg-slate-100 focus:text-slate-900">Other</SelectItem>
                             </SelectContent>
                           </Select>
-                          <FormMessage className="text-red-600" />
+                          <FormMessage className="text-rose-500" />
                         </FormItem>
                       )} />
                     </div>
 
                     <FormField control={form.control} name="volume" render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-foreground/80 font-medium">Monthly Volume / Spend</FormLabel>
+                        <FormLabel className="text-slate-700 font-semibold">Monthly Volume / Spend</FormLabel>
                         <FormControl>
-                          <Input placeholder={getVolumePlaceholder()} className="bg-gray-100 border-border text-foreground placeholder:text-foreground/20 rounded-xl focus-visible:ring-1 focus-visible:ring-[var(--color-brand-primary)]/50 focus-visible:border-[var(--color-brand-primary)]/50 h-14 px-4 transition-all" {...field} />
+                          <Input placeholder={getVolumePlaceholder()} className="bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 rounded-xl focus-visible:ring-1 focus-visible:ring-emerald-500 focus-visible:border-emerald-500 h-14 px-4 transition-all" {...field} />
                         </FormControl>
-                        <FormMessage className="text-red-600" />
+                        <FormMessage className="text-rose-500" />
                       </FormItem>
                     )} />
 
                     <FormField control={form.control} name="message" render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-foreground/80 font-medium">Message</FormLabel>
+                        <FormLabel className="text-slate-700 font-semibold">Message</FormLabel>
                         <FormControl>
-                          <Textarea placeholder="How can we help you?" className="min-h-[160px] bg-gray-100 border-border text-foreground placeholder:text-foreground/20 rounded-xl focus-visible:ring-1 focus-visible:ring-[var(--color-brand-primary)]/50 focus-visible:border-[var(--color-brand-primary)]/50 p-4 transition-all resize-none" {...field} />
+                          <Textarea placeholder="How can we help you?" className="min-h-[160px] bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 rounded-xl focus-visible:ring-1 focus-visible:ring-emerald-500 focus-visible:border-emerald-500 p-4 transition-all resize-none" {...field} />
                         </FormControl>
-                        <FormMessage className="text-red-600" />
+                        <FormMessage className="text-rose-500" />
                       </FormItem>
                     )} />
 
-                    <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto bg-gradient-to-r from-[var(--color-brand-primary)] to-[var(--color-brand-secondary)] text-foreground hover:opacity-90 font-medium rounded-xl h-14 px-8 text-base shadow-lg shadow-[var(--color-brand-primary)]/20 transition-all">
+                    <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto bg-slate-900 text-white hover:bg-slate-800 font-semibold rounded-xl h-14 px-8 text-base shadow-md transition-all">
                       {getSubmitLabel()}
                     </Button>
                   </form>
                 </Form>
-              </GlassPanel>
+              </div>
             </FadeUp>
 
             <StaggerContainer className="flex flex-col justify-between h-full space-y-6 lg:space-y-0">
               <motion.div variants={staggerItem}>
-                <GlassPanel className="bento-cyan p-8 border-l-[3px] border-l-[var(--color-brand-primary)] group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-                  <h3 className="font-display text-2xl text-foreground mb-3 group-hover:text-[var(--color-brand-primary)] transition-colors">Publishers</h3>
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">Questions about integration or yield optimization.</p>
-                  <a href="mailto:publishers@emonetiser.com" className="inline-flex items-center text-[var(--color-brand-primary)] hover:text-foreground transition-colors font-medium">
-                    publishers@emonetiser.com <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-8 h-full transition-all hover:shadow-md">
+                  <h3 className="font-display text-2xl font-bold text-slate-900 mb-3">Publishers</h3>
+                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">Questions about integration or yield optimization.</p>
+                  <a href="mailto:publishers@emonetiser.com" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 transition-colors font-semibold">
+                    publishers@emonetiser.com <ArrowRight className="ml-2 w-4 h-4" />
                   </a>
-                </GlassPanel>
+                </div>
               </motion.div>
 
               <motion.div variants={staggerItem}>
-                <GlassPanel className="bento-coral p-8 border-l-[3px] border-l-[var(--color-brand-secondary)] group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-                  <h3 className="font-display text-2xl text-foreground mb-3 group-hover:text-[var(--color-brand-secondary)] transition-colors">Advertisers</h3>
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">Inquiries about inventory access or managed service.</p>
-                  <a href="mailto:advertisers@emonetiser.com" className="inline-flex items-center text-[var(--color-brand-secondary)] hover:text-foreground transition-colors font-medium">
-                    advertisers@emonetiser.com <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <div className="rounded-3xl border border-blue-200 bg-blue-50 p-8 h-full transition-all hover:shadow-md">
+                  <h3 className="font-display text-2xl font-bold text-slate-900 mb-3">Advertisers</h3>
+                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">Inquiries about inventory access or managed service.</p>
+                  <a href="mailto:advertisers@emonetiser.com" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-semibold">
+                    advertisers@emonetiser.com <ArrowRight className="ml-2 w-4 h-4" />
                   </a>
-                </GlassPanel>
+                </div>
               </motion.div>
 
               <motion.div variants={staggerItem}>
-                <GlassPanel className="bento-yellow p-8 group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 border border-border">
-                  <h3 className="font-display text-2xl text-foreground mb-3">Headquarters</h3>
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">London, United Kingdom</p>
-                  <div className="pt-4 border-t border-border mt-auto">
-                    <p className="text-foreground/40 font-mono text-xs uppercase tracking-wider">Response expected within 1 business day.</p>
+                <div className="rounded-3xl border border-amber-200 bg-amber-50 p-8 h-full flex flex-col transition-all hover:shadow-md">
+                  <h3 className="font-display text-2xl font-bold text-slate-900 mb-3">Headquarters</h3>
+                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">London, United Kingdom</p>
+                  <div className="pt-4 border-t border-amber-200/50 mt-auto">
+                    <p className="text-amber-700/60 font-mono text-xs uppercase tracking-wider font-bold">Response expected within 1 business day.</p>
                   </div>
-                </GlassPanel>
+                </div>
               </motion.div>
             </StaggerContainer>
           </div>
@@ -249,61 +249,60 @@ export default function ContactPage() {
       </PageSection>
 
       {/* S3: ADDITIONAL CONTACT */}
-      <PageSection className="py-24 bg-white">
+      <PageSection className="py-24 bg-slate-50 border-y border-slate-100">
         <Container>
           <StaggerContainer className="grid sm:grid-cols-3 gap-6 text-center">
             <motion.div variants={staggerItem}>
-              <GlassPanel className="bento-pink p-8 h-full flex flex-col items-center justify-center group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-                <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center text-foreground mb-6 group-hover:bg-black/5 group-hover:scale-110 transition-all duration-300">
-                  <Envelope size={28} />
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 h-full flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-500 mb-6">
+                  <Envelope size={28} weight="duotone" />
                 </div>
-                <h3 className="text-xl font-medium text-foreground mb-3">Direct Email</h3>
-                <p className="text-sm text-muted-foreground">Reach our specific departments for faster routing.</p>
-              </GlassPanel>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Direct Email</h3>
+                <p className="text-sm text-slate-500 leading-relaxed">Reach our specific departments for faster routing.</p>
+              </div>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="bento-violet p-8 h-full flex flex-col items-center justify-center group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-                <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center text-foreground mb-6 group-hover:bg-black/5 group-hover:scale-110 transition-all duration-300">
-                  <Clock size={28} />
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 h-full flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-violet-50 border border-violet-100 flex items-center justify-center text-violet-500 mb-6">
+                  <Clock size={28} weight="duotone" />
                 </div>
-                <h3 className="text-xl font-medium text-foreground mb-3">Fast Response</h3>
-                <p className="text-sm text-muted-foreground">All inquiries are reviewed within 24 hours Mon-Fri.</p>
-              </GlassPanel>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Fast Response</h3>
+                <p className="text-sm text-slate-500 leading-relaxed">All inquiries are reviewed within 24 hours Mon-Fri.</p>
+              </div>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="bento-cyan p-8 h-full flex flex-col items-center justify-center group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-                <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center text-foreground mb-6 group-hover:bg-black/5 group-hover:scale-110 transition-all duration-300">
-                  <ChatCircle size={28} />
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 h-full flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-500 mb-6">
+                  <ChatCircle size={28} weight="duotone" />
                 </div>
-                <h3 className="text-xl font-medium text-foreground mb-3">Dedicated Support</h3>
-                <p className="text-sm text-muted-foreground">Existing partners can contact their account manager directly.</p>
-              </GlassPanel>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Dedicated Support</h3>
+                <p className="text-sm text-slate-500 leading-relaxed">Existing partners can contact their account manager directly.</p>
+              </div>
             </motion.div>
           </StaggerContainer>
         </Container>
       </PageSection>
 
-
       {/* S5: FAQ */}
-      <PageSection className="py-24 bg-white">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container className="max-w-4xl">
           <FadeUp className="mb-12 text-center">
-            <h2 className="text-3xl md:text-5xl font-display font-medium text-foreground">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900">Frequently Asked Questions</h2>
           </FadeUp>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
               <FadeUp key={i} delay={i * 0.1}>
-                <GlassPanel className="bento-coral overflow-hidden group hover:border-border transition-colors">
+                <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden transition-all hover:border-slate-300 shadow-sm">
                   <button 
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+                    className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none bg-slate-50/50 hover:bg-slate-50 transition-colors"
                   >
-                    <span className="font-medium text-foreground pr-8">{faq.q}</span>
+                    <span className="font-semibold text-slate-900 pr-8">{faq.q}</span>
                     <CaretDown 
                       size={20} 
                       className={cn(
-                        "text-foreground/50 transition-transform duration-300 shrink-0",
-                        openFaq === i ? "rotate-180" : ""
+                        "text-slate-400 transition-transform duration-300 shrink-0",
+                        openFaq === i ? "rotate-180 text-slate-600" : ""
                       )} 
                     />
                   </button>
@@ -315,13 +314,13 @@ export default function ContactPage() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                       >
-                        <div className="px-6 pb-6 text-foreground/70">
+                        <div className="px-6 pb-6 pt-2 text-slate-600 leading-relaxed">
                           {faq.a}
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </GlassPanel>
+                </div>
               </FadeUp>
             ))}
           </div>
@@ -329,14 +328,14 @@ export default function ContactPage() {
       </PageSection>
 
       {/* S6: FINAL ASSURANCE */}
-      <PageSection className="py-24 md:py-32">
+      <PageSection className="py-24 md:py-32 bg-slate-50 border-t border-slate-100">
         <Container className="max-w-3xl text-center">
           <FadeUp>
-            <blockquote className="text-2xl md:text-3xl font-display text-foreground/90 leading-relaxed mb-8">
+            <blockquote className="text-2xl md:text-3xl font-display font-medium text-slate-800 leading-relaxed mb-8">
               "Every enquiry is reviewed by a real specialist within one business day. We don't use automated responses for new partner enquiries."
             </blockquote>
-            <p className="text-sm font-mono text-foreground/50 tracking-wider uppercase">
-              - The Emonetiser Partnerships Team
+            <p className="text-sm font-mono font-bold text-slate-400 tracking-widest uppercase">
+              — The Emonetiser Partnerships Team
             </p>
           </FadeUp>
         </Container>

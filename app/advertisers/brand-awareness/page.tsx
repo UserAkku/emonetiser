@@ -3,38 +3,31 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { FadeUp, StaggerContainer, staggerItem } from "@/components/motion/Reveal";
-import { GlassCard, GlassPanel, MetricTile, PageSection, Container } from "@/components/ui/primitives";
-import { buttonVariants } from "@/components/ui/button";
+import { Eyebrow, MetricTile, PageSection, Container } from "@/components/ui/primitives";
 import { CtaDuo } from "@/components/shared/CtaDuo";
 import { MovingBorderButton } from "@/components/ui/moving-border-button";
 import { cn } from "@/lib/utils";
 import { 
-  ArrowRight, 
-  Eye, 
-  VideoCamera, 
-  Newspaper, 
-  Television, 
-  ShieldCheck,
-  CheckCircle,
-  WarningOctagon,
-  ChartBar
+  ArrowRight, Eye, VideoCamera, Newspaper, Television, 
+  ShieldCheck, CheckCircle, WarningOctagon, ChartBar
 } from "@phosphor-icons/react";
 import { BrandAwarenessVisual } from "@/components/visuals/BrandAwarenessVisual";
 
 export default function BrandAwarenessPage() {
   return (
-    <div className="bg-background text-foreground min-h-screen">
+    <main className="bg-white text-foreground min-h-screen">
       {/* S1: HERO */}
-      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 ">
+      <PageSection className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 gradient-mesh">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeUp>
               <div className="flex flex-col items-start text-left">
-                <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-foreground mb-6">
+                <Eyebrow accent="violet" className="mb-6">Brand Awareness</Eyebrow>
+                <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-slate-900 mb-6">
                   Be remembered.<br />
                   Not just seen.
                 </h1>
-                <p className="text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed font-sans">
+                <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
                   Command attention in premium, brand-safe environments. Deliver high-impact creatives to engaged audiences and drive measurable lift.
                 </p>
                 <MovingBorderButton href="/contact" className="mt-2 group">
@@ -53,38 +46,38 @@ export default function BrandAwarenessPage() {
       </PageSection>
 
       {/* S2: WHY PREMIUM INVENTORY */}
-      <PageSection className="py-24 md:py-32 bg-white">
+      <PageSection className="py-24 md:py-32 bg-slate-50 border-y border-slate-100">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeUp>
-              <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">The attention economy.</h2>
-              <p className="text-lg text-foreground/60 font-sans mb-6">
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-slate-900">The attention economy.</h2>
+              <p className="text-lg text-slate-500 mb-6">
                 Not all impressions are created equal. Ad placements on cluttered, low-quality sites might be cheap, but they fail to capture meaningful attention or build brand affinity.
               </p>
-              <p className="text-lg text-foreground/60 font-sans">
+              <p className="text-lg text-slate-500">
                 Our premium publisher network ensures your ads appear alongside quality content, driving significantly higher engagement rates, active viewability, and ultimately, brand recall.
               </p>
             </FadeUp>
             <FadeUp delay={0.2}>
               <div className="flex flex-col gap-4">
-                <GlassPanel className="bento-violet p-6 flex justify-between items-center border-[var(--color-brand-secondary)]/20">
-                  <span className="font-bold">Premium CPM vs Average</span>
-                  <span className="font-mono text-xl text-[var(--color-brand-secondary)]">2-3×</span>
-                </GlassPanel>
-                <GlassPanel className="bento-cyan p-6 flex justify-between items-center border-[var(--color-brand-primary)]/20">
-                  <span className="font-bold">Active Viewability</span>
+                <div className="rounded-2xl border border-violet-200 bg-violet-50 p-6 flex justify-between items-center transition-all hover:shadow-sm">
+                  <span className="font-semibold text-slate-900">Premium CPM vs Average</span>
+                  <span className="font-mono text-xl text-violet-600 font-bold tracking-tight">2-3×</span>
+                </div>
+                <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 flex justify-between items-center transition-all hover:shadow-sm">
+                  <span className="font-semibold text-slate-900">Active Viewability</span>
                   <div className="text-right">
-                    <span className="font-mono text-xl text-[var(--color-brand-primary)]">85%+</span>
-                    <span className="text-xs text-foreground/40 block">vs 55% avg</span>
+                    <span className="font-mono text-xl text-emerald-600 font-bold tracking-tight">85%+</span>
+                    <span className="text-xs text-slate-400 block font-mono uppercase tracking-widest mt-1">vs 55% avg</span>
                   </div>
-                </GlassPanel>
-                <GlassPanel className="bento-coral p-6 flex justify-between items-center border-[var(--color-brand-accent)]/20">
-                  <span className="font-bold">Video Completion (VCR)</span>
+                </div>
+                <div className="rounded-2xl border border-rose-200 bg-rose-50 p-6 flex justify-between items-center transition-all hover:shadow-sm">
+                  <span className="font-semibold text-slate-900">Video Completion (VCR)</span>
                   <div className="text-right">
-                    <span className="font-mono text-xl text-[var(--color-brand-accent)]">75%+</span>
-                    <span className="text-xs text-foreground/40 block">vs 40% avg</span>
+                    <span className="font-mono text-xl text-rose-600 font-bold tracking-tight">75%+</span>
+                    <span className="text-xs text-slate-400 block font-mono uppercase tracking-widest mt-1">vs 40% avg</span>
                   </div>
-                </GlassPanel>
+                </div>
               </div>
             </FadeUp>
           </div>
@@ -92,55 +85,55 @@ export default function BrandAwarenessPage() {
       </PageSection>
 
       {/* S3: AD FORMATS */}
-      <PageSection className="py-24 md:py-32">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <FadeUp>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center">Formats that perform</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center text-slate-900">Formats that perform</h2>
           </FadeUp>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <motion.div variants={staggerItem}>
-              <GlassPanel className="bento-yellow h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-secondary)]/10 to-transparent border border-border hover:border-[var(--color-brand-secondary)]/30">
-                <Eye className="w-10 h-10 text-[var(--color-brand-secondary)] mb-6 transition-transform group-hover:scale-110" />
-                <h3 className="text-xl font-medium text-foreground mb-2">High-Impact Display</h3>
-                <p className="text-muted-foreground font-sans text-sm mb-6 leading-relaxed">Rich media, takeovers, and large format banners designed to stop the scroll.</p>
-                <div className="text-xs font-mono text-[var(--color-brand-secondary)] px-3 py-1.5 bg-gray-100 rounded-lg border border-border inline-block">Awareness Focus</div>
-              </GlassPanel>
+              <div className="h-full rounded-3xl border border-amber-200 bg-amber-50 p-8 flex flex-col transition-all hover:shadow-md hover:-translate-y-0.5">
+                <Eye className="w-10 h-10 text-amber-600 mb-6" weight="duotone" />
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">High-Impact Display</h3>
+                <p className="text-slate-500 text-sm mb-8 flex-1 leading-relaxed">Rich media, takeovers, and large format banners designed to stop the scroll.</p>
+                <div className="text-[11px] font-mono font-bold tracking-widest uppercase text-amber-700 px-3 py-1.5 bg-white border border-amber-200 rounded-lg inline-block w-fit">Awareness Focus</div>
+              </div>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="bento-pink h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-primary)]/10 to-transparent border border-border hover:border-[var(--color-brand-primary)]/30">
-                <VideoCamera className="w-10 h-10 text-[var(--color-brand-primary)] mb-6 transition-transform group-hover:scale-110" />
-                <h3 className="text-xl font-medium text-foreground mb-2">Pre-Roll Video</h3>
-                <p className="text-muted-foreground font-sans text-sm mb-6 leading-relaxed">Captivate audiences with unskippable, premium video placements before content.</p>
-                <div className="text-xs font-mono text-[var(--color-brand-primary)] px-3 py-1.5 bg-gray-100 rounded-lg border border-border inline-block">Storytelling Focus</div>
-              </GlassPanel>
+              <div className="h-full rounded-3xl border border-blue-200 bg-blue-50 p-8 flex flex-col transition-all hover:shadow-md hover:-translate-y-0.5">
+                <VideoCamera className="w-10 h-10 text-blue-600 mb-6" weight="duotone" />
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Pre-Roll Video</h3>
+                <p className="text-slate-500 text-sm mb-8 flex-1 leading-relaxed">Captivate audiences with unskippable, premium video placements before content.</p>
+                <div className="text-[11px] font-mono font-bold tracking-widest uppercase text-blue-700 px-3 py-1.5 bg-white border border-blue-200 rounded-lg inline-block w-fit">Storytelling Focus</div>
+              </div>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="bento-violet h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-black/10 to-transparent border border-border hover:border-border">
-                <Newspaper className="w-10 h-10 text-foreground/80 mb-6 transition-transform group-hover:scale-110" />
-                <h3 className="text-xl font-medium text-foreground mb-2">Native Advertising</h3>
-                <p className="text-muted-foreground font-sans text-sm mb-6 leading-relaxed">In-feed placements that match the form and function of the editorial content.</p>
-                <div className="text-xs font-mono text-foreground/60 px-3 py-1.5 bg-gray-100 rounded-lg border border-border inline-block">Engagement Focus</div>
-              </GlassPanel>
+              <div className="h-full rounded-3xl border border-emerald-200 bg-emerald-50 p-8 flex flex-col transition-all hover:shadow-md hover:-translate-y-0.5">
+                <Newspaper className="w-10 h-10 text-emerald-600 mb-6" weight="duotone" />
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Native Advertising</h3>
+                <p className="text-slate-500 text-sm mb-8 flex-1 leading-relaxed">In-feed placements that match the form and function of the editorial content.</p>
+                <div className="text-[11px] font-mono font-bold tracking-widest uppercase text-emerald-700 px-3 py-1.5 bg-white border border-emerald-200 rounded-lg inline-block w-fit">Engagement Focus</div>
+              </div>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <GlassPanel className="bento-cyan h-full p-8 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-gradient-to-br from-[var(--color-brand-accent)]/10 to-transparent border border-border hover:border-[var(--color-brand-accent)]/30">
-                <Television className="w-10 h-10 text-[var(--color-brand-accent)] mb-6 transition-transform group-hover:scale-110" />
-                <h3 className="text-xl font-medium text-foreground mb-2">Connected TV</h3>
-                <p className="text-muted-foreground font-sans text-sm mb-6 leading-relaxed">The prestige of traditional TV commercials with the targeting of digital.</p>
-                <div className="text-xs font-mono text-[var(--color-brand-accent)] px-3 py-1.5 bg-gray-100 rounded-lg border border-border inline-block">Reach Focus</div>
-              </GlassPanel>
+              <div className="h-full rounded-3xl border border-violet-200 bg-violet-50 p-8 flex flex-col transition-all hover:shadow-md hover:-translate-y-0.5">
+                <Television className="w-10 h-10 text-violet-600 mb-6" weight="duotone" />
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Connected TV</h3>
+                <p className="text-slate-500 text-sm mb-8 flex-1 leading-relaxed">The prestige of traditional TV commercials with the targeting of digital.</p>
+                <div className="text-[11px] font-mono font-bold tracking-widest uppercase text-violet-700 px-3 py-1.5 bg-white border border-violet-200 rounded-lg inline-block w-fit">Reach Focus</div>
+              </div>
             </motion.div>
           </StaggerContainer>
         </Container>
       </PageSection>
 
       {/* S4: MEASUREMENT */}
-      <PageSection className="py-24 md:py-32 bg-white">
+      <PageSection className="py-24 md:py-32 bg-slate-50 border-y border-slate-100">
         <Container>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <FadeUp>
-              <h2 className="font-display text-4xl font-bold mb-6">Prove your brand impact</h2>
-              <p className="text-lg text-foreground/60 font-sans">
+              <h2 className="font-display text-4xl font-bold mb-6 text-slate-900">Prove your brand impact</h2>
+              <p className="text-lg text-slate-500">
                 Brand awareness shouldn&apos;t be a black box. We partner with leading measurement firms to provide actionable brand lift studies, proving exactly how your campaign shifted perception.
               </p>
             </FadeUp>
@@ -148,74 +141,75 @@ export default function BrandAwarenessPage() {
           
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
             <motion.div variants={staggerItem}>
-              <MetricTile value="85%+" label="Viewability" />
+              <MetricTile value="85%+" label="Viewability" accent="green" />
             </motion.div>
             <motion.div variants={staggerItem}>
-              <MetricTile value="75%" label="VCR" />
+              <MetricTile value="75%" label="VCR" accent="blue" />
             </motion.div>
             <motion.div variants={staggerItem}>
-              <MetricTile value="3×" label="Recall Lift" className="border-t-[var(--color-brand-secondary)]/50" />
+              <MetricTile value="3×" label="Recall Lift" accent="violet" />
             </motion.div>
             <motion.div variants={staggerItem}>
-              <MetricTile value="Measured" label="Share of Voice" />
+              <MetricTile value="Measured" label="Share of Voice" accent="blue" />
             </motion.div>
           </StaggerContainer>
         </Container>
       </PageSection>
 
       {/* S5: BRAND SAFETY */}
-      <PageSection className="py-24 md:py-32">
+      <PageSection className="py-24 md:py-32 bg-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeUp className="order-2 lg:order-1">
-              <h2 className="font-display text-4xl font-bold mb-10">Pillars of protection</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <h2 className="font-display text-4xl font-bold mb-10 text-slate-900">Pillars of protection</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
-                  <CheckCircle className="w-6 h-6 text-[var(--color-brand-accent)] mb-3" />
-                  <h4 className="font-bold mb-1">Verified Inventory</h4>
-                  <p className="text-sm text-foreground/60 font-sans">Direct integrations with top-tier SSPs and premium publishers.</p>
+                  <CheckCircle className="w-8 h-8 text-emerald-500 mb-4" weight="duotone" />
+                  <h4 className="font-semibold text-slate-900 mb-2">Verified Inventory</h4>
+                  <p className="text-sm text-slate-500 leading-relaxed">Direct integrations with top-tier SSPs and premium publishers.</p>
                 </div>
                 <div>
-                  <CheckCircle className="w-6 h-6 text-[var(--color-brand-accent)] mb-3" />
-                  <h4 className="font-bold mb-1">Category Controls</h4>
-                  <p className="text-sm text-foreground/60 font-sans">Strict content categorization to avoid misaligned contexts.</p>
+                  <CheckCircle className="w-8 h-8 text-emerald-500 mb-4" weight="duotone" />
+                  <h4 className="font-semibold text-slate-900 mb-2">Category Controls</h4>
+                  <p className="text-sm text-slate-500 leading-relaxed">Strict content categorization to avoid misaligned contexts.</p>
                 </div>
                 <div>
-                  <ShieldCheck className="w-6 h-6 text-[var(--color-brand-primary)] mb-3" />
-                  <h4 className="font-bold mb-1">Fraud Prevention</h4>
-                  <p className="text-sm text-foreground/60 font-sans">Real-time filtering of bots and invalid traffic before bidding.</p>
+                  <ShieldCheck className="w-8 h-8 text-blue-500 mb-4" weight="duotone" />
+                  <h4 className="font-semibold text-slate-900 mb-2">Fraud Prevention</h4>
+                  <p className="text-sm text-slate-500 leading-relaxed">Real-time filtering of bots and invalid traffic before bidding.</p>
                 </div>
                 <div>
-                  <ChartBar className="w-6 h-6 text-[var(--color-brand-secondary)] mb-3" />
-                  <h4 className="font-bold mb-1">Transparent Reporting</h4>
-                  <p className="text-sm text-foreground/60 font-sans">Domain-level visibility into exactly where every ad ran.</p>
+                  <ChartBar className="w-8 h-8 text-violet-500 mb-4" weight="duotone" />
+                  <h4 className="font-semibold text-slate-900 mb-2">Transparent Reporting</h4>
+                  <p className="text-sm text-slate-500 leading-relaxed">Domain-level visibility into exactly where every ad ran.</p>
                 </div>
               </div>
             </FadeUp>
             <FadeUp delay={0.2} className="order-1 lg:order-2">
-              <GlassPanel className="bento-coral p-8 border-[var(--color-brand-accent)]/20 text-center relative overflow-hidden bg-gradient-to-br from-black/5 to-transparent border group hover:border-[var(--color-brand-accent)]/40 transition-all duration-300 hover:shadow-[0_0_40px_rgba(217,119,87,0.1)]">
-                <ShieldCheck className="w-16 h-16 text-[var(--color-brand-accent)] mx-auto mb-6 transition-transform group-hover:scale-110" />
-                <h3 className="text-2xl font-bold mb-2">Platform Trust Score</h3>
-                <div className="text-5xl font-mono font-bold text-[var(--color-brand-accent)] mb-6">99.8%</div>
-                <div className="flex justify-center gap-2">
-                  <div className="w-1/4 h-2 bg-[var(--color-brand-accent)] rounded-l-full" />
-                  <div className="w-1/4 h-2 bg-[var(--color-brand-accent)]" />
-                  <div className="w-1/4 h-2 bg-[var(--color-brand-accent)]" />
-                  <div className="w-1/4 h-2 bg-[var(--color-brand-accent)] rounded-r-full" />
+              <div className="rounded-3xl border border-rose-200 bg-rose-50 p-10 text-center relative overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-rose-100 blur-3xl rounded-full opacity-60 pointer-events-none" />
+                <ShieldCheck className="w-16 h-16 text-rose-600 mx-auto mb-6 relative z-10" weight="duotone" />
+                <h3 className="text-2xl font-bold text-slate-900 mb-2 relative z-10">Platform Trust Score</h3>
+                <div className="text-6xl font-mono font-bold text-rose-600 mb-8 tracking-tighter relative z-10">99.8%</div>
+                <div className="flex justify-center gap-2 relative z-10">
+                  <div className="w-1/4 h-2 bg-rose-500 rounded-l-full opacity-100" />
+                  <div className="w-1/4 h-2 bg-rose-500 opacity-100" />
+                  <div className="w-1/4 h-2 bg-rose-500 opacity-100" />
+                  <div className="w-1/4 h-2 bg-rose-200 rounded-r-full" />
                 </div>
-                <p className="text-sm text-foreground/60 mt-4">Brand Safe Delivery Rate</p>
-              </GlassPanel>
+                <p className="text-sm text-slate-500 mt-4 relative z-10 font-medium">Brand Safe Delivery Rate</p>
+              </div>
             </FadeUp>
           </div>
         </Container>
       </PageSection>
 
       {/* S6: FINAL CTA */}
-      <PageSection className="py-24 md:py-32  border-t border-border">
+      <PageSection className="py-24 md:py-32 gradient-mesh border-t border-slate-100">
         <Container>
           <CtaDuo advertiserText="Launch Brand Campaign" />
         </Container>
       </PageSection>
-    </div>
+    </main>
   );
 }

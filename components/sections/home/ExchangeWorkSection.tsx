@@ -5,14 +5,13 @@ import { gsap, useGSAP, ScrollTrigger } from "@/lib/gsap";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ExchangeArchitecture } from "@/components/visuals/ExchangeArchitecture";
-import { cn } from "@/lib/utils";
 
 const steps = [
-  { id: "01", title: "Ad Request", desc: "Publisher's site or app loads, sending an ad request with context.", bentoClass: "bento-violet" },
-  { id: "02", title: "Bid Request", desc: "Emonetiser formats an OpenRTB bid request and broadcasts to DSPs.", bentoClass: "bento-cyan" },
-  { id: "03", title: "Simultaneous Bidding", desc: "DSPs evaluate the request and return bids in under 20ms.", bentoClass: "bento-coral" },
-  { id: "04", title: "Winning Bid", desc: "The highest eligible bid wins the auction instantly.", bentoClass: "bento-yellow" },
-  { id: "05", title: "Creative Delivery", desc: "The winning creative is returned and rendered for the user.", bentoClass: "bento-pink" },
+  { id: "01", title: "Ad Request", desc: "Publisher's site or app loads, sending an ad request with context." },
+  { id: "02", title: "Bid Request", desc: "Emonetiser formats an OpenRTB bid request and broadcasts to DSPs." },
+  { id: "03", title: "Simultaneous Bidding", desc: "DSPs evaluate the request and return bids in under 20ms." },
+  { id: "04", title: "Winning Bid", desc: "The highest eligible bid wins the auction instantly." },
+  { id: "05", title: "Creative Delivery", desc: "The winning creative is returned and rendered for the user." },
 ];
 
 export function ExchangeWorkSection() {
@@ -36,6 +35,7 @@ export function ExchangeWorkSection() {
       const items = textRef.current?.querySelectorAll(".step-item");
       if (!items) return;
 
+      // Create scroll-linked highlight effect
       items.forEach((item, i) => {
         gsap.to(item, {
           opacity: 1,
@@ -50,10 +50,11 @@ export function ExchangeWorkSection() {
         });
       });
       
+      // Pin the section
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",
-        end: "+=200%",
+        end: "+=200%", // scroll distance
         pin: true,
         pinSpacing: true,
       });
@@ -63,61 +64,47 @@ export function ExchangeWorkSection() {
   );
 
   return (
-    <section ref={containerRef} className="py-24 md:py-32 section-white overflow-hidden">
+    <section ref={containerRef} className="py-24 md:py-32 bg-background border-t border-border overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading 
           label="The Engine" 
-          headline="How the exchange works"
-          accent="yellow"
+          headline="How the exchange works" 
           className="mb-16"
         />
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           
           {/* Text Steps */}
-          <div ref={textRef} className="flex flex-col gap-6 relative z-10">
-            {steps.map((step, i) => {
-              const isActive = isMobile ? activeStep === i : true;
-              return (
-                <div 
-                  key={step.id} 
-                  className={cn(
-                    "step-item flex gap-6 p-6 rounded-3xl transition-all duration-500 cursor-default",
-                    isActive ? `bento-card ${step.bentoClass} shadow-xl scale-100 opacity-100` : "bg-gray-50 scale-[0.98]",
-                    !isMobile && "opacity-30" // Desktop handled by GSAP
-                  )}
-                  onClick={() => isMobile && setActiveStep(i)}
-                >
-                  <div className={cn(
-                    "flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg",
-                    isActive ? "bg-black/20 text-current" : "bg-gray-200 text-gray-500"
-                  )}>
-                    {step.id}
-                  </div>
-                  <div>
-                    <h3 className={cn("text-2xl font-bold mb-1", isActive ? "text-current" : "text-gray-900")}>
-                      {step.title}
-                    </h3>
-                    <p className={cn("font-medium", isActive ? "opacity-90" : "text-gray-500")}>
-                      {step.desc}
-                    </p>
-                  </div>
+          <div ref={textRef} className="flex flex-col gap-8 relative z-10">
+            {steps.map((step, i) => (
+              <div 
+                key={step.id} 
+                className={`step-item flex gap-6 transition-all duration-300 ${
+                  isMobile 
+                    ? activeStep === i ? "opacity-100" : "opacity-40" 
+                    : "opacity-30 lg:opacity-30" // handled by GSAP on desktop
+                }`}
+                onClick={() => isMobile && setActiveStep(i)}
+              >
+                <div className="font-mono text-2xl font-light text-[var(--color-brand-primary)]">{step.id}</div>
+                <div>
+                  <h3 className="text-xl font-medium mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground">{step.desc}</p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
             
-            {/* Mobile tap dots */}
+            {/* Mobile tap affordance */}
             {isMobile && (
               <div className="flex gap-2 justify-center mt-4">
                 {steps.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveStep(i)}
-                    className="h-2 rounded-full transition-all"
-                    style={{
-                      width: activeStep === i ? "2rem" : "0.5rem",
-                      background: activeStep === i ? "#111" : "#E5E7EB",
-                    }}
+                    className={`h-2 rounded-full transition-all ${
+                      activeStep === i ? "w-8 bg-[var(--color-brand-primary)]" : "w-2 bg-border"
+                    }`}
+                    aria-label={`Go to step ${i + 1}`}
                   />
                 ))}
               </div>
@@ -125,7 +112,7 @@ export function ExchangeWorkSection() {
           </div>
 
           {/* Visualizer */}
-          <div className="lg:sticky lg:top-1/4 h-[400px] flex items-center justify-center -mx-6 lg:mx-0 bento-card bento-white border-2 border-gray-100">
+          <div className="lg:sticky lg:top-1/4 h-[400px] flex items-center justify-center -mx-6 lg:mx-0">
              <ExchangeArchitecture />
           </div>
 

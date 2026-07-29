@@ -4,14 +4,13 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 
 export function MetricsSection() {
   return (
-    <section className="py-24 md:py-32 section-white">
+    <section className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading 
           label="Performance" 
           headline="Built for speed." 
           subtext="Millisecond latency. Maximum efficiency. Our infrastructure is built to handle global scale without compromising performance."
           className="mb-16"
-          accent="coral"
         />
         <StatGrid stats={stats.home} />
       </div>

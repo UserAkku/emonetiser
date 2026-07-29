@@ -31,65 +31,124 @@
   --radius-xl: calc(var(--radius) + 2px);
   --radius-2xl: calc(var(--radius) + 4px);
 
+  /* Emonetiser brand tokens */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-void: var(--background);
+  --color-surface: var(--card);
+  --color-line: var(--border);
+  --color-fog: var(--muted-foreground);
+  --color-paper: var(--foreground);
+
   /* Fonts */
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Premium Vibrant Colors */
-  --color-vibrant-violet: #7C3AED;
-  --color-vibrant-cyan: #06B6D4;
-  --color-vibrant-coral: #FF5722;
-  --color-vibrant-yellow: #FBBF24;
-  --color-vibrant-pink: #EC4899;
-  --color-vibrant-black: #0F172A;
+  /* Animations */
+  --animate-pulse-live: pulse-live 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  --animate-slide: slide var(--speed) ease-in-out infinite alternate;
+  --animate-meteor-effect: meteor-effect 5s linear infinite;
+  --animate-border-beam: border-beam calc(var(--duration)*1s) infinite linear;
+
+  @keyframes pulse-live {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes shimmer {
+    from { background-position: -200% center; }
+    to { background-position: 200% center; }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes spin-around {
+    0% {
+      transform: translateZ(0) rotate(0);
+    }
+    15%, 35% {
+      transform: translateZ(0) rotate(90deg);
+    }
+    65%, 85% {
+      transform: translateZ(0) rotate(270deg);
+    }
+    100% {
+      transform: translateZ(0) rotate(360deg);
+    }
+  }
+  @keyframes slide {
+    to {
+      transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes meteor-effect {
+    0% { transform: rotate(215deg) translateX(0); opacity: 1; }
+    70% { opacity: 1; }
+    100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
+  }
+  @keyframes border-beam {
+    100% { offset-distance: 100%; }
+  }
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--accordion-panel-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--accordion-panel-height); }
+    to { height: 0; }
+  }
 }
 
 :root {
-  /* ====================================================
-     EMONETISER — Premium Vibrant Color-Block Theme
-     100% White Canvas · Solid Vibrant Blocks · Crisp Text
-     ==================================================== */
+  /* Clean White Light Theme */
+  --background: hsl(0, 0%, 100%);          /* Pure White */
+  --foreground: hsl(222, 47%, 11%);        /* Dark Slate */
+  
+  --card: hsl(0, 0%, 100%);               /* White card */
+  --card-foreground: hsl(222, 47%, 11%);
+  
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 47%, 11%);
+  
+  --primary: hsl(158, 64%, 40%);           /* Vibrant Emerald */
+  --primary-foreground: hsl(0, 0%, 100%);
+  
+  --secondary: hsl(221, 83%, 53%);         /* Electric Blue */
+  --secondary-foreground: hsl(0, 0%, 100%);
+  
+  --muted: hsl(210, 40%, 96%);             /* Very light gray */
+  --muted-foreground: hsl(215, 16%, 47%);  /* Medium slate */
+  
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(222, 47%, 11%);
+  
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  
+  --border: hsl(214, 32%, 91%);            /* Light gray border */
+  --input: hsl(214, 32%, 91%);
+  --ring: hsl(158, 64%, 40%);
+  
+  --radius: 0.75rem;
 
-  --background: #FFFFFF;
-  --foreground: #111111;
-  
-  --card: #FFFFFF;
-  --card-foreground: #111111;
-  
-  --popover: #FFFFFF;
-  --popover-foreground: #111111;
-  
-  --primary: #111111;
-  --primary-foreground: #FFFFFF;
-  
-  --secondary: #F3F4F6;
-  --secondary-foreground: #111111;
-  
-  --muted: #F9FAFB;
-  --muted-foreground: #4B5563;
-  
-  --accent: #F3F4F6;
-  --accent-foreground: #111111;
-  
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
-  
-  --border: #E5E7EB;
-  --input: #E5E7EB;
-  --ring: #111111;
-  
-  --radius: 1.5rem; /* Super rounded corners for premium bento look */
-
-  /* Aliases for some legacy components */
-  --brand-primary: #7C3AED;
-  --brand-secondary: #06B6D4;
-  --brand-accent: #FF5722;
-  
-  /* Every section background is pure white */
-  --section-purple: #FFFFFF;
-  --section-teal: #FFFFFF;
-  --section-coral: #FFFFFF;
+  /* Vibrant Brand Colors */
+  --brand-primary: hsl(158, 64%, 40%);    /* Emerald Green — Publisher */
+  --brand-secondary: hsl(221, 83%, 53%);  /* Electric Blue — Advertiser */
+  --brand-accent: hsl(262, 83%, 58%);     /* Rich Violet */
 }
 
 @layer base {
@@ -109,91 +168,159 @@
 }
 
 /* ============================================
-   PREMIUM VIBRANT SOLID CARDS (Bento Blocks)
+   LIGHT GRADIENT BACKGROUNDS
+   ============================================ */
+.gradient-mesh {
+  background: linear-gradient(135deg, hsl(158, 64%, 98%) 0%, hsl(0, 0%, 100%) 50%, hsl(221, 83%, 98%) 100%);
+}
+
+.gradient-mesh-subtle {
+  background: hsl(210, 40%, 98%);
+}
+
+/* ============================================
+   CARD SYSTEM — Colorful bento-style
    ============================================ */
 
-.bento-card {
-  @apply relative overflow-hidden rounded-3xl p-8 transition-transform duration-300;
-}
-.bento-card:hover {
-  transform: translateY(-4px);
+/* Base card — clean white with shadow */
+.glass-card {
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(214, 32%, 91%);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
 }
 
-/* Violet Block */
+.glass-card:hover {
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Bento color variants */
+.bento-green {
+  background: hsl(158, 60%, 97%);
+  border-color: hsl(158, 50%, 85%);
+}
+.bento-blue {
+  background: hsl(221, 80%, 97%);
+  border-color: hsl(221, 60%, 85%);
+}
 .bento-violet {
-  background-color: var(--color-vibrant-violet);
-  color: #FFFFFF;
-  box-shadow: 0 20px 40px -10px rgba(124, 58, 237, 0.4);
+  background: hsl(262, 80%, 97%);
+  border-color: hsl(262, 50%, 87%);
 }
-.bento-violet .text-muted-foreground { color: rgba(255,255,255,0.7); }
-
-/* Cyan Block */
+.bento-amber {
+  background: hsl(38, 90%, 97%);
+  border-color: hsl(38, 70%, 85%);
+}
+.bento-rose {
+  background: hsl(350, 80%, 97%);
+  border-color: hsl(350, 60%, 87%);
+}
+.bento-sky {
+  background: hsl(200, 80%, 97%);
+  border-color: hsl(200, 60%, 85%);
+}
 .bento-cyan {
-  background-color: var(--color-vibrant-cyan);
-  color: #FFFFFF;
-  box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.4);
+  background: hsl(186, 80%, 97%);
+  border-color: hsl(186, 55%, 85%);
 }
-.bento-cyan .text-muted-foreground { color: rgba(255,255,255,0.7); }
-
-/* Coral Block */
 .bento-coral {
-  background-color: var(--color-vibrant-coral);
-  color: #FFFFFF;
-  box-shadow: 0 20px 40px -10px rgba(255, 87, 34, 0.4);
+  background: hsl(15, 80%, 97%);
+  border-color: hsl(15, 60%, 87%);
 }
-.bento-coral .text-muted-foreground { color: rgba(255,255,255,0.7); }
-
-/* Yellow Block */
 .bento-yellow {
-  background-color: var(--color-vibrant-yellow);
-  color: #111111;
-  box-shadow: 0 20px 40px -10px rgba(251, 191, 36, 0.4);
+  background: hsl(48, 90%, 97%);
+  border-color: hsl(48, 70%, 85%);
 }
-.bento-yellow .text-muted-foreground { color: rgba(0,0,0,0.6); }
-
-/* Pink Block */
 .bento-pink {
-  background-color: var(--color-vibrant-pink);
-  color: #FFFFFF;
-  box-shadow: 0 20px 40px -10px rgba(236, 72, 153, 0.4);
+  background: hsl(330, 80%, 97%);
+  border-color: hsl(330, 55%, 87%);
 }
-.bento-pink .text-muted-foreground { color: rgba(255,255,255,0.7); }
 
-/* Black Block */
-.bento-black {
-  background-color: var(--color-vibrant-black);
-  color: #FFFFFF;
-  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.4);
+/* Double-bezel outer shell */
+.bezel-outer {
+  background: hsl(214, 32%, 97%);
+  border: 1px solid hsl(214, 32%, 89%);
+  padding: 6px;
+  border-radius: 1.5rem;
 }
-.bento-black .text-muted-foreground { color: rgba(255,255,255,0.6); }
 
-/* White Block (with crisp shadow for contrast) */
-.bento-white {
-  background-color: #FFFFFF;
-  color: #111111;
-  border: 1px solid #E5E7EB;
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+/* Double-bezel inner core */
+.bezel-inner {
+  background: hsl(0, 0%, 100%);
+  border-radius: calc(1.5rem - 6px);
 }
-.bento-white:hover {
-  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+
+/* Accent glow effects — subtler on light bg */
+.glow-primary {
+  box-shadow: 0 0 30px -6px color-mix(in srgb, var(--brand-primary) 30%, transparent);
+}
+.glow-secondary {
+  box-shadow: 0 0 30px -6px color-mix(in srgb, var(--brand-secondary) 25%, transparent);
+}
+.glow-accent {
+  box-shadow: 0 0 20px -4px color-mix(in srgb, var(--brand-accent) 25%, transparent);
+}
+
+/* Hairline dividers */
+.divider-subtle {
+  border-color: hsl(214, 32%, 91%);
+}
+
+/* Shimmer text */
+.text-shimmer {
+  background: linear-gradient(
+    105deg,
+    var(--muted-foreground) 0%,
+    var(--foreground) 40%,
+    var(--brand-primary) 60%,
+    var(--brand-secondary) 80%,
+    var(--muted-foreground) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Section alternating backgrounds */
+.section-alt {
+  background: hsl(210, 40%, 98%);
+}
+
+/* Scroll reveal utility */
+.reveal-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Accordion animations */
+.data-open\:animate-accordion-down[data-open] {
+  animation: accordion-down 200ms ease-out;
+}
+.data-closed\:animate-accordion-up[data-closed] {
+  animation: accordion-up 200ms ease-out;
+}
+
+/* Marquee */
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }
 
 /* ============================================
-   BACKGROUNDS
+   INTERACTIVE CARD HOVER STATES
    ============================================ */
-.section-white, .gradient-mesh, .gradient-mesh-subtle {
-  background: #FFFFFF !important;
+.card-hover {
+  transition: all 0.25s ease;
 }
-
-/* Clear any lingering blobs or noise */
-.blob, .noise-overlay::before {
-  display: none !important;
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.1);
 }
 
 /* ============================================
-   ANIMATIONS (Kept for components)
+   CODE BLOCK (for SDK pages) — keep dark
    ============================================ */
-@keyframes pulse-live { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
-@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
-@keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-.reveal-up { animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.code-block {
+  background: hsl(222, 47%, 11%);
+  color: hsl(210, 40%, 96%);
+  border: 1px solid hsl(222, 30%, 20%);
+}
