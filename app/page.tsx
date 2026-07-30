@@ -24,13 +24,6 @@ export default function HomePage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <StaggerContainer className="flex flex-col items-start gap-8 z-10 relative">
-              <motion.div variants={staggerItem}>
-                <Eyebrow accent="green">
-                  <ShieldCheck className="w-4 h-4" weight="fill" />
-                  Google Certified Publisher Partner
-                </Eyebrow>
-              </motion.div>
-              
               <motion.h1 variants={staggerItem} className="text-5xl sm:text-6xl lg:text-7xl font-display font-semibold tracking-tight leading-[1.1] text-balance text-slate-900">
                 One exchange.<br />Both sides of the trade.
               </motion.h1>
@@ -74,9 +67,8 @@ export default function HomePage() {
           </div>
           
           <Container>
-            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                { name: "Google CPP", desc: "Certified Partner", icon: ShieldCheck, bg: "bg-emerald-50 border-emerald-200", iconColor: "text-emerald-600", iconBg: "bg-emerald-100" },
                 { name: "IAB Tech Lab", desc: "Gold Member", icon: SealCheck, bg: "bg-blue-50 border-blue-200", iconColor: "text-blue-600", iconBg: "bg-blue-100" },
                 { name: "ads.txt Verified", desc: "100% Direct", icon: CheckCircle, bg: "bg-violet-50 border-violet-200", iconColor: "text-violet-600", iconBg: "bg-violet-100" },
                 { name: "OpenRTB 2.6", desc: "Latest Standard", icon: ShieldCheck, bg: "bg-amber-50 border-amber-200", iconColor: "text-amber-600", iconBg: "bg-amber-100" }
@@ -285,12 +277,11 @@ export default function HomePage() {
           <FadeUp className="mb-16 text-center">
             <h2 className="text-4xl font-display font-semibold tracking-tight text-slate-900">Scale meets speed.</h2>
           </FadeUp>
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { value: <CounterStat value={20} prefix="<" suffix="ms" />, label: "Auction Latency", sub: "p99 global", accent: "green" as const },
               { value: "OpenRTB 2.6", label: "Protocol Standard", sub: "IAB compliant", accent: "blue" as const },
-              { value: "3 Channels", label: "Web + App + CTV", sub: "Unified auction", accent: "violet" as const },
-              { value: "Google CPP", label: "Certified Partner", sub: "Since 2022", accent: "green" as const }
+              { value: "3 Channels", label: "Web + App + CTV", sub: "Unified auction", accent: "violet" as const }
             ].map((metric, i) => (
               <motion.div key={i} variants={staggerItem} className="h-full">
                 <MetricTile

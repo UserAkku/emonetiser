@@ -79,7 +79,6 @@ export default function AboutPage() {
               {[
                 { year: "2019", title: "The Problem", desc: "Fragmented exchanges causing up to 40% value loss in the supply path.", color: "border-rose-200 bg-rose-50 border-l-4 border-l-rose-500" },
                 { year: "2021", title: "We Built It", desc: "Launched our unified infrastructure handling both supply and demand directly.", color: "border-blue-200 bg-blue-50 border-l-4 border-l-blue-500" },
-                { year: "2022", title: "Google Certified", desc: "Achieved official certification, validating our direct integration capabilities and scale.", color: "border-emerald-200 bg-emerald-50 border-l-4 border-l-emerald-500" },
               ].map((item, i) => (
                 <motion.div key={i} variants={staggerItem}>
                   <div className={cn("p-6 rounded-r-2xl border-y border-r transition-all hover:shadow-md hover:translate-x-1", item.color)}>
@@ -188,9 +187,8 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 mt-4">Verified & Certified</h2>
           </FadeUp>
           
-          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Certificate, title: "Google CPP", year: "Issued 2022", desc: "Certified Publishing Partner for scaling and monetizing apps & websites.", color: "border-amber-200 bg-amber-50" },
               { icon: ShieldCheck, title: "IAB Tech Lab", year: "Member", desc: "Committed to developing and implementing global technical standards.", color: "border-blue-200 bg-blue-50" },
               { icon: FileText, title: "ads.txt Compliant", year: "Continuous", desc: "Full support for authorized digital sellers for transparent supply chains.", color: "border-emerald-200 bg-emerald-50" },
               { icon: ShareNetwork, title: "OpenRTB 2.6", year: "Supported", desc: "Implementing the latest real-time bidding protocols for efficiency.", color: "border-violet-200 bg-violet-50" },
