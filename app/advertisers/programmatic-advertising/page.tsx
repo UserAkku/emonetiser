@@ -31,7 +31,7 @@ export default function ProgrammaticAdvertisingPage() {
                 <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
                   Buy premium inventory directly through Emonetiser&apos;s exchange. Skip the intermediaries and maximize your working media budget.
                 </p>
-                <MovingBorderButton href="/contact" className="mt-2 group">
+                <MovingBorderButton href="/company/contact" className="mt-2 group">
                   Set Up Your Seat
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 ml-2" />
                 </MovingBorderButton>

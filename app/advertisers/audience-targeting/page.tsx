@@ -30,7 +30,7 @@ export default function AudienceTargetingPage() {
                 <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
                   Combine powerful demographic, behavioral, and contextual signals to zero in on the precise audience most likely to engage with your brand.
                 </p>
-                <MovingBorderButton href="/contact" className="mt-2 group">
+                <MovingBorderButton href="/company/contact" className="mt-2 group">
                   Explore Audiences
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 ml-2" />
                 </MovingBorderButton>

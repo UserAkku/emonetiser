@@ -31,7 +31,7 @@ export default function OmnichannelAdvertisingPage() {
                 <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
                   Reach your most valuable audiences continuously across Web, App, and Connected TV - all managed from a single, unified platform.
                 </p>
-                <MovingBorderButton href="/contact" className="mt-2 group">
+                <MovingBorderButton href="/company/contact" className="mt-2 group">
                   Plan Your Campaign
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 ml-2" />
                 </MovingBorderButton>
