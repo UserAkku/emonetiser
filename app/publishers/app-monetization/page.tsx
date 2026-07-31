@@ -37,7 +37,7 @@ export default function AppMonetizationPage() {
               <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
                 Integrate our ultra-lightweight SDK for iOS and Android once, and tap into global premium demand across all formats.
               </p>
-              <MovingBorderButton href="/contact" className="mt-2 group">
+              <MovingBorderButton href="/company/contact" className="mt-2 group">
                 Download SDK
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
               </MovingBorderButton>

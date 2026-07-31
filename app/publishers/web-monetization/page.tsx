@@ -28,7 +28,7 @@ export default function WebMonetizationPage() {
               <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
                 Unlock your true earning potential with advanced header bidding and real-time auctions that connect you to unlimited demand.
               </p>
-              <MovingBorderButton href="/contact" className="mt-2 group">
+              <MovingBorderButton href="/company/contact" className="mt-2 group">
                 Get Your Tag
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
               </MovingBorderButton>

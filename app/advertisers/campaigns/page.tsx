@@ -32,7 +32,7 @@ export default function CampaignsPage() {
                 <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
                   Drive real business outcomes with our unified campaign manager. Leverage smart bidding and deep attribution to scale your performance efficiently.
                 </p>
-                <MovingBorderButton href="/contact" className="mt-2 group">
+                <MovingBorderButton href="/company/contact" className="mt-2 group">
                   Launch Campaign
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 ml-2" />
                 </MovingBorderButton>

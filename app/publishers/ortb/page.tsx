@@ -47,7 +47,7 @@ export default function OrtbPage() {
               <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
                 Bypass the browser entirely. Execute server-to-server auctions for zero latency, higher bid density, and unmatched scalability.
               </p>
-              <MovingBorderButton href="/contact" className="mt-2 group">
+              <MovingBorderButton href="/company/contact" className="mt-2 group">
                 Connect Endpoint
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
               </MovingBorderButton>

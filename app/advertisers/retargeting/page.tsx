@@ -30,7 +30,7 @@ export default function RetargetingPage() {
                 <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
                   Re-engage your highest-intent audiences across Web, App, and Connected TV with privacy-first retargeting.
                 </p>
-                <MovingBorderButton href="/contact" className="mt-2 group">
+                <MovingBorderButton href="/company/contact" className="mt-2 group">
                   Start Retargeting
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 ml-2" />
                 </MovingBorderButton>

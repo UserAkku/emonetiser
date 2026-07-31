@@ -27,7 +27,7 @@ export default function CtvMonetizationPage() {
               <p className="text-xl text-slate-500 max-w-lg mb-10 leading-relaxed">
                 Maximize OTT revenue with seamless Server-Side Ad Insertion (SSAI) and OpenRTB programmatic demand for the big screen.
               </p>
-              <MovingBorderButton href="/contact" className="mt-2 group">
+              <MovingBorderButton href="/company/contact" className="mt-2 group">
                 Talk to Video Specialists
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
               </MovingBorderButton>
