@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col bg-white">
       {/* SECTION 1 - HERO */}
-      <PageSection className="gradient-mesh pt-32 lg:pt-40 pb-24 md:pb-32 overflow-hidden">
+      <PageSection className="gradient-mesh pt-12 lg:pt-40 pb-24 md:pb-32 overflow-hidden">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <StaggerContainer className="flex flex-col items-start gap-8 z-10 relative">

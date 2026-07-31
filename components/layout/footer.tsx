@@ -18,7 +18,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3 w-fit transition-opacity hover:opacity-80">
-              <img src="/emonetiser-symbol.webp" alt="Emonetiser Logo" className="h-8 w-8 object-contain" />
+              <img src="/emonetiser-symbol.png" alt="Emonetiser Logo" className="h-8 w-8 object-contain" />
               <span className="font-display text-xl font-bold tracking-tight text-slate-900">Emonetiser</span>
             </Link>
             <p className="text-sm text-slate-500 leading-relaxed max-w-[320px]">

@@ -109,7 +109,7 @@ export default function ContactPage() {
   return (
     <main className="bg-white text-slate-900 min-h-screen">
       {/* S1: HERO */}
-      <PageSection className="pt-32 pb-16 md:pt-48 md:pb-24 gradient-mesh">
+      <PageSection className="pt-12 pb-16 md:pt-48 md:pb-24 gradient-mesh">
         <Container>
           <FadeUp>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-display font-bold tracking-tight text-slate-900 mb-6">
@@ -218,8 +218,8 @@ export default function ContactPage() {
                 <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-8 h-full transition-all hover:shadow-md">
                   <h3 className="font-display text-2xl font-bold text-slate-900 mb-3">Publishers</h3>
                   <p className="text-slate-500 text-sm mb-6 leading-relaxed">Questions about integration or yield optimization.</p>
-                  <a href="mailto:publishers@emonetiser.com" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 transition-colors font-semibold">
-                    publishers@emonetiser.com <ArrowRight className="ml-2 w-4 h-4" />
+                  <a href="mailto:Adops@emonetiser.io" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 transition-colors font-semibold">
+                    Adops@emonetiser.io <ArrowRight className="ml-2 w-4 h-4" />
                   </a>
                 </div>
               </motion.div>
@@ -228,8 +228,8 @@ export default function ContactPage() {
                 <div className="rounded-3xl border border-blue-200 bg-blue-50 p-8 h-full transition-all hover:shadow-md">
                   <h3 className="font-display text-2xl font-bold text-slate-900 mb-3">Advertisers</h3>
                   <p className="text-slate-500 text-sm mb-6 leading-relaxed">Inquiries about inventory access or managed service.</p>
-                  <a href="mailto:advertisers@emonetiser.com" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-semibold">
-                    advertisers@emonetiser.com <ArrowRight className="ml-2 w-4 h-4" />
+                  <a href="mailto:Adops@emonetiser.io" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-semibold">
+                    Adops@emonetiser.io <ArrowRight className="ml-2 w-4 h-4" />
                   </a>
                 </div>
               </motion.div>
@@ -237,7 +237,7 @@ export default function ContactPage() {
               <motion.div variants={staggerItem}>
                 <div className="rounded-3xl border border-amber-200 bg-amber-50 p-8 h-full flex flex-col transition-all hover:shadow-md">
                   <h3 className="font-display text-2xl font-bold text-slate-900 mb-3">Headquarters</h3>
-                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">London, United Kingdom</p>
+                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">Kainchi Dham, Uttarakhand, India</p>
                   <div className="pt-4 border-t border-amber-200/50 mt-auto">
                     <p className="text-amber-700/60 font-mono text-xs uppercase tracking-wider font-bold">Response expected within 1 business day.</p>
                   </div>

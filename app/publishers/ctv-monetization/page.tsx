@@ -15,7 +15,7 @@ export default function CtvMonetizationPage() {
     <main className="flex flex-col w-full bg-white min-h-screen text-foreground">
       
       {/* S1 HERO */}
-      <PageSection className="pt-32 pb-24 md:pt-40 md:pb-32 gradient-mesh">
+      <PageSection className="pt-12 pb-24 md:pt-40 md:pb-32 gradient-mesh">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeUp className="flex flex-col items-start text-left">

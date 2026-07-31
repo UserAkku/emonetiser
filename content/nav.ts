@@ -1,6 +1,7 @@
 import { 
   Globe, Smartphone, Tv, 
-  BarChart2, Merge, Target, Crosshair, Star 
+  BarChart2, Merge, Target, Crosshair, Star,
+  Server, Box, TrendingUp, Users
 } from "lucide-react";
 
 export const publisherLinks = [
@@ -21,6 +22,18 @@ export const publisherLinks = [
     label: "CTV Monetization",
     description: "Server-side ad insertion and OpenRTB demand.",
     icon: Tv,
+  },
+  {
+    path: "/publishers/ortb",
+    label: "OpenRTB Integration",
+    description: "Direct server-to-server connections for maximum yield.",
+    icon: Server,
+  },
+  {
+    path: "/publishers/sdk",
+    label: "SDK Integration",
+    description: "Lightweight, crash-free native app monetization.",
+    icon: Box,
   },
 ];
 
@@ -54,6 +67,18 @@ export const advertiserLinks = [
     label: "Brand Awareness",
     description: "Build lasting recall through premium placements.",
     icon: Star,
+  },
+  {
+    path: "/advertisers/campaigns",
+    label: "Performance Campaigns",
+    description: "Drive measurable ROI with smart bidding and attribution.",
+    icon: TrendingUp,
+  },
+  {
+    path: "/advertisers/affiliate-marketing",
+    label: "Affiliate Marketing",
+    description: "Scale your revenue by paying only for real conversions.",
+    icon: Users,
   },
 ];
 

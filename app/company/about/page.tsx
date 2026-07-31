@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <main className="bg-white text-foreground min-h-screen">
       {/* S1: HERO + MISSION */}
-      <PageSection className="pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden relative gradient-mesh">
+      <PageSection className="pt-12 pb-24 md:pt-48 md:pb-32 overflow-hidden relative gradient-mesh">
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
             <FadeUp>
