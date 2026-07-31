@@ -83,7 +83,7 @@ export function MetricTile({
   value: React.ReactNode;
   label: string;
   sub?: string;
-  accent?: "blue" | "violet" | "green";
+  accent?: "blue" | "violet" | "green" | "amber" | "rose" | "sky";
   className?: string;
 }) {
   const colors = {
@@ -99,9 +99,21 @@ export function MetricTile({
       bg: "bg-emerald-50 border-emerald-200 hover:border-emerald-300",
       value: "text-emerald-600",
     },
+    amber: {
+      bg: "bg-amber-50 border-amber-200 hover:border-amber-300",
+      value: "text-amber-600",
+    },
+    rose: {
+      bg: "bg-rose-50 border-rose-200 hover:border-rose-300",
+      value: "text-rose-600",
+    },
+    sky: {
+      bg: "bg-sky-50 border-sky-200 hover:border-sky-300",
+      value: "text-sky-600",
+    },
   };
 
-  const c = colors[accent];
+  const c = colors[accent] || colors.blue;
 
   return (
     <div className={cn(

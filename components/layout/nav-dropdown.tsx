@@ -61,9 +61,9 @@ export function NavDropdown({ label, items, accent = "company" }: NavDropdownPro
       <button
         ref={triggerRef}
         className={cn(
-          "flex items-center gap-1.5 py-2 px-2 text-[13px] font-semibold uppercase tracking-[0.1em] text-slate-500 transition-all hover:text-slate-900",
-          accent === "publisher" && "hover:text-emerald-600",
-          accent === "advertiser" && "hover:text-blue-600"
+          "flex items-center gap-1.5 py-2 px-2 text-[13px] font-semibold uppercase tracking-[0.1em] text-slate-600 transition-all hover:text-slate-900",
+          accent === "publisher" && "hover:text-emerald-700",
+          accent === "advertiser" && "hover:text-blue-700"
         )}
       >
         {label}

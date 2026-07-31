@@ -31,16 +31,14 @@ export function Navbar() {
       >
         <nav
           className={cn(
-            "w-full transition-all duration-500 border-b",
-            scrolled
-              ? "bg-white/95 backdrop-blur-xl border-slate-200 shadow-sm"
-              : "bg-white/80 backdrop-blur-md border-transparent"
+            "w-full transition-all duration-500 border-b bg-[var(--color-brand-primary)]/10 backdrop-blur-xl border-[var(--color-brand-primary)]/20",
+            scrolled ? "shadow-sm" : ""
           )}
         >
           <div className={cn("mx-auto max-w-7xl px-6 lg:px-8 w-full flex items-center transition-all duration-500", scrolled ? "h-16" : "h-20")}>
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 shrink-0 mr-4">
-              <img src="/emonetiser-symbol.webp" alt="Emonetiser Logo" className="h-7 w-7 object-contain" />
+              <img src="/emonetiser-symbol.png" alt="Emonetiser Logo" className="h-7 w-7 object-contain" />
               <span className="font-display text-base font-semibold tracking-tight text-slate-900">Emonetiser</span>
             </Link>
 
