@@ -11,10 +11,10 @@ const Node = forwardRef<HTMLDivElement, { children?: React.ReactNode; className?
       <div
         ref={ref}
         className={cn(
-          "flex h-16 w-16 items-center justify-center rounded-2xl border transition-all duration-500 shadow-xl",
+          "flex h-16 w-16 items-center justify-center rounded-2xl border transition-all duration-500 shadow-sm",
           highlighted 
-            ? "bg-[var(--color-brand-secondary)]/20 border-[var(--color-brand-secondary)]/50 hover:-translate-y-2 scale-110" 
-            : "glass-panel bg-background hover:-translate-y-1 border-white/10 hover:border-white/30",
+            ? "bg-blue-50 border-blue-200 hover:-translate-y-2 scale-110 shadow-md" 
+            : "bg-white hover:-translate-y-1 border-slate-200 hover:border-slate-300 hover:shadow-md",
           className
         )}
       >
@@ -22,7 +22,7 @@ const Node = forwardRef<HTMLDivElement, { children?: React.ReactNode; className?
       </div>
       <span className={cn(
         "mt-4 text-sm font-sans text-center transition-colors",
-        highlighted ? "font-bold text-[var(--color-brand-secondary)]" : "font-medium text-white/80"
+        highlighted ? "font-bold text-blue-600" : "font-medium text-slate-600"
       )}>
         {title}
       </span>
@@ -43,17 +43,17 @@ export function RetargetingBeam() {
     <div className="w-full relative">
       {/* Desktop view */}
       <div ref={containerRef} className="hidden md:flex relative w-full max-w-5xl mx-auto items-start justify-between py-12 px-4">
-        <Node ref={node1Ref} title="User Visits" icon={<User className="w-8 h-8 text-white/70" />} />
-        <Node ref={node2Ref} title="Pixel Fires" icon={<Browser className="w-8 h-8 text-white/70" />} />
-        <Node ref={node3Ref} title="Segment Built" icon={<Database className="w-8 h-8 text-white/70" />} />
-        <Node ref={node4Ref} title="Matched on Exchange" icon={<Users className="w-8 h-8 text-[var(--color-brand-secondary)]" />} highlighted />
-        <Node ref={node5Ref} title="Ad Delivered" icon={<PaperPlaneRight className="w-8 h-8 text-white/70" />} />
+        <Node ref={node1Ref} title="User Visits" icon={<User className="w-8 h-8 text-slate-400" />} />
+        <Node ref={node2Ref} title="Pixel Fires" icon={<Browser className="w-8 h-8 text-slate-400" />} />
+        <Node ref={node3Ref} title="Segment Built" icon={<Database className="w-8 h-8 text-slate-400" />} />
+        <Node ref={node4Ref} title="Matched on Exchange" icon={<Users className="w-8 h-8 text-blue-600" />} highlighted />
+        <Node ref={node5Ref} title="Ad Delivered" icon={<PaperPlaneRight className="w-8 h-8 text-slate-400" />} />
 
         {/* Beams */}
-        <AnimatedBeam containerRef={containerRef} fromRef={node1Ref} toRef={node2Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="rgba(255,255,255,0.4)" gradientStopColor="rgba(255,255,255,0.4)" curvature={0} duration={2} />
-        <AnimatedBeam containerRef={containerRef} fromRef={node2Ref} toRef={node3Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="rgba(255,255,255,0.4)" gradientStopColor="rgba(255,255,255,0.4)" curvature={0} duration={2} delay={1} />
-        <AnimatedBeam containerRef={containerRef} fromRef={node3Ref} toRef={node4Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="rgba(255,255,255,0.4)" gradientStopColor="var(--color-brand-secondary)" curvature={0} duration={2} delay={2} />
-        <AnimatedBeam containerRef={containerRef} fromRef={node4Ref} toRef={node5Ref} pathColor="rgba(255,255,255,0.1)" gradientStartColor="var(--color-brand-secondary)" gradientStopColor="rgba(255,255,255,0.4)" curvature={0} duration={2} delay={3} />
+        <AnimatedBeam containerRef={containerRef} fromRef={node1Ref} toRef={node2Ref} pathColor="rgba(0,0,0,0.05)" gradientStartColor="rgba(0,0,0,0.2)" gradientStopColor="rgba(0,0,0,0.2)" curvature={0} duration={2} />
+        <AnimatedBeam containerRef={containerRef} fromRef={node2Ref} toRef={node3Ref} pathColor="rgba(0,0,0,0.05)" gradientStartColor="rgba(0,0,0,0.2)" gradientStopColor="rgba(0,0,0,0.2)" curvature={0} duration={2} delay={1} />
+        <AnimatedBeam containerRef={containerRef} fromRef={node3Ref} toRef={node4Ref} pathColor="rgba(0,0,0,0.05)" gradientStartColor="rgba(0,0,0,0.2)" gradientStopColor="#2563eb" curvature={0} duration={2} delay={2} />
+        <AnimatedBeam containerRef={containerRef} fromRef={node4Ref} toRef={node5Ref} pathColor="rgba(0,0,0,0.05)" gradientStartColor="#2563eb" gradientStopColor="rgba(0,0,0,0.2)" curvature={0} duration={2} delay={3} />
       </div>
 
       {/* Mobile view */}
@@ -67,9 +67,9 @@ export function RetargetingBeam() {
         ].map((step, i) => (
           <div key={i} className={cn(
             "p-4 rounded-xl border flex items-center gap-4 transition-all duration-300",
-            step.highlighted ? "bg-[var(--color-brand-secondary)]/10 border-[var(--color-brand-secondary)]/50 text-[var(--color-brand-secondary)]" : "glass-panel border-white/10 text-white"
+            step.highlighted ? "bg-blue-50 border-blue-200 text-blue-700 shadow-sm" : "bg-white border-slate-200 text-slate-700 shadow-sm"
           )}>
-            <div className={cn("font-mono text-sm opacity-50", step.highlighted && "text-[var(--color-brand-secondary)] opacity-80")}>0{i+1}</div>
+            <div className={cn("font-mono text-sm opacity-50", step.highlighted && "text-blue-600 opacity-80")}>0{i+1}</div>
             <step.icon className="w-6 h-6" />
             <div className="font-bold">{step.title}</div>
           </div>
