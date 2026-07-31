@@ -141,7 +141,7 @@ export default function CtvMonetizationPage() {
           </FadeUp>
           
           <div className="relative w-full max-w-5xl mx-auto hidden md:block">
-            <div className="absolute top-[40%] left-0 w-full h-[2px] bg-gradient-to-r from-slate-200 via-violet-300 to-slate-200 z-0" />
+            <div className="absolute top-8 left-0 w-full h-[2px] bg-gradient-to-r from-slate-200 via-violet-300 to-slate-200 z-0" />
             
             <StaggerContainer className="grid grid-cols-5 gap-4 relative z-10">
               {[

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FadeUp, StaggerContainer, staggerItem } from "@/components/motion/Reveal";
 import { Eyebrow, PageSection, Container } from "@/components/ui/primitives";
-import { buttonVariants } from "@/components/ui/button";
+import { MovingBorderButton } from "@/components/ui/moving-border-button";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { ArrowRight, Graph, Target, ShieldCheck, ShareNetwork, ChartLineUp, AppWindow, Globe, FileText, Certificate, HandsClapping, Lightbulb, Eyeglasses, Users } from "@phosphor-icons/react";
@@ -23,12 +23,13 @@ export default function AboutPage() {
                 Founded to eliminate the middlemen - connecting publishers and advertisers through one transparent, real-time auction infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="#what-we-built" className="inline-flex h-12 items-center justify-center rounded-full bg-slate-900 px-8 text-sm font-semibold text-white transition-colors hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 gap-2">
-                  Meet the Platform <ArrowRight weight="bold" />
-                </Link>
-                <Link href="/company/contact" className="inline-flex h-12 items-center justify-center rounded-full border border-slate-200 bg-white px-8 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-50 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200 focus:ring-offset-2">
+                <MovingBorderButton href="#what-we-built" className="group">
+                  Meet the Platform
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 ml-2" />
+                </MovingBorderButton>
+                <MovingBorderButton variant="secondary" href="/company/contact" className="group">
                   Get in Touch
-                </Link>
+                </MovingBorderButton>
               </div>
             </FadeUp>
             <FadeUp delay={0.2} className="relative h-[400px] lg:h-[500px] flex items-center justify-center">
