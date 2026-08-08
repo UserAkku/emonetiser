@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { fontDisplay, fontSans, fontMono } from "@/lib/fonts";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -48,9 +46,7 @@ export default function RootLayout({
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col font-sans bg-background text-foreground overflow-x-hidden">
         <TooltipProvider>
-          <Navbar />
-          <main className="flex-1 flex flex-col pt-20">{children}</main>
-          <Footer />
+          {children}
         </TooltipProvider>
         <Toaster />
         
