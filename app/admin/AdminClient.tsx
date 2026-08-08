@@ -74,7 +74,8 @@ export default function AdminClient() {
     }
   };
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: number | undefined) => {
+    if (id === undefined) return;
     try {
       const res = await fetch(`/api/sellers?id=${id}`, {
         method: 'DELETE',
